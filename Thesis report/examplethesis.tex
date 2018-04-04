@@ -66,6 +66,7 @@
 
 \chapter{1 Inledning}
 
+
 We use the \emph{biblatex} package to handle our references. We therefore and use the
 command \texttt{parencite} to get a reference in parenthesis, like this
 \parencite{heisenberg2015}.  It is also possible to include the author
@@ -73,14 +74,32 @@ as part of the sentence using \texttt{textcite}, like talking about
 the work of \textcite{einstein2016}.
 
 \section{Problemformulering}
-Detta är problemformuleringen.
+Skapande av data sker idag i en rekord frekvens. Under 2010 skapades ca 1 ZB data och efter 2014 förväntades det skapas 7 ZB per år.\parencite{1} Denna kontinuerliga ökning av data har till stor del berott på uppkomsten av sociala medier, sakernas internet (engelska: Internet of Things) och multimedia.\parencite{2} Det flöde av data som har uppstått gör dock ingen nytta om de bara kommer samlas eftersom det inte handlar om det man vet, utan vad man gör med det man vet.\parencite{3} Vikten ligger alltså i att göra data till värdefull information som människan kan tolka och lära sig någonting ifrån vilket har visat sig vara en svår uppgift. Detta beror dels på att data blir mer och mer komplex och dels på att användarna ställer högre krav på att presentationen av den ska vara tydlig, lärorik och lätt att förstå. Detta gäller både statiska datamängder och strömmande.
 
-\blindtext
+Detta projekt kommer därför gå ut på att komma fram till ett sätt att visualisera stora mängder data på ett sätt som tillfredsställer användarna. Mer specifikt kommer det handla om strömmande data från betalstationer runt om i Sverige som kommer hämtas från Trafikverket. Data kommer analyseras och sedan presenteras baserat på följande faktorer: antalet bilar, fordonstyp (bil, buss, lastbil), geografisk placering och riktning in eller ut från staden. Presentationen av denna data kommer ske i en interaktiv dashboard följandes principerna inom Människa-Dator interaktion. Syftet är alltså att ta fram ett sätt att presentera stora mängder strömmande data så att de blir användbara. Oberoende av vilket data som ska användas så ska denna rapport metoden kunna tillämpas.
+
 
 \section{Målsättning}
-Detta är målsättningen.
+Målet med det här projekt är att genomföra en analys för att visualisera stora mängder strömmande data så att de blir användbara och välanpassade för användare. För att projektarbetet ska gå så effektivt som möjligt måste delmomenten delas upp. Ett grundläggande mål för projektet är att skapa ett verktyg för testning och tillämpning av analysen. Detta verktyg kommer vara en dashboard där data från Trafikverkets betalstationer ska presenteras. Projektet kommer ytterligare delas upp till följande mer detaljerade delmål.
+Förstudie på ramverk för strömmande analys och visualisering som passar för stora mängder data: 
+Vilka system finns tillgängliga
+Hur jämförs de med varandra
+Vilka teorier om människa-datorinteraktion finns, vilka  och hur skulle de implementeras	
 
-\blindtext
+
+Installera Elastic stack på en maskin på ÅF som används för utveckling.
+
+
+Skapa en mjukvara som hämtar data genom det öppna API:et från Trafikverket och överför data om betalstationer och passerande fordon i Sverige till Elasticsearch i realtid.
+
+
+Analysera och visualisera data för att skapa en interaktiv dashboard som ska möjliggöra användarna att utforska data dynamisk genom att följa en design och utvecklingsprocess från människa-datorinteraktion.	
+			 	
+Driftsätta dashboarden som en hemsida.	
+
+
+Genomföra en analys angående representation av stora mängder strömmande data på ett sådant sätt att de blir användbara.	
+
 
 \section{Avgränsningar}
 Detta är avgränsningarna.
