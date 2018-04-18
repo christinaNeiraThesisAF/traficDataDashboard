@@ -1,8 +1,7 @@
 package com.thesisAF.rest;
- 
+
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
 import javax.ws.rs.core.Response;
 
 
@@ -10,70 +9,93 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.List;
+import java.util.TimeZone;
 
-import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
 
-import javax.ws.rs.core.Response;
-
- 
 @Path("/tolls")
 public class TollRetriever {
-	public String data = new String();
-	
+	public static String startDate = "2015-02-28 00:00:00";
+	public static String data = new String();
+	public static int count = 1;
+	SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
 	private final String USER_AGENT = "Mozilla/5.0";
-	
+
 	@GET
 	@Path("/toll")
-	public  Response getTolls() throws Exception {	
-		sendGet();
-		System.out.println("hej");
+	public  Response getTolls() throws Exception {
+		System.out.println("count "+count++);
+		System.out.println("Start "+startDate);
+		Date currentDate= getDate();
+		sendGet(currentDate);
+
+		startDate = dateFormat.format(currentDate);
+		System.out.println("startDate in toll "+ startDate);
 		
 		return Response.status(200).entity(data).build();
 	}
-//
-//		public static void main(String[] args) throws Exception {
-//
-//			TollRetreiver http = new TollRetreiver();
-//
-//			System.out.println("Testing 1 - Send Http GET request");
-//			http.sendGet();
-//
-//	}
-//
-		// HTTP GET request
-		private void sendGet() throws Exception {
 
-			String url = "https://tsopendata.azure-api.net/Passager/v0.1/ByBetalstation?Passagedatum=2015-10-01&PassageTidStart=06:00:00&PassageTidStopp=06:10:00";
-			
-			URL obj = new URL(url);
-			HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+	// HTTP GET request
+	private void sendGet(Date currentDate) throws Exception {
+		DateFormat dateformat = new SimpleDateFormat("yyyy-MM-dd");
+		DateFormat timeFormat = new SimpleDateFormat("HH:mm:ss");
 
-			// optional default is GET
-			con.setRequestMethod("GET");
+		String extractedDate = dateformat.format(dateFormat.parse(startDate)).toString();
 
-			//add request header
-			con.setRequestProperty("User-Agent", USER_AGENT);
+		String endTime = timeFormat.format(currentDate).toString();
+		System.out.println("currentTime "+ endTime);
+		System.out.println("start date in send get "+ startDate);
+		Date parsedStartDateFromString = dateFormat.parse(startDate);
+		String startTime = timeFormat.format(parsedStartDateFromString);
+		System.out.println("startTime "+ startTime);
 
-			int responseCode = con.getResponseCode();
-			System.out.println("\nSending 'GET' request to URL : " + url);
-			System.out.println("Response Code : " + responseCode);
 
-			BufferedReader in = new BufferedReader(
-			        new InputStreamReader(con.getInputStream()));
-			String inputLine;
-			StringBuffer response = new StringBuffer();
+		String url = "https://tsopendata.azure-api.net/Passager/v0.1/ByBetalstation?Passagedatum="+ extractedDate + "&PassageTidStart="+startTime+"&PassageTidStopp="+endTime;
 
-			while ((inputLine = in.readLine()) != null) {
-				response.append(inputLine);
-			}
-			in.close();
+		URL obj = new URL(url);
+		HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 
-			//print result
-			System.out.println(response.toString());
-			data = response.toString();
+		// optional default is GET
+		con.setRequestMethod("GET");
+
+		//add request header
+		con.setRequestProperty("User-Agent", USER_AGENT);
+
+		int responseCode = con.getResponseCode();
+		System.out.println("\nSending 'GET' request to URL : " + url);
+		System.out.println("Response Code : " + responseCode);
+
+		BufferedReader in = new BufferedReader(
+				new InputStreamReader(con.getInputStream()));
+		String inputLine;
+		StringBuffer response = new StringBuffer();
+
+		while ((inputLine = in.readLine()) != null) {
+			response.append(inputLine);
 		}
+		in.close();
 
+		data = response.toString();
+	}
+	
+
+	public Date getDate() throws ParseException{
+		Date enddate = dateFormat.parse(startDate);
+
+		Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
+		cal.setTime(enddate);
+		cal.add(Calendar.MINUTE, 1);
+
+		Date currentDate = cal.getTime();
+
+		return currentDate;	 
+	}
 }
