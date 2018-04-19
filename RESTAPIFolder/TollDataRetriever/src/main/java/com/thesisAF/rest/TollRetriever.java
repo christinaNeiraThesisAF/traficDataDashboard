@@ -4,6 +4,10 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.core.Response;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import com.google.gson.Gson;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -15,8 +19,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.List;
+
 import java.util.TimeZone;
 
 
@@ -36,10 +39,29 @@ public class TollRetriever {
 		System.out.println("Start "+startDate);
 		Date currentDate= getDate();
 		sendGet(currentDate);
-
-		startDate = dateFormat.format(currentDate);
-		System.out.println("startDate in toll "+ startDate);
 		
+		ArrayList<Passage> passages = new ArrayList<Passage>();
+		
+		JSONArray jsonArray = new JSONArray(data);
+		
+		for(int i = 0 ; i < jsonArray.length() ; i++){ 
+			JSONObject obj = jsonArray.getJSONObject(i);
+			Passage passage = new Passage(obj.getString("PassageDatum"), obj.getString("PassageTid"),obj.getString("Betalstation"),
+				   					obj.getLong("Korfalt"),obj.getString("Riktning"),obj.getString("Lan"),
+				   					obj.getString("Kommun"),obj.getString("Postnummer"),obj.getString("Fordonstyp"),obj.getString("Skatteobjekt"));
+			passage.parseDateAndTime();
+			if(passage.getVehicleType().equals("Missing")){
+				passage.setVehicleType("Okänd");
+				passage.setCounty("Okänd");
+				passage.setTownship("Okänd");
+			}
+			passages.add(passage);  
+		}
+		
+		data = new Gson().toJson(passages);
+		
+		startDate = dateFormat.format(currentDate);
+		System.out.println("startDate in toll "+ startDate);		
 		return Response.status(200).entity(data).build();
 	}
 
