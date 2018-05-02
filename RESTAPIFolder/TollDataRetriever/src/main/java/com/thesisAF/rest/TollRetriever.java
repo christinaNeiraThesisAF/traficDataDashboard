@@ -8,6 +8,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import com.google.gson.Gson;
+import com.sun.jersey.server.impl.uri.rules.automata.AutomataMatchingUriTemplateRules;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -25,8 +26,9 @@ import java.util.TimeZone;
 
 @Path("/tolls")
 public class TollRetriever {
-	public static String startDate = "2015-02-28 00:00:00";
+	public static String startDate = "2015-02-27 06:00:00";
 	public static String data = new String();
+	String startTime;
 	public static int count = 1;
 	SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
@@ -35,34 +37,104 @@ public class TollRetriever {
 	@GET
 	@Path("/toll")
 	public  Response getTolls() throws Exception {
-		System.out.println("count "+count++);
-		System.out.println("Start "+startDate);
 		Date currentDate= getDate();
 		sendGet(currentDate);
-		
-		ArrayList<Passage> passages = new ArrayList<Passage>();
-		
-		JSONArray jsonArray = new JSONArray(data);
-		
-		for(int i = 0 ; i < jsonArray.length() ; i++){ 
-			JSONObject obj = jsonArray.getJSONObject(i);
-			Passage passage = new Passage(obj.getString("PassageDatum"), obj.getString("PassageTid"),obj.getString("Betalstation"),
-				   					obj.getLong("Korfalt"),obj.getString("Riktning"),obj.getString("Lan"),
-				   					obj.getString("Kommun"),obj.getString("Postnummer"),obj.getString("Fordonstyp"),obj.getString("Skatteobjekt"));
-			passage.parseDateAndTime();
-			if(passage.getVehicleType().equals("Missing")){
-				passage.setVehicleType("Okänd");
-				passage.setCounty("Okänd");
-				passage.setTownship("Okänd");
-			}
-			passages.add(passage);  
-		}
+
+		ArrayList<Passage> passages = filterPassages(); 
 		
 		data = new Gson().toJson(passages);
 		
 		startDate = dateFormat.format(currentDate);
-		System.out.println("startDate in toll "+ startDate);		
+		System.out.println("next startDate in toll "+ startDate);		
 		return Response.status(200).entity(data).build();
+	}
+
+	private ArrayList<Passage> filterPassages() throws ParseException {
+		ArrayList<Passage> passages = new ArrayList<Passage>();
+		JSONArray jsonArray = new JSONArray(data);
+		
+		int nrOfPassages = jsonArray.length();
+		
+		System.out.println("Antalet bilar "+ nrOfPassages);
+		
+		if(nrOfPassages<59)
+			filterLessThanOrEqualSixtyPassages(nrOfPassages,jsonArray, passages);
+		else 
+			filterMoreThanSixtyPassages(nrOfPassages,jsonArray, passages);
+		
+		return passages;
+	}
+
+	private void filterMoreThanSixtyPassages(int nrOfPassages, JSONArray jsonArray, ArrayList<Passage> passages) throws ParseException {
+		int currentSeconds = 0 ,diff = 0,nrOfPassagesInSecond = 0;
+		diff = nrOfPassages/60;
+		boolean hasReachedSixtySecs = false;
+		for(int i = 0 ; i < jsonArray.length() ; i++){ 
+			JSONObject obj = jsonArray.getJSONObject(i);
+
+			if(obj.getString("PassageTid").equals(startTime)){
+					Passage passage = parsePassage(obj,passages,currentSeconds);
+										
+					nrOfPassagesInSecond++;
+					passages.add(passage); 
+					
+					if(diff == nrOfPassagesInSecond && currentSeconds<=59 && !hasReachedSixtySecs){
+						currentSeconds += 1;
+						nrOfPassagesInSecond = 0;
+					}	
+					
+					if(currentSeconds == 60){
+						currentSeconds = 0;
+						hasReachedSixtySecs = true;
+					}
+					
+					if(hasReachedSixtySecs){
+						currentSeconds += 1;
+						nrOfPassagesInSecond = 0;
+					}
+
+			}
+		}
+	}
+
+	private Passage parsePassage(JSONObject obj, ArrayList<Passage> passages, int currentSeconds) throws ParseException {
+		
+		Passage passage = new Passage(obj.getString("PassageDatum"), obj.getString("PassageTid"),obj.getString("Betalstation"),
+					obj.getLong("Korfalt"),obj.getString("Riktning"),obj.getString("Lan"),
+					obj.getString("Kommun"),obj.getString("Postnummer"),obj.getString("Fordonstyp"),obj.getString("Skatteobjekt"));
+		passage.parseDateAndTime();
+		
+		passage.setGranularity(currentSeconds);
+		//System.out.println("Granurality "+ passage.getGranularity());
+		if(passage.getVehicleType().equals("Missing")){
+			passage.setVehicleType("Okänd");
+			passage.setCounty("Okänd");
+			passage.setTownship("Okänd");
+		}
+		
+		String geoPointKey = passage.getPaymentStation() + "-" + passage.getDirection();
+		passage.setlocation(GeoDataLoad.geoData.get(geoPointKey));
+		if(passage.getlocation().equals(""))
+			System.out.println("NULL: "+ passage.getlocation() + " "+ passage.getPaymentStation() + " " + passage.getDirection());
+			
+		return passage;
+	}
+
+	private void filterLessThanOrEqualSixtyPassages(int nrOfPassages, JSONArray jsonArray,
+			ArrayList<Passage> passages) throws ParseException {
+		int currentSeconds = 0 ,diff = 0;
+		if(nrOfPassages>0)
+			diff = 60/nrOfPassages;
+		
+		for(int i = 0 ; i < jsonArray.length() ; i++){ 
+			JSONObject obj = jsonArray.getJSONObject(i);
+			if(obj.getString("PassageTid").equals(startTime)){
+				Passage passage = parsePassage(obj,passages,currentSeconds);
+				
+				currentSeconds += diff;
+				passages.add(passage); 
+			} 
+		}	
 	}
 
 	// HTTP GET request
@@ -72,15 +144,12 @@ public class TollRetriever {
 
 		String extractedDate = dateformat.format(dateFormat.parse(startDate)).toString();
 
-		String endTime = timeFormat.format(currentDate).toString();
-		System.out.println("currentTime "+ endTime);
-		System.out.println("start date in send get "+ startDate);
 		Date parsedStartDateFromString = dateFormat.parse(startDate);
-		String startTime = timeFormat.format(parsedStartDateFromString);
+		startTime = timeFormat.format(parsedStartDateFromString);
 		System.out.println("startTime "+ startTime);
 
 
-		String url = "https://tsopendata.azure-api.net/Passager/v0.1/ByBetalstation?Passagedatum="+ extractedDate + "&PassageTidStart="+startTime+"&PassageTidStopp="+endTime;
+		String url = "https://tsopendata.azure-api.net/Passager/v0.1/ByBetalstation?Passagedatum="+ extractedDate + "&PassageTidStart="+startTime+"&PassageTidStopp="+startTime;
 
 		URL obj = new URL(url);
 		HttpURLConnection con = (HttpURLConnection) obj.openConnection();
@@ -90,10 +159,6 @@ public class TollRetriever {
 
 		//add request header
 		con.setRequestProperty("User-Agent", USER_AGENT);
-
-		int responseCode = con.getResponseCode();
-		System.out.println("\nSending 'GET' request to URL : " + url);
-		System.out.println("Response Code : " + responseCode);
 
 		BufferedReader in = new BufferedReader(
 				new InputStreamReader(con.getInputStream()));
@@ -120,4 +185,5 @@ public class TollRetriever {
 
 		return currentDate;	 
 	}
+	
 }

@@ -1,0 +1,151 @@
+Danvikstull-In:59.314013,18.103509
+Danvikstull-Ut:59.313913,18.103443
+Skansbron-In:59.304024,18.079491
+Skansbron-Ut:59.304014,18.079404
+Skanstullsbron-In:59.306329,18.077448
+Skanstullsbron-Ut:59.306305,18.077276
+Johanneshovsbron-In:59.303816,18.077230
+Johanneshovsbron-Ut:59.303774,18.077031
+Liljeholmsbron-In:59.311443,18.028818
+Liljeholmsbron-Ut:59.311940,18.029190
+Stora Essingen - Från E4N-In:59.322907,17.996689
+Stora Essingen - från E4S-Ut:59.322887,17.996571
+Stora Essingen - från E4S-In:59.322081,17.996331
+Stora Essingen - Till E4S-Ut:59.322887,17.996571
+Tpl Fredhäll - Essingeleden - Södergående-In:59.333736,18.009615
+Tpl Fredhäll - Essingeleden - Norrgående-In:59.333725,18.009918
+Tpl Fredhäll - Essingeleden - Från Alvik-In:59.331246,18.008932
+Tpl Fredhäll - Essingeleden - Mot Alvik-Ut:59.331667,18.010547
+Drottningholmsvägen - till E4S-Ut:59.331362,18.010654
+Drottningholmsvägen - från E4N-In:59.330694,18.010647
+Drottningholmsvägen - till Alvik-Ut:59.331522,18.010541
+Drottningholmsvägen - från Alvik-In:59.331220,18.010977
+Tpl Kristineberg - avfart E4S-In:59.336459,18.010252
+Tpl Kristineberg - påfart E4N-Ut:59.336198,18.010829
+Tpl Kristineberg - avfart E4N-In:59.333720,18.010110
+Tpl Kristineberg - påfart E4S-Ut:59.333739,18.009471
+Ekelundsbron-In:59.340638,18.012804
+Ekelundsbron-Ut: 59.340611,18.012996
+Klarastrandsleden-In:59.338735,18.029866
+Klarastrandsleden-Ut:59.338811,18.029943
+Tomtebodavägen-In:59.343701,18.026099
+Tomtebodavägen-Ut:59.343747,18.026230
+Solnabron Nord-Ut:59.346814,18.032175
+Solnabron Syd-In:59.346578,18.032230
+Norrtull Tillfällig väg 1-In:59.349744,18.042600
+Norrtull Tillfällig väg 2-In:59.349694,18.042457
+Norrtull Norra stationsgatan-Ut:59.349795,18.043912
+Norrtull Sveavägen-Ut:59.350271,18.045146
+Ekhagen - 211-In:59.371136,18.050285
+Ekhagen - 212-Ut:59.371405,18.050415
+Ekhagen - 213-In:59.369354,18.051588
+Ekhagen - 214-Ut:59.369497,18.050703
+Universitetet-In:59.362973,18.054608
+Universitetet-Ut:59.363119,18.055234
+Roslagstull-In:59.352773,18.057995
+Roslagstull-Ut:59.352481,18.058734
+Värtan - från E20/Hjorthagsv/Lidingöv mot S. Hamnv-In:59.352438,18.106441
+Värtan - till E20/Hjorthagsv/Lidingöv fr. S. Hamnv-Ut:59.351792,18.106572
+Värtan - från E20/Hjorthagsv Öst mot Tpl Värtan-In:59.351215,18.095255
+Värtan - till E20/Hjorthagsv Väst från Tpl Värtan-Ut:59.351434,18.095663
+Värtan - till E20/Hjorthagsv Öst mot Södra Hamnv-In:59.350763,18.099442
+Ropsten, 261-In:59.356578,18.105117
+Ropsten, 262-Ut:59.356658,18.104982
+Ropsten, 263-In:59.356983,18.102438
+Ropsten, 264-Ut:59.356892,18.102367
+Roslagstull-In:59.352773,18.057995
+Roslagstull-Ut:59.352481,18.058734
+Lilla Frescativägen-In:59.365630,18.052476
+Lilla Frescativägen-Ut:59.365611,18.052472
+Johanneshovsbron-In:59.303816,18.077230
+Johanneshovsbron-Ut:59.303774,18.077031
+Lidingövägen-Ut:59.355517,18.105018
+Lidingövägen-In:59.355763,18.104557
+Norra Hamnvägen-Ut:59.355238,18.106917
+Norra Hamnvägen-In:59.355391,18.106767
+Gasverksvägen-In:59.357891,18.100625
+Gasverksvägen-Ut:59.357935,18.100432
+Lilla Essingen - till E4N-Ut:59.325113,18.003990
+Bobergsgatan-In:59.359926,18.098581
+Bobergsgatan-Ut:59.359896,18.098404
+Roslagsvägen-Ut:59.375153,18.047377
+Roslagsvägen-In:59.375109,18.047190
+Lindhagensgatan - till E4-Ut:59.336198,18.010829
+Lindhagensgatan - från E4-In:59.336459,18.010252
+Norrtullstunneln-Ut:59.352115,18.047158
+Norrtullstunneln-In:59.351509,18.045591
+Motalabron-In:58.539302,15.017228
+Motalabron-Ut:58.539302,15.017366
+Sundsvallsbron Norrgående-In:62.381905,17.352346
+Sundsvallsbron Norrgående Påfart-In:62.381993,17.352390
+Sundsvallsbron Södergående-Ut:62.381853,17.352265
+Sundsvallsbron Södergående Avfart-Ut:62.381809,17.351993
+Fridkullagatan-In:57.682440,11.987761
+Fridkullagatan-Ut:57.682422,11.987503
+Gibraltargatan-In:57.683001,11.984609
+Gibraltargatan-Ut:57.682991,11.984311
+Doktor Allards gata-In:57.681559,11.978799
+Doktor Allards gata-Ut:57.681572,11.978589
+Ehrenströmsgatan-In:57.679239,11.968780
+Ehrenströmsgatan-Ut:57.679139,11.968581
+Dag Hammarskjöldsleden-In:57.677908,11.942496
+Dag Hammarskjöldsleden-Ut:57.678127,11.942053
+Margretebergsgatan-In:57.680722,11.943260
+Margretebergsgatan-Ut:57.680933,11.943161
+Fjällgatan/Jungmansgatan-In:57.696133,11.945600
+Fjällgatan/Jungmansgatan-Ut:57.696133,11.945600
+Stigbergsliden-In:57.699376,11.936839
+Stigbergsliden-Ut:57.699556,11.936339
+E45 Oskarsleden-In:57.699874,11.935908
+E45 Oskarsleden-Ut:57.700014,11.935875
+Emigrantvägen-In:57.700096,11.935856
+Emigrantvägen-Ut:57.700187,11.935834
+Älvsborgsbron-In:57.694787,11.898929
+Älvsborgsbron-Ut:57.694867,11.899345
+Lindholmsallén-In:57.707665,11.935618
+Lindholmsallén-Ut:57.707773,11.935620
+Karlavagnsgatan västra-In:57.708200,11.935344
+Karlavagnsgatan västra-Ut:57.708284,11.935167
+Polstjärnegatan-In:57.710603,11.936474
+Polstjärnegatan-Ut:57.710603,11.936474
+Karlavagnsgatan östra-In:57.711934,11.942829
+Karlavagnsgatan östra-Ut:57.711792,11.943102
+Hjalmar Brantingsgatan-In:57.720158,11.958092
+Hjalmar Brantingsgatan-Ut:57.720612,11.959080
+Södra Tagenevägen-In:57.759264,11.988538
+Södra Tagenevägen-Ut:57.759211,11.988739
+Skälltorpsvägen-In:57.758281,11.989627
+Skälltorpsvägen-Ut:57.758092,11.989696
+Backadalen-In:57.747673,11.988950
+Backadalen-Ut:57.747489,11.988908
+Tingstadsmotet avfart E6-In:57.731972,11.983367
+Tingstadsvägen-In:57.731034,11.982592
+Tingstadsvägen-Ut:57.730884,11.982491
+Ringömotet-In:57.724609,11.982505
+Ringömotet-Ut:57.724730,11.982801
+Salsmästaregatan-In:57.724079,11.984561
+Salsmästaregatan-Ut:57.723979,11.984721
+Marieholmsgatan-In:57.720793,11.990665
+Marieholmsgatan-Ut:57.720711,11.990867
+E45 Marieholmsleden-In:57.720101,11.993576
+E45 Marieholmsleden-Ut:57.719915,11.994018
+Partihandelsgatan-In:57.718664,11.994466
+Partihandelsgatan-Ut:57.718564,11.994575
+E20 Alingsåsleden-In:57.716877,11.996708
+E20 Alingsåsleden-Ut:57.716679,11.997136
+Olskroksmotet avfart E20-Ut:57.715286,11.995037
+Olskroksmotet påfart E6-In:57.714802,11.995020
+Redbergsvägen-In:57.714192,11.995157
+Redbergsvägen-Ut:57.714015,11.995651
+Willinsbron-In:57.709256,11.997035
+Willinsbron-Ut:57.709256,11.997035
+Örgrytevägen-In:57.697953,11.997192
+Örgrytevägen-Ut:57.697758,11.997272
+E6/E20 Kungsbackaleden-In:57.688538,12.001348
+E6/E20 Kungsbackaleden-Ut:57.688427,12.000840
+Sankt Sigfridsgatan-In:57.689169,12.005053
+Sankt Sigfridsgatan-Ut:57.689520,12.004867
+Almedalsvägen-In:57.685885,12.002260
+Almedalsvägen-Ut:57.685835,12.002059
+Mölndalsvägen-In:57.685074,11.999609
+Mölndalsvägen-Ut:57.685001,11.999240

@@ -19,4 +19,7 @@
 		<url-pattern>/rest/*</url-pattern>
 	</servlet-mapping>
 
+<listener>
+    <listener-class>com.thesisAF.rest.GeoDataLoad</listener-class>
+</listener>
 </web-app>

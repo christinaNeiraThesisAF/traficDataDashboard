@@ -8,7 +8,7 @@ import java.util.TimeZone;
 
 public class Passage {
 
-	private String paymentStation, vehicleType, county, township, postalCode, taxItem, passageDate, passageTime ,direction, passageDateAndTime;
+	private String paymentStation, vehicleType, county, township, postalCode, taxItem, passageDate, passageTime ,direction, passageDateAndTime, granularity, location;
 	private long lane;
 	
 	public Passage() {
@@ -28,15 +28,9 @@ public class Passage {
 		this.passageTime = passageTime;
 		this.direction = direction;
 		this.lane = lane;
+		this.location = "";
 	}
 
-	@Override
-	public String toString() {
-		return "Passage [paymentStation=" + paymentStation + ", vehicleType=" + vehicleType + ", county=" + county
-				+ ", town=" + township + ", postNr=" + postalCode + ", taxItem=" + taxItem + ", passageDate=" + passageDate
-				+ ", passageTime=" + passageTime + ", riktning=" + direction + ", lane=" + lane + ", passageDateAndTime="
-				+ passageDateAndTime + "]";
-	}
 	
 	public String getPaymentStation() {
 		return paymentStation;
@@ -126,17 +120,46 @@ public class Passage {
 		this.lane = lane;
 	}
 
+	
+	public String getGranularity() {
+		return granularity;
+	}
+
+	public void setGranularity(int seconds) {	
+		if(seconds < 10 )
+			this.granularity = passageDateAndTime.substring(0, 17) + "0" + seconds;
+		else
+			this.granularity = passageDateAndTime.substring(0, 17) + "" + seconds;
+
+	}
+
+	public String getlocation() {
+		return location;
+	}
+
+	public void setlocation(String location) {
+		this.location = location;
+	}
+
 	public void parseDateAndTime() throws ParseException{
-		
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");		
 		dateFormat.setTimeZone(TimeZone.getTimeZone("GMT"));
 		
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		format.setTimeZone(TimeZone.getTimeZone("GMT"));
 
 		Date date = format.parse(passageDate.substring(0, 10) + " " + passageTime);
-		
 		passageDateAndTime = dateFormat.format(date);
 		 
-		//System.out.println(passageDateAndTime);
+		//System.out.println("Parsed date and time "+passageDateAndTime);
 	}
+
+	@Override
+	public String toString() {
+		return "Passage [paymentStation=" + paymentStation + ", vehicleType=" + vehicleType + ", county=" + county
+				+ ", township=" + township + ", postalCode=" + postalCode + ", taxItem=" + taxItem + ", passageDate="
+				+ passageDate + ", passageTime=" + passageTime + ", direction=" + direction + ", passageDateAndTime="
+				+ passageDateAndTime + ", granularity=" + granularity + ", lane=" + lane + "]";
+	}
+	
 }
