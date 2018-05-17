@@ -67,56 +67,62 @@
 \chapter{Inledning}
 
 
-We use the \emph{biblatex} package to handle our references. We therefore and use the
-command \texttt{parencite} to get a reference in parenthesis, like this
-\parencite{heisenberg2015}.  It is also possible to include the author
-as part of the sentence using \texttt{textcite}, like talking about
-the work of \textcite{einstein2016}.
-
 \section{Problemformulering}
-Skapande av data sker idag i en rekord frekvens. Under 2010 skapades ca 1 ZB data och efter 2014 förväntades det skapas 7 ZB per år.\parencite{1} Denna kontinuerliga ökning av data har till stor del berott på uppkomsten av sociala medier, sakernas internet (engelska: Internet of Things) och multimedia.\parencite{2} Det flöde av data som har uppstått gör dock ingen nytta om de bara kommer samlas eftersom det inte handlar om det man vet, utan vad man gör med det man vet.\parencite{3} Vikten ligger alltså i att göra data till värdefull information som människan kan tolka och lära sig någonting ifrån vilket har visat sig vara en svår uppgift. Detta beror dels på att data blir mer och mer komplex och dels på att användarna ställer högre krav på att presentationen av den ska vara tydlig, lärorik och lätt att förstå. Detta gäller både statiska datamängder och strömmande.
 
-Detta projekt kommer därför gå ut på att komma fram till ett sätt att visualisera stora mängder data på ett sätt som tillfredsställer användarna. Mer specifikt kommer det handla om strömmande data från betalstationer runt om i Sverige som kommer hämtas från Trafikverket. Data kommer analyseras och sedan presenteras baserat på följande faktorer: antalet bilar, fordonstyp (bil, buss, lastbil), geografisk placering och riktning in eller ut från staden. Presentationen av denna data kommer ske i en interaktiv dashboard följandes principerna inom Människa-Dator interaktion. Syftet är alltså att ta fram ett sätt att presentera stora mängder strömmande data så att de blir användbara. Oberoende av vilket data som ska användas så ska denna rapport metoden kunna tillämpas.
+Ökade mängder av strömmande data som uppstått i samhället är ett resultat av övervakning av bland annat trafik, väder, statistik från hemsidor, sociala medier samt servrar och databaser. Att presentera dessa dataströmmar på interaktiva hemsidor gör att människor kan få önskad information för att kunna förstå situationer. Dock har det visat sig vara en utmaning att presentera strömmande data i realtid, i exempelvis en webbapplikation med en mängd olika element med data (eng. Dashboard). Svårigheten ligger i att göra information så lättförståelig för användaren som möjligt och beror på en mängd faktorer. Det handlar om vilka datavisualiseringselement som ska användas och hur de ska anpassas för att underlätta förståelsen. Applikationen som presenterar datat måste därför vara designad på ett sätt så att användaren förstår: 
+
+
+\begin{itemize}
+\item Vad det är som presenteras
+\item Vilka handlingar som bör utföras för att 	   utvinna den önskade informationen
+\item Vad som kommer hända efter att en handling 		utförts av användaren
+\end{itemize}
+
+För att presentera datamängder finns det en mängd vanligen använda element, såsom linjediagram, stapeldiagram, cirkeldiagram samt punkter eller regioner i färg i kartor. Vid tillämpning av dessa element finns det egenskaper som kan påverka förståelsen av datat. Några av dem är vilket intervall data kommer presenteras i, hur snabbt data kommer uppdateras och hur länge data kommer vara synligt innan det försvinner. Även estetiska egenskaper som färg, storlek och placering är viktigt vid presentation av element. 
+
+Detta projekt gick alltså ut på att ta fram ett sätt att presentera strömmande data så att de blev användbara, vilket enligt en definition i boken Human computer interaction skriven av Alan Dix, Janet Finlay, Geregory D. Abowd, Russell Beale[1] är att utföra en handling enkelt och naturligt utan risk för fel. Den användare som visualiseringen riktade sig till var den genomsnittliga invånaren utan hög teknologisk kunskap eller erfarenhet inom tolkning av strömmande data. Projektet utfördes genom en analys av de olika datavisualiseringselement som fanns tillgängliga för att presentera data, med elementens egenskaper i åtanke. Dataströmmen som användes som exempeldata togs från Transportstyrelsens öppna databas gällande betalstationer runt om i Sverige. Presentationen av denna data gjordes i en interaktiv webbapplikation följandes principerna inom Människa-Dator interaktion. Oberoende av vilket data som ska användas/presenteras ska metoden som togs fram i denna rapport kunna tillämpas.
 
 
 \section{Målsättning}
-Målet med det här projekt är att genomföra en analys för att visualisera stora mängder strömmande data så att de blir användbara och välanpassade för användare. För att projektarbetet ska gå så effektivt som möjligt måste delmomenten delas upp. Ett grundläggande mål för projektet är att skapa ett verktyg för testning och tillämpning av analysen. Detta verktyg kommer vara en dashboard där data från Trafikverkets betalstationer ska presenteras. Projektet kommer ytterligare delas upp till följande mer detaljerade delmål.
-Förstudie på ramverk för strömmande analys och visualisering som passar för stora mängder data: 
-Vilka system finns tillgängliga
-Hur jämförs de med varandra
-Vilka teorier om människa-datorinteraktion finns, vilka  och hur skulle de implementeras	
+Målet med det här projekt var att genomföra en litteraturstudie kring visualisering av stora mängder strömmande data så att användare enkelt skulle kunna förstå vilka data presenteras, vad som skulle kunna göras med dem och hur de skulle kunna användas. Det handlade alltså om att skapa ett sätt att presentera strömmande data där användare skulle kunna dra nytta av dem. Ett grundläggande mål för projektet var att skapa ett verktyg för testning och tillämpning av analysen. Detta verktyg skulle vara en webbapplikation där data från Transportstyrelsens betalstationer skulle presenteras. Projektet skulle ytterligare delas upp i följande mer detaljerade delmål:
 
 
-Installera Elastic stack på en maskin på ÅF som används för utveckling.
-
-
-Skapa en mjukvara som hämtar data genom det öppna API:et från Trafikverket och överför data om betalstationer och passerande fordon i Sverige till Elasticsearch i realtid.
-
-
-Analysera och visualisera data för att skapa en interaktiv dashboard som ska möjliggöra användarna att utforska data dynamisk genom att följa en design och utvecklingsprocess från människa-datorinteraktion.	
-			 	
-Driftsätta dashboarden som en hemsida.	
-
-
-Genomföra en analys angående representation av stora mängder strömmande data på ett sådant sätt att de blir användbara.	
-
+\begin{itemize}
+\item Förstudie på ramverk för strömmande analys och visualisering som passade för stora mängder data:
+\begin{itemize}
+\item Vilka teorier om människa-datorinteraktion fanns, vilka och hur skulle de implementeras?
+\item Vilka system fanns tillgängliga?
+\end{itemize}
+\item Analysera och visualisera data för att skapa en interaktiv dashboard som skulle möjliggöra användarna att utforska datadynamisk genom att följa en design och utvecklingsprocess från människa-datorinteraktion.
+\item Genomföra en analys angående representation av stora mängder strömmande data på ett sådant sätt att användare skulle kunna dra nytta av dem och använda dem på det bästa möjliga sättet genom att:
+\begin{itemize}
+\item Anpassa och analysera vanligen använda element, såsom olika typer av diagram och grafer, vid presentation av data.
+\item Dra slutsatser kring tillämpning av element med hjälp av djupintervjuer och processer inom Människa-dator interaktion.
+\end{itemize}
+\end{itemize} 
 
 \section{Avgränsningar}
-Detta är avgränsningarna.
+Data som skulle användas för analys och visualisering skulle vara data från Transportstyrelsens betalstationer. Skapandet av webbapplikationen, analys och visualisering av data skulle göras med hjälp av Elastic Stacks “open source” projekt: Logstash, Elasticsearch och Kibana. 
 
-\blindtext
 
 \section{Författarnas bidrag till examensarbetet}
 Detta är författarnas bidrag till examensarbetet.
 
-\blindtext
-
 
 \chapter{Teori och bakgrund}
 
-\blindtext
+Detta kapitel presenterar bakgrund och teorier till hur ett användargränssnitt designas med både användarupplevelsen och strömmande data i fokus. 
 
-\printbibliography[heading=bibintoc] % Print the bibliography (and make it appear in the table of contents)
+\section{Visualisering} 
+\subsection{} 
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[scale=1]{../../Desktop/Screen Shot 2018-04-20 at 08.19.17.png}
+\caption{Systemarkitektur}
+\end{figure}
+
+
 
 \chapter{Metoder och resultat}
 Metoder och resultat text
