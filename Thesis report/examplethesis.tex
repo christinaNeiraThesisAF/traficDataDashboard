@@ -14,7 +14,11 @@
 
 
 \usepackage{blindtext} % This is just to get some nonsense text in this template, can be safely removed
+
 \usepackage[parfill]{parskip}
+\usepackage{caption}
+\usepackage{multirow}
+
 \usepackage{csquotes} % Recommended by biblatex
 \usepackage{biblatex}
 \addbibresource{references.bib} % The file containing our references, in BibTeX format
@@ -30,8 +34,8 @@
 \school{School of Electrical Engineering and Computer Science}
 \date{\today}
 
-
 \begin{document}
+
 
 % Frontmatter includes the titlepage, abstracts and table-of-contents
 \frontmatter
@@ -133,11 +137,85 @@ Detta kapitel presenterar bakgrund och teorier till hur ett användargränssnitt
 \subsection{} 
 
 
-
-
-\chapter{Metoder och resultat}
+\chapter{Metoder}
 Metoder och resultat text
 \blindtext
+
+\captionsetup[table]{name=Tabel}
+
+\begin{table}[h!]
+  \begin{center}
+    \caption{En passage och dess egenskaper efter modifiering.}
+    \label{tab:table1}
+    \begin{tabular}{|p{3cm}|p{3cm}|p{3cm}|p{3cm}|}
+         \hline
+      \textbf{Fält} & \textbf{Format} & \textbf{Exempel} & \textbf{Beskrivning}\\
+      \hline
+      Datum & YYYY-MM-DD & “February 27th 2015” & Datum för passage\\ % <--
+        \hline
+      Klockslag & HHMM& “06:56” & Klockslag för passage\\ % <--
+        \hline
+      SkatteObjekt & Sträng & “GBG”
+ & Område för avgift/skatt\\ % <--
+        \hline
+      Betalstation & Sträng & “Hjalmar Brantingsgatan” & Betalstation\\ % <--
+        \hline
+      Riktning & Sträng & “Ut” & Körriktning\\ % <--
+        \hline
+      Län & Sträng & “Västra Götalands Län” & Län\\ % <--
+        \hline
+      Kommun & Sträng & “Göteborg” & Kommun\\ % <--
+        \hline
+      Körfältsnummer & Nummer & “4” &  Körfältet som fordonet var i vid passage\\ % <--
+        \hline
+          Postnr & Sträng & “418xx”
+ & Postnr - endast de 3 första siffrorna\\ % <--
+        \hline
+          Fordonstyp & Sträng & “PERSONBIL” & Fordonstyp\\ % <--
+        \hline
+          TidStämpel & yyyy-MM-dd'T'HH:mm:ss
+ & “February 27th 2015, 07:56:03” & Tidsstämpel för passagen med datum och tid, på sekundnivå 
+\\ % <--
+        \hline
+Geografisk Placering & Sträng & “57.718564, 11.994575” & 
+Koordinat för betalstationens 
+\\ % <--
+        \hline
+    \end{tabular}
+  \end{center}
+\end{table}
+
+\chapter{Resultat}
+
+
+ \begin{tabular}{|p{3cm}|p{3cm}|p{3cm}|p{3cm}|}
+      \hline
+     \textbf{Designkrav} & \textbf{Lösningar} & \textbf{Visualisering} & \textbf{Fält}\\
+     \hline
+  \multirow{3}{3cm}{Hur många bilar åker igenom varje betalstation och/ eller stad?} &  Trafikintensitet baserad på stad & Taggmoln  & SkatteObjekt\\\cline{2-4}
+  & \multirow{2}{3cm}{Trafikintensitet baserad på betalstationer} & Karta med koordinater
+& Geografisk Placering\\\cline{3-4}  
+  & &  Taggmoln
+& Betalstationer \\ \hline
+
+
+  \multirow{2}{3cm}{Varifrån kommer bilar som åker genom betalstationerna?} &  Kommun där fordonsägare bor & Karta med geografiska områden  & Kommun\\\cline{2-4}
+  &Län där fordonsägare bor
+ & Karta med geografiska områden  & Län\\ \hline
+ 
+Hur många fordon som passerade den senaste minuten? &Antal fordon
+ & Antal  & PassageObjekt\\ \hline
+ 
+ \multirow{2}{3cm}{Hur ser trafikfördelningen ut baserad på riktning?} &  Riktnings-fördelning&Cirkeldiagram& Riktning\\\cline{2-4}
+  &Körfälts-fördelning 
+ & Cirkeldiagram  & Körfält\\ \hline
+ 
+ \multirow{2}{3cm}{Vilken är den mest populära fordonstypen?} &  Trafikintensitet baserad på fordonstyp & Cirkeldiagram& Fordonstyp\\\cline{2-4}
+  &Trafikintensitet baserad på fordonstyp för de mest populära betalstationerna 
+ & Stapeldiagram  & TidsStämpel, Betalstation, Fordonstyp\\ \hline
+
+
+\end{tabular}
 
 
 \chapter{Analys och diskussion}
