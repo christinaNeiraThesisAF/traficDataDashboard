@@ -21,7 +21,7 @@
 \usepackage{pdfpages}
 \usepackage{graphicx}
 \graphicspath{ {./images/} }
-
+\usepackage{mathtools}
 \usepackage{csquotes} % Recommended by biblatex
 \usepackage{biblatex}
 \addbibresource{references.bib} % The file containing our references, in BibTeX format
@@ -134,13 +134,150 @@ Data som skulle användas för analys och visualisering skulle vara data från T
 
 \chapter{Teori och bakgrund}
 
-Detta kapitel presenterar bakgrund och teorier till hur ett användargränssnitt designas med både användarupplevelsen och strömmande data i fokus. 
+Detta kapitel presenterar en bakgrund och teorier till hur ett användargränssnitt designas med användarupplevelsen, användargränssnittet, utmaningar i processen och strömmande data i fokus. Det tar även upp Elastic Stack som är verktyget som användes i projektet.
 
-\section{Visualisering} 
-\subsection{} 
+\section{Användarupplevelse och användargränssnitt} 
+I detta avsnitt kommer termerna användargränssnitt och användarupplevelse presenteras. Även termernas betydelse till mjukvaruprodukter och tillämpning tas upp.
+
+\subsection{Bakgrund} 
+
+Den första datorn med ett grafiskt användargränssnitt var Xerox PARC och skapades 1973 [3]. Det hade bilder, listrutor och kryssrutor. Innan detta var användaren tvungen att interagera med en dator enbart via ett kommandoradsgränssnitt. Efter det första grafiska användargränssnittet har konceptet undersökts och utvecklats mycket och blivit en nödvändig del av en produkt. Användargränssnittet är inte bara ett grafiskt användargränssnitt, det är användbarheten av en produkt för användaren.
+
+I och med utvecklingen av teknik, och den ständiga ökningen av andelen människor som använder teknikprodukter, uppstod aspekter av produkter som inte tidigare undersökts såsom användarupplevelse. Konceptet User Experience (UX) introducerades först 1990-talet av Donald Norman [4]. Innan termen User Experience introducerades hänvisade människor till detta koncept som "critical aspects of human interface research and application".
+
+\subsection{Användarupplevelse}
+ 
+Enligt definitionen framtagen av främst Donald Norman i artikeln “The definition of User Experience (UX)” [5] är användarupplevelse kvaliteten på upplevelsen och erfarenheten som användaren får vid interaktion med en viss produkt, ett system eller en tjänst. Det handlar om utvecklingen av kvaliteten på användarens interaktion med dessa tjänster. Det är ett koncept som utforskar varje stadie som användaren måste gå igenom vid användning av en tjänst, system eller produkt. En del av dessa aspekter är processen att hitta produkten, handlingar för att interagera med produktens gränssnitt, känslomässiga förändringar som kan uppstå under produktanvändning och vilket intryck produkten lämnar efter att den har använts. Det innefattar även allt som berör användarens erfarenhet av produkten även när användaren informerar en annan person om produkten. En produkt måste uppfylla användarens behov utan att skapa en dålig upplevelse för denne. Dessutom måste produkterna avge enkelhet och elegans för att kunna erbjuda användaren tillfredsställelse. 
+
+Användarupplevelse är en mycket komplicerad process som överstiger vad användaren trodde sig vilja och utforskar djupt det bästa sättet att förbättra användbarheten hos produkten och öka tillfredsställelsen. Under processen undersöks de positiva känslorna användaren har vid interaktion med produkterna och sätt att förbättra dem enligt rapporten “UX Gymnastics: Representation of UX Theory and Concepts through Full Body Movement” [6]. Detta koncept bildas således på mätningar av användarens attityder, preferenser och beteende. 
+
+I boken “Measuring the User Experience” [7] av Tom Tullis och Bill Albert förklaras det att användarupplevelsens stora inflytande på användaren har fått många företag att tillägna avdelningar som är dedikerade till att undersöka och förbättra användarupplevelsen av sina produkter. Anledningen till att användarupplevelse är så viktigt för producenterna är att när en produkt saknar användarupplevelse eller inte har tillräckligt med användarupplevelse, påverkar det radikalt försäljningen av produkten. 
+
+\subsection{Användargränssnitt}
+Användargränssnittet, även kallat UI efter engelskans User Interface, är den del av en systemprogramvara som användaren kan se, höra, röra eller prata med enligt boken “The Essential Guide to User Interface Design: An introduction to HUI Design” [8]. Det är indelat i två aspekter, ett är användarinmatningen och ett är systemutmatningen. Inmatningen är det sätt som användaren interagerar med systemet och kan vara via tangentbordet, musen, pekskärmen eller rösten. Utmatningen är hur användaren kommer att få ett svar från systemet och det främsta exemplet på det i dagens samhälle är en bildskärm. Användargränssnittsdesign kommer från en studie kallad människa-datorinteraktion som är studien, planeringen och designen av hur människor och datorer kommunicerar för att uppfylla användarens behov.
+
+Ett bra användargränssnitt är ett gränssnitt som är lätt att använda och förstå. Det uppfyller den avsedda användarens behov och hjälper användaren att utföra den önskade uppgiften. Det visas att om användaren inte är nöjd med en ansökan efter första användningen finns det 80 \% möjlighet att användaren slutar använda applikationen [9]. Därför är det viktigt att säkerställa att användargränssnittet är bäst under utvecklingen med hjälp av designprocessen i användargränssnittet.
+
+Vid design av ett användargränssnitt bör principer inom Människa-Dator Interaktion, förkortat MDI, följas. Det är studien, planeringen och designen av hur människor och datorer interagerar med varandra så att personens behov är uppfyllda på det mest effektiva sättet [8]. För att kunna göra detta gäller det att förstå de två komponenterna inom MDI - människan och datorn. För att förstå människan bör man se på psykologiska och sociala aspekter samt mänskliga fel och man bör veta och känna till den tänkta användaren för produkten. För att förstå datorn är begränsningar, kapacitet, verktyg och plattformar i fokus.
+
+\subsection{Ergonomiskt och biologiskt perspektiv}
+
+I boken “Arbete och teknik på människans villkor” [10] lyfts det fram att för att skapa produkter som underlättar människors användning av datorer och förenkla förståelsen av presenterade data måste det tas hänsyn till de fysikaliska faktorerna som kan påverka människans interaktion med teknologiska produkter. Eftersom en väldigt stor del av informationen som finns i vår omgivning tas in av människor genom synen så är den en stor faktor vid människans interaktion med en teknologisk produkt som till exempel en webbapplikation. Detta betyder att vid skapandet av teknologiska produkter måste synergonomiska aspekter betraktas. 
+
+Synergonomiska aspekter handlar om att presentera data på ett sådant sätt så att de inte belastar användarens ögon. Några exempel på detta kan vara att skapa bra kontraster på bakgrunden och texten i en webbapplikation, ha tydliga menyer som användaren kan få information från och ha data presenterade på ett organiserat sätt så att användaren får korrekt information utan att tröttas ut. Denna aspekt är väldigt viktig eftersom den förhindrar användarens ögontrötthet och ger en mer effektiv informationsöverföring. 
+
+Det är inte tillräckligt att endast presentera information, presentationen måste även underlätta hjärnans tolkningsprocess vid inmatning av data för att kunna dra slutsatser och dra nytta av informationen som presenteras. Människans erfarenheter av användning av produkter bidrar mycket till tolkningsprocessen och därför är det viktigt att följa vissa standarder för visualiseringsmetoder vid presentation av data. Ett exempel på detta kan vara användning av kugghjulsikoner för att hänvisa till inställningar, en papperskorg för att ta bort någonting och en penna för att ändra någonting. 
+
+Något som också är viktigt att tänka på då användarens förståelse av dataströmmen är i fokus är att kunna möjliggöra en fullständig presentation av det allmänna läget men också ha stöd för att kunna se detaljer i datat enligt rapporten “A visual analytics agend” [11]. Man bör även göra det möjligt för användaren att integrera olika typer av information och data till en enda presentation för att öka förståelsen av det som presenteras.
+
+En ganska stor del av befolkningen är färgblinda, vilket betyder att de kan ha svårt att urskilja alla eller vissa färger [12]. Det är en utmaning att kunna skapa teknologiska produkter som ska kunna användas även av människor med detta handikapp [10]. Detta kan göras genom att undvika vissa färgkombinationer, där rött och grönt är de vanligaste kombinationerna som människor är färgblinda för.
+
+\subsection{UX-designprocess}
+\captionsetup[figure]{name=Figur}
+
+\begin{figure}
+\center
+\includegraphics[width=0.5\textwidth]{PrototypeCreation}
+\caption{Redogörelse för de fyra stegen för optimal design.}
+\end{figure}
+
+Inom begreppet MDI tillhör interaktionsdesign som har som mål att öka människors förståelse över vad som kan göras, vad som sker och vad som precis hänt. För att kunna göra detta och försäkra en positiv användarupplevelse av produkten som designas så ska principer inom psykologi, design, konst och känsla följas. Kraven inom detta område är att försäkra att människors behov är mötta, att den resulterande produkten är förståelig, lätt och naturlig att använda och det ska vara svårt att göra fel. Dessutom ska användaren kunna utföra önskade uppgifter och upplevelsen ska vara positiv och njutningsbar för användaren.           
+
+Enligt upphovsmannen till UX, Donald Norman [13] består människa-centrerad designprocess av fyra steg som itereras enligt figur 2.1. I boken “The design of everyday things” [14] tas det upp att denna metod brukar även kallas för “the spiral method” och syftar på att leverera framsteg vid varje iteration. Dessa fyra steg är: 
+
+\begin{enumerate}
+\item Observation: handlar om att undersöka och förstå problemet. Det handlar om att undersöka och observera slutanvändaren för att kunna förstå deras behov, intresse och motivationer. Det görs genom att observera, lyssna och intervjua användarna. I detta steg bestäms designkraven. Med hjälp av undersökningen kan designern skapa personas, vilket är användarprofiler som representerar slutanvändarna och inkluderar information om deras motivationer, mål, behov och förväntningar [15]. Dessa användarprofiler skapas i början av ett projekt och kan ändras i ett senare skede vid behov. [16]
+
+\item Idéskapande: går ut på att baserad på designkraven hitta lösningar som uppfyller dessa krav. Tillvägagångssättet för den delen av designprocessen görs enligt följande tre steg:
+\begin{itemize}
+\item att vara kreativ och frambringa många idéer,
+\item att undvika kritisera dessa idéer, att vara kreativ utan hänsyn till begränsningar,
+\item att ifrågasätta allting, även det uppenbara. 
+\end{itemize}
+
+\item Prototypskapande: går ut på att skapa första utkastet till produktens användargränssnitt. Att experimentera med olika designs, demonstrera användargränssnittet till ledningen och kontrollera om produkten är funktionell och användbar är del av detta steg. En känd prototypteknik är “Wizard of Oz”. I denna teknik skapar prototyper som efterliknar stora och komplexa system innan de är gjorda. Det ger möjligheten att presentera hur produkten skulle interagera med användaren. 
+
+\item Testning: handlar om att observera interaktionen mellan prototypen och användaren. Det kan även göras genom demonstration av olika versioner av användargränssnittet till användarna, intervjua användaren, ställa frågor, använda sig av enkäter för att kunna identifiera svårigheter med användargränssnittet.
+ 
+\end{enumerate}
+
+Genom iterationen av dessa fyra steg möjliggörs ständigt förbättring av användargränssnittet. När kraven för användargränssnittet är specificerade det skapas en prototyp och den testas för att säkerställa att dessa krav uppfylls. UX designern får återkoppling från personerna som testar användargränssnittet och baserad på det kan en ny iteration börja. Efter varje iteration förbättras användargränssnittet, den blir mer riktat till slutanvändare och kvalitet av produkten ökas. [14]
+
+\subsection{Utmaningar i UX-designprocessen}
+
+I rapporten “User experience prototyping - a literature review” [17] diskuterar Tuomas Nissinen fidelity-aspekten av prototyper som tas fram under designprocessen. Fidelity definieras som det koncept som betecknar hur lik en prototyp är med slutprodukten. Det finns prototyper som tillämpar olika nivåer av fidelity där nivåerna kategoriseras enligt: low-fidelity prototyper, high-fidelity prototyper, mixed-fidelity prototyper och multi-fidelity prototyper. Dessa prototyper används vid olika situationer då kostnad, tid och syfte kan variera. Low-fidelity kan göras både med papper och penna och på datorn. Den syftar på att presentera ett koncept eller idé istället för att presentera funktionaliteten av hela systemet. Dessa prototyper brukar göras tidigt i designprocessen, är snabba och har extremt låg kostnad. Några nackdelar med dem är att de har begränsningar angående användbarhet och testning. En high-fidelity prototyp har däremot all funktionalitet av systemet samt stödjer användarinteraktion med det. Den är väldigt lik slutprodukten och är väl anpassad för testning. Stödet för interaktiv funktionalitet gör dessa prototyper speciellt användbara vid upptäckt av användbarhetsproblem. Nackdelarna är dock att de är mycket mer tidskrävande än low-fidelity prototyper samt att de är mer kostsamma att ta fram. High-fidelity prototyper är inte heller anpassade för visualisering av komplex funktionalitet. Mixed-fidelity och multi-fidelity prototyper är blandningar av de tidigare nämnda prototyperna. Enligt Tuomas Nissinen är skapandet av interaktiva prototyper en stor utmaning för designers. Detta eftersom det skulle vara väldigt tidskrävande att stödja interaktiv funktionalitet i low-fidelity prototyper eller implementera komplex funktionalitet i high-fidelity prototyper.
+Enligt Kate Pernice i Nielsen Norman Group [18] måste en prototyp av ett användargränssnitt testas för att möjliggöra bedömningen av dess användbarhet. Vid testning av prototypen måste alltså användaren få gensvar från prototypen vid handlingar och detta kan göras på två sätt. Det ena sättet går ut på att en person som är bekant med designen ska ge gensvar till användare testar prototypen och en sådan prototyp kallas för statisk.  Det andra sättet är genom att implementera dessa gensvar vilket resulterar i en interaktiv prototyp. Skapandet av en sådan prototyp kan bli tidskrävande. Även Pernice lyfter fram de områden där fidelity kan variera vilka är interaktivitet, innehåll, kommando och visuellt. 
+Vid utveckling av design till ett system, en tjänst eller en produkt krävs även ett team som ska utveckla det som ligger bakom designen och utgör funktionaliteten. Teamet är delar av större organisationer och enligt en undersökning gjord av Project Management Institute [19] använder sig 71 \%, av organisationer som deltog i undersökningen, av Agila metoder ibland, ofta eller alltid. När UX-designers ska följa Agila metoder kan det bli problematiskt. I en rapport skriven av Michael Budwig, Soojin Jeong och Kuldeep Kelkar vid namn “When User Experience Met Agile: A Case Study” [20] beskrivs svårigheter som kan uppstå vid denna situation. På grund av att UX-teamet behöver utveckla design innan utvecklingsteamet har utvecklat det bakomliggande systemet kunde inte UX-teamet ofta få nödvändiga inputs från utvecklingsgruppens medlemmar. Vid uppkomsten av problem och nya krav för produkten i sprinter är UX-teamet tvungna att hantera både nya dem problem och kvar som har uppkommit och samtidigt leverera sina primära projekt i tid. Detta kan orsaka en stressig och negativ arbetsmiljö för UX-teamet. 
+I rapporten “Experience Prototyping” [21] påpekas att designers borde fokusera på att utforska genom att göra, eftersom även små ändringar i ett användargränssnitt kan ha stora konsekvenser i den slutliga användarupplevelsen. Rapporten lyfter även fram betydelsen av skapandet av flera prototyper och påverkan de kan ha i slutprodukten. Detta eftersom en enda prototyp inte är tillräckligt för att designern ska kunna bestämma vilka element och hur dem ska presenteras i användargränssnittet. Ett sätt att ta reda på designmöjligheter och identifiera möjliga problem är genom direkt användarinteraktion med systemet vilket uppnås med high-fidelity prototyper vilket oftast är kostsamt och inte möjligt att genomföra.
+I en undersökning som gjordes med designers av användargränssnitt i rapporten “How is User Interface Prototyping Really Done in Practice? A Survey of User Interface Designers” [22] observerades och analyserades designers av användargränssnittvanor vid design av användargränssnitt. 65 \% av deltagande designers av användargränssnitt föredrar att använda sig av verktyg som kommer ge low-fidelity eftersom det går snabbt att skapa. Av de designers av användargränssnitt som föredrar att använda sig av high-fidelity verktyg är det 85\% som gör det eftersom det modellerar det slutgiltiga systemet korrekt. Enligt undersökningen är den vanligaste metoden för att ta fram ett användargränssnitt att rita. Detta trots att 48 \% av designers av användargränssnitt anser att slutanvändare inte tar prototyper seriöst och 39 \% av deltagarna anser att de inte kan testa komplexa interaktioner.  En tanke för framtida designverktyg var att de borde ha dessa två aspekter i fokus - snabbhet och korrekthet. 
+
+I rapporten “User Interface Prototyping: Tools and Techniques” [23] presenteras ett antal krav för prototypverktyg vid samling av viktig information för det systemet som ska byggas, sådan information kan vara vilka uppgifter användaren ska kunna utföra vid interaktion med systemet men även användargränssnittets utseende. Kraven som ett prototypverktyg ska ha är att det bland annat ska: 
+
+\begin{itemize}
+\item vara enkelt att använda på så sätt att alla medlemmar i ett utvecklingsteam ska kunna delta i utvecklingen av prototypen,
+\item kunna snabbt underlätta små förändringar i användargränssnittet samt kunna se tillämpning av dessa,
+\item ge designers omfattande kontroll av designdetaljer,
+\item kunna vara så likt slutprodukten som möjligt och möjliggöra användarinteraktion,
+\item kunna erbjuda versionshantering för prototyper för att ge designern möjligheten att återanvända redan skapade designer.
+
+\end{itemize}
+
+\section{Visualiseringselement} 
+
+I detta avsnitt presenteras sätt som beskriver hur dataströmmar kan visualiseras och utmaningar i visualiseringen. 
+
+\subsection{Visualiseringselement}
+
+För att presentera datamängder finns det en mängd vanligen använda element, såsom linjediagram, stapeldiagram, cirkeldiagram samt punkter eller regioner i färg i kartor. Vid tillämpning av dessa element finns det egenskaper som kan påverka förståelsen av datat. Några av dem är vilket intervall data kommer presenteras i, hur snabbt data kommer uppdateras och hur länge data kommer vara synligt innan det försvinner. Även estetiska egenskaper som färg, storlek och placering är viktigt vid presentation av element.
+
+Några av de använda diagram som är enklast att förstå som används för visualisering av data är stapeldiagram, linjediagram och cirkeldiagram. De beskrivs lite mer detaljerade nedan: [24]
+\begin{itemize}
+\item Stapeldiagram används för visualisering av kategoriska data med diskreta värde.
+\item Linjediagram är lämplig för visualisering av kontinuerliga värde. Värden presenteras som flera punkter som är anslutna med varandra och bygger en linje. Detta diagram har hög läsbarhet.
+\item Cirkeldiagram är ett diagram som används mest för presentation av proportionella data. Varje del av cirkeldiagrammet är märkt med en färg och en etikett för att representera en procent av de data som presenteras. Den är mest lämplig för presentation av data som delas upp i högst sex kategorier för att kunna behålla sin effektivitet. 
+\end{itemize}	
+
+\subsection{Utmaningar}
+
+Rapporten “Challenges in Visual Data Analysis” [25] presenterar de största utmaningarna inom visuell analys vilket innebär visualisering av stora, heterogena och dynamiska mängder data. Visuell analys innebär att representera data och ge människor möjligheten att interagera med dessa data för att ta beslut och dra slutsatser. I rapporten lyfts det även fram att koncept såsom representation, uppfattning, interaktion och beslutsfattande är avgörande för presentation och analys av data. En av utmaningarna som förekommer på visuell analys är visuell skalbarhet. Med detta menas att kunna presentera stora datamängder och fokusera mer på detaljer och enskilda element. En annan stor utmaning som finns på visuell analys är att kunna tolka data på ett korrekt sätt och dra slutsatser. Detta beror väldigt mycket på metoder som används för att processa rådata och kvalitet på rådata. Det gäller då att åtgärda möjliga fel på rådata (till exempel dubbletter) och skapa en stabil design för visualiseringen. Analys av tidsberoende dataströmmar är också en utmaning för visuell analys eftersom bra komprimerings och hanteringsmetoder för data behövs. Det är viktigt att kunna analysera data och presentera värdefulla resultat för att möjliggöra snabb identifiering av till exempel anomalier på data. 
+
+Ytterligare en svårighet med att presentera dataströmmar är att hastigheten som data kommer in kan vara extremt hög enligt rapporten “Visual analysis of dynamic data streams” [26]. Detta kan försvåra arbetet för forskare eller analytiker då data ska analyseras och beslut ska fattas i realtid. Dessutom kan data som passerat vara relevant för aktuella data vid vissa beslutsfattningar. Eftersom dataströmmar ofta innehåller väldigt mycket information kan det vara lämpligt att användare kan filtrera och extrahera den data som är relevant för deras problem och behov. Även att kunna kombinera, sätta ihop och jämföra olika aspekter av data kan öka förståelsen och underlätta analysen för användaren. 
+
+\section{Elastic Stack} 
+
+Elastic stack är ett verktyg som kan ta data från vilken källa som helst, i vilket format som helst, och söka, analysera och visualisera det i realtid. Den består av fyra open-sourceprojekt som är Beats, Logstash, Elasticsearch och Kibana som presenteras mer i detalj nedan. Användning av Elastic stack är gratis men det finns begränsningar i utrymme och vissa extrafunktioner som kan betalas. [27]
+
+\subsection{Logstash}
+
+Enligt produktbeskrivningen på Elastic Stacks hemsida [28] är Logstash en dataprocessor för server-sidan som samlar data från många olika källor samtidigt, förvandlar dem och skickar sedan dem till det stash som anges. Detta är ofta Elasticsearch eftersom de har en mycket stark synergi mellan varandra. Processhanteringen är en pipeline med tre steg: inputs $\rightarrow$ filter $\rightarrow$ outputs. Inputs genererar händelser, filter ändrar dem och outputs skickar dem någon annanstans. 
+
+\subsection{Beats}
+
+Enligt produktbeskrivningen på Elastic Stacks hemsida [29] är Beats en plattform för lätta och enkla datasändare. De kan skicka data från tusentals maskiner till Logstash eller Elasticsearch. De är installerade på servrar och centraliserar icke modifierade data till Elasticsearch. Om datat behöver bearbetning kan Beats skicka datat till Logstash för ändring och analysering av data. Några exempel på olika Beats är Filebeat som används för att samla loggfiler, Metricbeat för att samla mätvärden från dina system och tjänster, eller Packetbeat för att samla nätverksdata etc. 
+
+\subsection{Elasticsearch}
+
+Elasticsearch är en JSON-baserad, RESTful sök- och analysmotor som lagrar och indexerar data och gör dem tillgängliga för analys och visualisering enligt produktbeskrivningen på Elastic Stacks hemsida [30]. Det är Elastic Stacks huvudmotor och möjliggör lagring, sökning och analys av stora datamängder snabbt och i nära realtid vilket innebär att det finns en liten latens från det att ett dokument indexeras tills dess att det blir sökbart. Elasticsearch passar bäst för applikationer som är konstruerade för att hantera nära realtidsdata som behöver bearbetas och analyseras snabbt. 
+
+\subsection{Kibana}
+
+Kibana används för att visualisera det som är lagrad i Elasticsearch och är baserat på HTML, JavaScript och Bootstrap enligt produktbeskrivningen på Elastic Stacks hemsida [31]. Kibana möjliggör en mängd olika visualiseringar av data med vanligen använda UI-element som beskrivs nedan:
+
+\begin{itemize}
+\item Diagram: areadiagram, värmekarta, horisontellt och vertikalt stapeldiagram, linjediagram, cirkeldiagram.
+\item Data: datatabell, mätare, målmätare, siffror.
+\item Kartor: koordinater i karta, regioner i karta.
+\item Övriga: titlar, taggmoln, sök.
+\end{itemize}
+
+I dessa UI-element aggregeras data automatiskt av Kibana vid val av fält. Det kan vara fält som representerar tid, namn, geografisk koordinat, summa, m.m. För att Kibana ska kunna aggregera dessa egenskaper i data måste de vara kartlagda i Elasticsearch. Kartläggningen går ut på att specificera vilka fält som representerar vad. UI-elementen har anpassningsbara egenskaper som rör visualiseringen av datat, som färg, etiketter på axlar i grafer, det maximala antalet olika värden samt specifika modifieringar för vissa UI-element. När flera UI-element sparats kan de kombineras med varandra för att bilda dashboards. Ett UI-element går att använda i flera dashboards och om en ändring görs av UI-elementet ändras det på alla stället. Att ändra och spara är en snabb process som kan göras på ett fåtal knapptryckningar vilket underlättar vid framtagning av en dashboard. Dashboards går även att bädda in i webbsidor genom HTML vilket kan vara väldigt användbart vid kombination med olika dashboards. Ytterligare en aspekt vid framtagning av dashboards i Kibana är att det som utvecklas är den faktiska produkten som ska användas av slutanvändaren. Vid interaktion med UI - element i Kibana kan data filtreras och data ändras då över hela dashboarden, eftersom data alltid hålls synkroniserad.
+
+Vid skapandet av en interaktiv dashboard finns det en mängd egenskaper som går att anpassa. Det går att ställa in en automatisk uppdateringsfrekvens som hämtar nya data på intervall mellan 5 sekunder och 1 dag. Det går även att specificera under vilket datum- och tidsintervall data ska visualiseras. Det kan då vara relaterat till nu vilket är tidpunkten som användaren sitter framför dashboarden eller två fixerade tidpunkter. Ett exempel hade kunnat vara att visa all data från en minut sedan till nu och uppdatera datat varje minut.
+
+I Kibana finns även utvecklarverktyg som erbjuder kraftfulla sätt att interagera med Elastic Stack. Med den inbyggda konsolen kan utvecklare undvika att skriva kommandon i terminalen och istället utveckla Elasticsearch-data direkt i Kibana. I den betalda versionen av Elastic Stack finns det även möjlighet för tillämpning av maskininlärning på data i Elasticsearch, notiser vid ändringar av specificerade data, rapportgenerering av en eller flera visualiseringar i Kibana.
 
 
-\chapter{Metoder}
+\chapter{Metod}
 Metoder och resultat text
 \blindtext
 
