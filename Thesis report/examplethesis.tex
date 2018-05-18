@@ -210,9 +210,13 @@ Genom iterationen av dessa fyra steg möjliggörs ständigt förbättring av anv
 \subsection{Utmaningar i UX-designprocessen}
 
 I rapporten “User experience prototyping - a literature review” [17] diskuterar Tuomas Nissinen fidelity-aspekten av prototyper som tas fram under designprocessen. Fidelity definieras som det koncept som betecknar hur lik en prototyp är med slutprodukten. Det finns prototyper som tillämpar olika nivåer av fidelity där nivåerna kategoriseras enligt: low-fidelity prototyper, high-fidelity prototyper, mixed-fidelity prototyper och multi-fidelity prototyper. Dessa prototyper används vid olika situationer då kostnad, tid och syfte kan variera. Low-fidelity kan göras både med papper och penna och på datorn. Den syftar på att presentera ett koncept eller idé istället för att presentera funktionaliteten av hela systemet. Dessa prototyper brukar göras tidigt i designprocessen, är snabba och har extremt låg kostnad. Några nackdelar med dem är att de har begränsningar angående användbarhet och testning. En high-fidelity prototyp har däremot all funktionalitet av systemet samt stödjer användarinteraktion med det. Den är väldigt lik slutprodukten och är väl anpassad för testning. Stödet för interaktiv funktionalitet gör dessa prototyper speciellt användbara vid upptäckt av användbarhetsproblem. Nackdelarna är dock att de är mycket mer tidskrävande än low-fidelity prototyper samt att de är mer kostsamma att ta fram. High-fidelity prototyper är inte heller anpassade för visualisering av komplex funktionalitet. Mixed-fidelity och multi-fidelity prototyper är blandningar av de tidigare nämnda prototyperna. Enligt Tuomas Nissinen är skapandet av interaktiva prototyper en stor utmaning för designers. Detta eftersom det skulle vara väldigt tidskrävande att stödja interaktiv funktionalitet i low-fidelity prototyper eller implementera komplex funktionalitet i high-fidelity prototyper.
+
 Enligt Kate Pernice i Nielsen Norman Group [18] måste en prototyp av ett användargränssnitt testas för att möjliggöra bedömningen av dess användbarhet. Vid testning av prototypen måste alltså användaren få gensvar från prototypen vid handlingar och detta kan göras på två sätt. Det ena sättet går ut på att en person som är bekant med designen ska ge gensvar till användare testar prototypen och en sådan prototyp kallas för statisk.  Det andra sättet är genom att implementera dessa gensvar vilket resulterar i en interaktiv prototyp. Skapandet av en sådan prototyp kan bli tidskrävande. Även Pernice lyfter fram de områden där fidelity kan variera vilka är interaktivitet, innehåll, kommando och visuellt. 
+
 Vid utveckling av design till ett system, en tjänst eller en produkt krävs även ett team som ska utveckla det som ligger bakom designen och utgör funktionaliteten. Teamet är delar av större organisationer och enligt en undersökning gjord av Project Management Institute [19] använder sig 71 \%, av organisationer som deltog i undersökningen, av Agila metoder ibland, ofta eller alltid. När UX-designers ska följa Agila metoder kan det bli problematiskt. I en rapport skriven av Michael Budwig, Soojin Jeong och Kuldeep Kelkar vid namn “When User Experience Met Agile: A Case Study” [20] beskrivs svårigheter som kan uppstå vid denna situation. På grund av att UX-teamet behöver utveckla design innan utvecklingsteamet har utvecklat det bakomliggande systemet kunde inte UX-teamet ofta få nödvändiga inputs från utvecklingsgruppens medlemmar. Vid uppkomsten av problem och nya krav för produkten i sprinter är UX-teamet tvungna att hantera både nya dem problem och kvar som har uppkommit och samtidigt leverera sina primära projekt i tid. Detta kan orsaka en stressig och negativ arbetsmiljö för UX-teamet. 
+
 I rapporten “Experience Prototyping” [21] påpekas att designers borde fokusera på att utforska genom att göra, eftersom även små ändringar i ett användargränssnitt kan ha stora konsekvenser i den slutliga användarupplevelsen. Rapporten lyfter även fram betydelsen av skapandet av flera prototyper och påverkan de kan ha i slutprodukten. Detta eftersom en enda prototyp inte är tillräckligt för att designern ska kunna bestämma vilka element och hur dem ska presenteras i användargränssnittet. Ett sätt att ta reda på designmöjligheter och identifiera möjliga problem är genom direkt användarinteraktion med systemet vilket uppnås med high-fidelity prototyper vilket oftast är kostsamt och inte möjligt att genomföra.
+
 I en undersökning som gjordes med designers av användargränssnitt i rapporten “How is User Interface Prototyping Really Done in Practice? A Survey of User Interface Designers” [22] observerades och analyserades designers av användargränssnittvanor vid design av användargränssnitt. 65 \% av deltagande designers av användargränssnitt föredrar att använda sig av verktyg som kommer ge low-fidelity eftersom det går snabbt att skapa. Av de designers av användargränssnitt som föredrar att använda sig av high-fidelity verktyg är det 85\% som gör det eftersom det modellerar det slutgiltiga systemet korrekt. Enligt undersökningen är den vanligaste metoden för att ta fram ett användargränssnitt att rita. Detta trots att 48 \% av designers av användargränssnitt anser att slutanvändare inte tar prototyper seriöst och 39 \% av deltagarna anser att de inte kan testa komplexa interaktioner.  En tanke för framtida designverktyg var att de borde ha dessa två aspekter i fokus - snabbhet och korrekthet. 
 
 I rapporten “User Interface Prototyping: Tools and Techniques” [23] presenteras ett antal krav för prototypverktyg vid samling av viktig information för det systemet som ska byggas, sådan information kan vara vilka uppgifter användaren ska kunna utföra vid interaktion med systemet men även användargränssnittets utseende. Kraven som ett prototypverktyg ska ha är att det bland annat ska: 
@@ -282,9 +286,33 @@ I Kibana finns även utvecklarverktyg som erbjuder kraftfulla sätt att interage
 
 
 \chapter{Metod}
-Metoder och resultat text
-\blindtext
 
+I detta kapitel presenteras vilka metoder som användes för att uppfylla målen definierade i 1.2.
+
+\section{Litteraturstudie}
+
+För att identifiera utmaningar i den traditionella designprocessen genomfördes en litteraturstudie under förstudien. Detta för att ta reda på vad som skulle stå i fokus under utvärderingen av designprocessen som skulle bli framtagen med Kibana. Under förstudien genomfördes även en litteraturstudie för att ta reda på svårigheter inom visualisering för att kunna välja en typ av data som har visualiseringsutmaningar. Litteraturstudien utfördes genom analyser av relaterade arbeten och rapporter.
+
+\section{Utvärdering av UX-designprocessen vid användning av Kibana}
+
+Efter att produkten tagits fram och UX-designprocessen specificerats gjordes en utvärdering av UX-designprocessen. Denna utvärdering utfördes av UX-designers via ett formulär där hela UX-designprocessen och Kibana beskrevs. I formuläret skulle sedan påståenden besvaras angående olika aspekter av UX-designprocessen i Kibana såsom begränsningar och särskilda funktioner. Erfarna UX-designers var vana vid att arbeta enligt den traditionella UX-designprocessen och ansågs därför som lämpliga kandidater för undersökningen. En erfaren UX-designer definierade projektdeltagarna som en person som hade tre år eller mer erfarenhet av att arbeta med design. Formuläret skickades ut till 32 kandidater genom deras profiler på LinkedIn och det kan hittas i appendix.
+
+Det som utvärderingen fokuserade på var svårigheter inom UX-designprocessen, främst det tredje steget, prototypskapande och det fjärde, testning. Inom skapandet av prototypen fanns det svårigheter vid att få prototypen och slutprodukten att vara lika främst gällande det visuella, innehållet, interaktionen och funktionaliteten eftersom utvecklare och designers använde olika verktyg. Ändringar som skulle göras på designen kunde även komma att bli kostsamma och därför lade utvärderingen även fokus på optimering av ändring av användargränssnittet. Vid testningen var det en del faktorer som försvårade att testa den riktiga funktionaliteten på produkten, bland annat att det var väldigt tidskrävande och att designers inte alltid visste systemets begränsningar. 
+
+\section{Utvärdering av kommunikationen mellan Agila utvecklare och UX-designers under UX-designprocessen vid användning av Kibana}
+
+En utvärdering gjordes även av kommunikationen mellan Agila utvecklare och UX-designers eftersom det har visat sig vara en svårighet. Under projektets gång fick projektdeltagarna erfarenhet av båda rollerna eftersom de dels skapade systemet och designen till dashboarden. Utvärderingen gjordes genom en analys av tankar, erfarenheter och noteringar som gjorts av projektdeltagarna under projektets gång. 
+
+
+\section{Förberedelse av data för visualisering}
+
+För att möjliggöra utvärderingen av designprocessen vid användning av Kibana skapades ett användargränssnitt med hjälp av Kibana som skulle visualisera Transportstyrelsens data från betalstationer.
+
+För att kunna presentera data användes Elastic stack. Anledningen till att just detta verktyg valdes är på grund av övertaget denna produkt har på marknaden. Den är snabb vid sökningar och analyser, gör filtrerings- och modifiering processen smidig och erbjuder ett helt anpassningsbart användargränssnitt. Dessutom är det en väldigt stabil produkt som används av stora företag som bland annat Facebook, eBay, Netflix och Slack enligt Elastic Stacks lista på kunder [32]. 
+
+En utmaning i visualisering av strömmande data har varit visuell skalbarhet och beslutsfattande. Ett annat vanligt problem inom visualisering av strömmande data var hastigheten som data skulle komma in och kombination av data vid visualisering för ökande förståelse.  Ett mer generellt men ofta förekommande problem vid användning av data är att de inte är i den önskade formen och därför krävs det modifiering för att kunna använda dem på det önskade sättet. Vid skapandet av dashboarden skulle de ovan nämnda utmaningarna ligga i fokus. I det här projektet skulle visualisering av strömmande data examineras och därför behövdes det en dataström. Data som användes var statisk, icke konsistent och ofullständigt därför valdes den följande implementationen.
+
+I Figur 3.1 representerar pilen dataflödet från det att data hämtas till att de visualiseras. 
 
 \begin{figure}[h]
 \centering
@@ -292,7 +320,13 @@ Metoder och resultat text
 \caption{Redogörelse för systemarkitektur.}
 \end{figure}
 
-\captionsetup[table]{name=Tabel}
+Det började med en RESTful webbtjänst som efterfrågade Transportstyrelsens data genom det öppna API:et som fanns tillgängligt på Transportstyrelsens hemsida. Vid förfrågan av data under en viss tidsperiod returnerades en lista med passager och deras egenskaper. Dessa passager modifierades och skickades vidare till Logstash som skulle skicka data till Elasticsearch. Efter det hämtades data från Elasticsearch in i Kibana för att möjliggöra visualiseringen av dem.  
+
+Eftersom data som användes var statisk skapades en dataström av dessa data med hjälp av webbtjänsten. Detta gjordes genom att modifiera tiden i data som kom in i webbtjänsten, i sekundnivå. För att kunna använda dataströmmen som skapades och visualisera den i Kibana så krävdes modifiering av data. Detta gjordes genom att ändra format på datatyper, som tid och datum vilket gjordes i webbtjänsten innan data skickades vidare till Logstash. Dessutom var det nödvändigt att lägga till information om geografiska punkter på den data som visualiserades för att möjliggöra visualisering av data i kartor. Eftersom regioner som skulle visualiseras saknades i Kibana behövdes även denna information tas fram. Informationen om regioner, som i detta fall var svenska kommuner och län, som fanns tillgängliga var i ett format som inte var kompatibelt med Kibana. På grund av detta skapades ett dokument som innehöll denna information och lades till i Kibanas regionsdata. Ytterligare ett tillägg som behövdes på data var geografiska koordinater för betalstationer. Detta för att kunna visualisera trafikintensitet baserad på betalstationer. Det gjordes genom att ta fram ett dokument som innehöll koordinater för betalstationerna. Informationen om koordinater lades till i all data som hämtades genom webbtjänsten och skickades vidare till Logstash. 
+
+I Tabell 3.1 presenteras vilka egenskaper en passage hade efter modifiering. Dessa egenskaper användes sedan för visualisering. 
+
+\captionsetup[table]{name=Tabell}
 
 \begin{table}[h!]
   \begin{center}
@@ -335,6 +369,48 @@ Koordinat för betalstationens
     \end{tabular}
   \end{center}
 \end{table}
+
+
+\section{Visualisera data i en interaktiv dashboard i Kibana}
+
+För att visualisera data i en interaktiv dashboard i Kibana skapades först alla UI-element och sedan integrerades de in i en dashboard. De UI-element som användes var de som fanns tillgängliga i Kibana och som var passande för syftet. De element som användes var:
+
+\begin{itemize}
+\item Taggmoln:
+\begin{itemize}
+\item Taggmoln med olika områden med betalstationer i Sverige, där störst text visar störst antal
+\item Taggmoln med de fem mest populära betalstationerna i det specifika området, där störst text visar störst antal
+\end{itemize}
+\item Karta med koordinater:
+\begin{itemize}
+\item Karta med koordinater för alla betalstationer utplacerade i Sverige
+\end{itemize}
+\item Karta med geografiska områden:
+\begin{itemize}
+\item Karta med län där fordonsägare bor, där starkast färg är flest antal fordon
+\item Karta med kommuner där fordonsägare bor, där starkast färg är flest antal fordon
+\end{itemize}
+\item Stapeldiagram:
+\begin{itemize}
+\item Stapeldiagram med de mest trafikerade betalstationerna i det specifika området med fordontypsfördelning
+\item Stapeldiagram med trafikintensitet med fordontypsfördelning
+\end{itemize}
+\item Cirkeldiagram:
+\begin{itemize}
+\item Cirkeldiagram med fordontypsfördelning
+\item Cirkeldiagram med körfältsfördelning
+\end{itemize}
+\item Antal:
+\begin{itemize}
+\item Antal fordon den senaste minuten i det valda området
+\end{itemize}
+\item Sök:
+\begin{itemize}
+\item Sökning baserat på betalstationer
+\end{itemize}
+\end{itemize}
+
+Vid specificering av data som skulle ingå i ett UI-element gjordes automatiska aggregeringar av Kibana vid val av fält. Aggregering gjordes på termer i valda fält, koordinater och datum. För termer i valda fält specificerades ett fält och sedan skapades automatiskt aggregeringar baserat på flest/minst antal gånger värdet i detta fält uppkom. Eftersom de UI-elementen som skapades kunde återanvändas på flera olika dashboards skapades flera versioner av användargränssnittet vid varje iteration. 
 
 \chapter{Resultat}
 
