@@ -300,13 +300,29 @@ Det som utvärderingen fokuserade på var svårigheter inom UX-designprocessen, 
 
 En utvärdering gjordes även av kommunikationen mellan Agila utvecklare och UX-designers eftersom det har visat sig vara en svårighet. Under projektets gång fick projektdeltagarna erfarenhet av båda rollerna eftersom de dels skapade systemet och designen till dashboarden. Utvärderingen gjordes genom en analys av tankar, erfarenheter och noteringar som gjorts av projektdeltagarna under projektets gång. 
 
+\section{Förberedelse av data för visualisering}
+
+För att möjliggöra utvärderingen av designprocessen vid användning av Kibana skapades ett användargränssnitt med hjälp av Kibana som skulle visualisera Transportstyrelsens data från betalstationer.
+
+För att kunna presentera data användes Elastic stack. Anledningen till att just detta verktyg valdes är på grund av övertaget denna produkt har på marknaden. Den är snabb vid sökningar och analyser, gör filtrerings- och modifiering processen smidig och erbjuder ett helt anpassningsbart användargränssnitt. Dessutom är det en väldigt stabil produkt som används av stora företag som bland annat Facebook, eBay, Netflix och Slack enligt Elastic Stacks lista på kunder [32]. 
+
+En utmaning i visualisering av strömmande data har varit visuell skalbarhet och beslutsfattande. Ett annat vanligt problem inom visualisering av strömmande data var hastigheten som data skulle komma in och kombination av data vid visualisering för ökande förståelse.  Ett mer generellt men ofta förekommande problem vid användning av data är att de inte är i den önskade formen och därför krävs det modifiering för att kunna använda dem på det önskade sättet. Vid skapandet av dashboarden skulle de ovan nämnda utmaningarna ligga i fokus. I det här projektet skulle visualisering av strömmande data examineras och därför behövdes det en dataström. Data som användes var statisk, icke konsistent och ofullständigt därför valdes den följande implementationen.
+
+I Figur 3.1 representerar pilen dataflödet från det att data hämtas till att de visualiseras. 
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=1\textwidth]{Systemarkitektur}
 \caption{Redogörelse för systemarkitektur.}
 \end{figure}
-\captionsetup[table]{name=Tabel}
+
+Det började med en RESTful webbtjänst som efterfrågade Transportstyrelsens data genom det öppna API:et som fanns tillgängligt på Transportstyrelsens hemsida. Vid förfrågan av data under en viss tidsperiod returnerades en lista med passager och deras egenskaper. Dessa passager modifierades och skickades vidare till Logstash som skulle skicka data till Elasticsearch. Efter det hämtades data från Elasticsearch in i Kibana för att möjliggöra visualiseringen av dem.  
+
+Eftersom data som användes var statisk skapades en dataström av dessa data med hjälp av webbtjänsten. Detta gjordes genom att modifiera tiden i data som kom in i webbtjänsten, i sekundnivå. För att kunna använda dataströmmen som skapades och visualisera den i Kibana så krävdes modifiering av data. Detta gjordes genom att ändra format på datatyper, som tid och datum vilket gjordes i webbtjänsten innan data skickades vidare till Logstash. Dessutom var det nödvändigt att lägga till information om geografiska punkter på den data som visualiserades för att möjliggöra visualisering av data i kartor. Eftersom regioner som skulle visualiseras saknades i Kibana behövdes även denna information tas fram. Informationen om regioner, som i detta fall var svenska kommuner och län, som fanns tillgängliga var i ett format som inte var kompatibelt med Kibana. På grund av detta skapades ett dokument som innehöll denna information och lades till i Kibanas regionsdata. Ytterligare ett tillägg som behövdes på data var geografiska koordinater för betalstationer. Detta för att kunna visualisera trafikintensitet baserad på betalstationer. Det gjordes genom att ta fram ett dokument som innehöll koordinater för betalstationerna. Informationen om koordinater lades till i all data som hämtades genom webbtjänsten och skickades vidare till Logstash. 
+
+I Tabell 3.1 presenteras vilka egenskaper en passage hade efter modifiering. Dessa egenskaper användes sedan för visualisering. 
+
+\captionsetup[table]{name=Tabell}
 
 \begin{table}[h!]
   \begin{center}
@@ -349,6 +365,48 @@ Koordinat för betalstationens
     \end{tabular}
   \end{center}
 \end{table}
+
+
+\section{Visualisera data i en interaktiv dashboard i Kibana}
+
+För att visualisera data i en interaktiv dashboard i Kibana skapades först alla UI-element och sedan integrerades de in i en dashboard. De UI-element som användes var de som fanns tillgängliga i Kibana och som var passande för syftet. De element som användes var:
+
+\begin{itemize}
+\item Taggmoln:
+\begin{itemize}
+\item Taggmoln med olika områden med betalstationer i Sverige, där störst text visar störst antal
+\item Taggmoln med de fem mest populära betalstationerna i det specifika området, där störst text visar störst antal
+\end{itemize}
+\item Karta med koordinater:
+\begin{itemize}
+\item Karta med koordinater för alla betalstationer utplacerade i Sverige
+\end{itemize}
+\item Karta med geografiska områden:
+\begin{itemize}
+\item Karta med län där fordonsägare bor, där starkast färg är flest antal fordon
+\item Karta med kommuner där fordonsägare bor, där starkast färg är flest antal fordon
+\end{itemize}
+\item Stapeldiagram:
+\begin{itemize}
+\item Stapeldiagram med de mest trafikerade betalstationerna i det specifika området med fordontypsfördelning
+\item Stapeldiagram med trafikintensitet med fordontypsfördelning
+\end{itemize}
+\item Cirkeldiagram:
+\begin{itemize}
+\item Cirkeldiagram med fordontypsfördelning
+\item Cirkeldiagram med körfältsfördelning
+\end{itemize}
+\item Antal:
+\begin{itemize}
+\item Antal fordon den senaste minuten i det valda området
+\end{itemize}
+\item Sök:
+\begin{itemize}
+\item Sökning baserat på betalstationer
+\end{itemize}
+\end{itemize}
+
+Vid specificering av data som skulle ingå i ett UI-element gjordes automatiska aggregeringar av Kibana vid val av fält. Aggregering gjordes på termer i valda fält, koordinater och datum. För termer i valda fält specificerades ett fält och sedan skapades automatiskt aggregeringar baserat på flest/minst antal gånger värdet i detta fält uppkom. Eftersom de UI-elementen som skapades kunde återanvändas på flera olika dashboards skapades flera versioner av användargränssnittet vid varje iteration. 
 
 \chapter{Resultat}
 
