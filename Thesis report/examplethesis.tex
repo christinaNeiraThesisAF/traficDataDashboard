@@ -14,7 +14,7 @@
 
 
 \usepackage{blindtext} % This is just to get some nonsense text in this template, can be safely removed
-
+\usepackage[parfill]{parskip}
 \usepackage{csquotes} % Recommended by biblatex
 \usepackage{biblatex}
 \addbibresource{references.bib} % The file containing our references, in BibTeX format
@@ -37,25 +37,38 @@
 \frontmatter
 
 \titlepage
-
-\begin{abstract}
-  English abstract goes here.
-
-  \blindtext
-\end{abstract}
-
-
 \begin{otherlanguage}{swedish}
   \begin{abstract}
-    Träutensilierna i ett tryckeri äro ingalunda en oviktig faktor,
-    för trevnadens, ordningens och ekonomiens upprätthållande, och
-    dock är det icke sällan som sorgliga erfarenheter göras på grund
-    af det oförstånd med hvilket kaster, formbräden och regaler
-    tillverkas och försäljas Kaster som äro dåligt hopkomna och af
-    otillräckligt.
-  \end{abstract}
-\end{otherlanguage}
+I dagsläget finns det en mängd utmaningar och svårigheter inom den traditionella UX-designprocessen. Dessa utmaningar har en påverkan på hur tidskrävande och kostsam en UX-designprocess kan vara. Några av dem är att få prototyper att likna slutprodukten med avseende på funktionalitet, användargränssnitt och användarupplevelsen och att UX-designers sällan får tillräckligt med input från utvecklare vad det gäller funktionella begränsningar. Det finns även svårigheter vid visualisering av data, mer specifikt strömmande data. Svårigheten ligger i att göra informationen i data så lättförståelig för användaren som möjligt och att möjliggöra användaren att få ut önskad information. Svårigheten beror på en mängd faktorer som datats komplexitet samt hastigheten och mängden data som strömmar in. 
 
+För att undersöka dessa svårigheter togs det fram en UX-designprocess vid användning av datavisualiseringsverktyget Kibana, som är en del av Elastic Stack. Elastic stack är ett verktyg som består av fyra projekt som hämtar, hanterar, tillfälligt lagrar och visualiserar data. För att kunna utvärdera och bedöma UX-designprocessen vid användning av Kibana skapades en interaktiv dashboard som presenterade Transportstyrelsens data från betalstationer. Under detta projekt togs en UX-designprocess fram där prototypskapandet och testningen optimerades då följande krav var uppfyllda: det som skulle visualiseras var data som var kompatibel med Kibana, systemet skulle vara fulländat innan skapandet av UI-element skulle påbörjas och det krävdes inte mycket modifiering av UI-element. Om kraven inte uppfylldes visade det sig att Kibana har en del begränsningar vad det gäller vad som kan visualiseras och hur visualiseringen kan modifieras. 
+
+\textbf{Nyckelord}
+
+\textit{Kibana, Elastic Stack, UX-designprocess, UX, Användarupplevelse}
+
+ \end{abstract}
+\end{otherlanguage}
+ 
+
+\begin{abstract}
+
+In the current situation there are a lot of challenges and difficulties in the traditional UX-design process. These challenges have an impact on how time consuming and costly a UX-design process can be. Some of them are to get prototypes to match the end product with regard to functionality, user interface and user experience and UX-designers rarely get enough input from developers regarding functional limitations. There are also difficulties in visualizing data, more specifically streaming data. The difficulty lies in making the information in the data as easy to understand as possible for the user and to enable the user to obtain the desired information. The difficulty is due to a variety of factors such as data complexity as well as the speed and amount of data flowing in.
+
+To investigate these difficulties, a UX-design process was developed using the data visualization tool Kibana, which is part of Elastic Stack. Elastic stack is a tool consisting of four projects that retrieve, manage, temporarily store and visualize data. In order to evaluate and assess the UX design process when using Kibana, an interactive dashboard was created that presented data from Swedish payment stations. During this project, a UX-design process was developed where prototype creation and testing were optimized when the following requirements were met: the data that would be visualized was compatible with Kibana, the system would be completed before the creation of UI-elements would begin and no bigger modification of UI-elements was required. If the requirements were not met, it appeared that Kibana has some limitations as to what can be visualized and how much visualizations can be modified.
+
+\textbf{Keywords}
+
+\textit{Kibana, Elastic Stack, UX-design process, UX, User Experience}
+
+\end{abstract}
+
+\chapter*{Förord}
+Detta projekt är ett resultat av ett examensarbete inom datateknik på Kungliga Tekniska Högskolan, på uppdrag av företaget ÅF Digital Solutions AB. Arbetet har utförts av Christina Ntis och Neira Causevic på heltid under perioden mars 2018 - juni 2018.
+
+Text som är i kursiv stil i denna rapport är termer på engelska som inte var lämpliga för översättning till svenska.
+
+Vi skulle vilja tacka alla inblandade parter i detta examensarbete på ÅF och KTH. Stort tack till, Martin Neumann, vår handledare på ÅF för all kunskapsdelning, stöd och rådgivning. Tack även till Anders Lindström som var vår handledare på KTH för all hjälp med detta examensarbete. 
 
 \tableofcontents
 
@@ -66,48 +79,51 @@
 
 \chapter{Inledning}
 
+För 30 år sedan uppstod konceptet användarupplevelse, mer känt som UX, som står för engelskans User Experience. Det är kvalitén på upplevelsen och erfarenheten som användaren får vid interaktion med en viss produkt, ett system eller en tjänst. För att ge användare en bra användarupplevelse bör användargränssnittet, d.v.s. det grafiska gränssnittet, vara användarvänligt. Detta innebär att gränssnittet ska vara lätt att använda och förstå samt uppfylla de avsedda användarnas behov och hjälpa användaren att utföra den önskade uppgiften. 
 
-\section{Problemformulering}
+Dock är det inte alltid lätt att skapa användargränssnitt för produkter, speciellt när det gäller att visualisera strömmande data. Svårigheten ligger i att göra informationen i data så lättförståelig för användaren som möjligt och att möjliggöra användaren att få ut önskad information. Svårigheten beror på en mängd faktorer som datats komplexitet samt hastigheten och mängden data som strömmar in. 
 
-Ökade mängder av strömmande data som uppstått i samhället är ett resultat av övervakning av bland annat trafik, väder, statistik från hemsidor, sociala medier samt servrar och databaser. Att presentera dessa dataströmmar på interaktiva hemsidor gör att människor kan få önskad information för att kunna förstå situationer. Dock har det visat sig vara en utmaning att presentera strömmande data i realtid, i exempelvis en webbapplikation med en mängd olika element med data (eng. Dashboard). Svårigheten ligger i att göra information så lättförståelig för användaren som möjligt och beror på en mängd faktorer. Det handlar om vilka datavisualiseringselement som ska användas och hur de ska anpassas för att underlätta förståelsen. Applikationen som presenterar datat måste därför vara designad på ett sätt så att användaren förstår: 
+För att ta fram användargränssnitt bör en UX-designprocess följas, dock finns det i dagsläget många utmaningar i denna designprocess. Några av dessa svårigheter är att prototyper sällan är lika slutprodukten vad det gäller funktionalitet, användargränssnitt och användarupplevelsen. Dessutom får UX-designers sällan tillräckligt med input från utvecklare vad det gäller funktionella begränsningar. Det utgör ett problem då användaren skulle kunna testa funktionalitet som inte är möjlig att skapa i systemet eller att användaren missar att testa funktionalitet som är möjlig att skapa. Anledning till varför användargränssnittet skulle kunna variera i prototypen och slutprodukten är att UX-designers ofta inte använder samma visualiseringsverktyg som produktutvecklarna. Kombinationen av att utseendet och funktionaliteten kan variera skulle i sin tur leda till att användarupplevelsen vid testning av prototypen skulle variera från användarupplevelsen vid användning av slutprodukten. 
 
+Ytterligare en svårighet som finns vid framtagandet av interaktiva prototyper är att detta kan vara väldigt tidskrävande för en UX-designer. Detta eftersom resultatet av varje användarinteraktion som ska finnas i slutprodukten även skulle behöva tas fram för prototypen. Därför leder detta problem, samt de ovan nämnda, till att extra tid måste läggas ned av UX-designern vilket även ökar kostnader. 
 
-\begin{itemize}
-\item Vad det är som presenteras
-\item Vilka handlingar som bör utföras för att 	   utvinna den önskade informationen
-\item Vad som kommer hända efter att en handling 		utförts av användaren
-\end{itemize}
+I detta projekt användes därför ett verktyg där produktframtagningen och prototypskapandet kunde ske samtidigt. Syftet var att utvärdera designprocessen vid användningen av det verktyget jämfört med den vanligen använda designprocessen. Verktyget skulle användas för hämtning, tillfällig lagring och visualisering av data. Det fanns en mängd olika verktyg för detta som t.ex. Elastic Stack, Loggly och Scalyr. Eftersom Elastic Stack säger sig vara “en världsledande mjukvaruleverantör för att göra strukturerad och ostrukturerad data användbar i realtid för användarfall som sökning, loggning, säkerhet och analys” [1] valdes detta verktyg. I samma artikel presenteras statistiken att Elastic Stack har över 100 miljoner nedladdningar vilket visar på att det är extremt populärt och använt. Dessutom var Elasticsearch, som är sökmotorn i Elastic Stack och möjliggör lagring, sökning och analys av stora mängder data i nära real-tid, den mest populära sökmotorn enligt en rakning av sökmotorer som gjorts på DB-Engines i Maj 2018 [2]. Eftersom Kibana används för visualisering av data som finns i Elasticsearch är det även möjligt för alla Elasticsearch användare att använda Kibana vilket skulle innebära en stor mängd potentiella användare av Kibana. Under projektets gång låg fokus på Kibana eftersom det är visualiseringsverktyget i Elastic Stack.
 
-För att presentera datamängder finns det en mängd vanligen använda element, såsom linjediagram, stapeldiagram, cirkeldiagram samt punkter eller regioner i färg i kartor. Vid tillämpning av dessa element finns det egenskaper som kan påverka förståelsen av datat. Några av dem är vilket intervall data kommer presenteras i, hur snabbt data kommer uppdateras och hur länge data kommer vara synligt innan det försvinner. Även estetiska egenskaper som färg, storlek och placering är viktigt vid presentation av element. 
-
-Detta projekt gick alltså ut på att ta fram ett sätt att presentera strömmande data så att de blev användbara, vilket enligt en definition i boken Human computer interaction skriven av Alan Dix, Janet Finlay, Geregory D. Abowd, Russell Beale[1] är att utföra en handling enkelt och naturligt utan risk för fel. Den användare som visualiseringen riktade sig till var den genomsnittliga invånaren utan hög teknologisk kunskap eller erfarenhet inom tolkning av strömmande data. Projektet utfördes genom en analys av de olika datavisualiseringselement som fanns tillgängliga för att presentera data, med elementens egenskaper i åtanke. Dataströmmen som användes som exempeldata togs från Transportstyrelsens öppna databas gällande betalstationer runt om i Sverige. Presentationen av denna data gjordes i en interaktiv webbapplikation följandes principerna inom Människa-Dator interaktion. Oberoende av vilket data som ska användas/presenteras ska metoden som togs fram i denna rapport kunna tillämpas.
-
+Dataströmmen som användes som exempeldata vid visualiseringen var från Transportstyrelsens öppna databas gällande betalstationer i Sverige. Detta möjliggjorde en visualisering av trafik där användare kunde få information som t.ex. antal fordon som passerade ett valt område, fördelning av fordonstyper, var fordonsägare som åkte igenom valda betalstationer bodde m.m.
 
 \section{Målsättning}
-Målet med det här projekt var att genomföra en litteraturstudie kring visualisering av stora mängder strömmande data så att användare enkelt skulle kunna förstå vilka data presenteras, vad som skulle kunna göras med dem och hur de skulle kunna användas. Det handlade alltså om att skapa ett sätt att presentera strömmande data där användare skulle kunna dra nytta av dem. Ett grundläggande mål för projektet var att skapa ett verktyg för testning och tillämpning av analysen. Detta verktyg skulle vara en webbapplikation där data från Transportstyrelsens betalstationer skulle presenteras. Projektet skulle ytterligare delas upp i följande mer detaljerade delmål:
+Detta arbete syftar till att undersöka om, och hur Kibana kan förbättra UX-designprocessen. Ett av målen i det här projekt var därför att ta fram viktiga problem och eventuella brister inom UX-designprocessen och undersöka dessa. Det skulle även skapas en produkt med hjälp av Elastic Stack där Kibana skulle användas som visualiseringsverktyg. Framtagningen av produkten gjordes för att kunna uppfylla det huvudsakliga målet med projektet vilket var en UX-designprocess som togs fram vid användning av Kibana. Den skulle sedan utvärderas av erfarna UX-designers för att jämföras med den traditionella UX-designprocessen. 
 
+Projektet skulle ytterligare delas upp i följande mer detaljerade delmål:
 
 \begin{itemize}
-\item Förstudie på ramverk för strömmande analys och visualisering som passade för stora mängder data:
+
+\item Identifiera problem och brister inom UX-designprocessen. 
+
+\item Bedöma UX-designprocessen vid användning av Kibana baserat på utvärderingar av erfarna UX-designers. 
+
+\item Bedöma kommunikationen mellan Agila utvecklare och UX-designers baserat på projektdeltagarnas erfarenhet av båda rollerna under UX-designprocessen vid användning av Kibana.
+
+\item För att kunna utvärdera och bedöma UX-designprocessen vid användning av Kibana ska en interaktiv dashboard skapas med hjälp av Kibana som presenterade Transportstyrelsen data från betalstationer.
+
 \begin{itemize}
-\item Vilka teorier om människa-datorinteraktion fanns, vilka och hur skulle de implementeras?
-\item Vilka system fanns tillgängliga?
+\item Utforska slutanvändare och ta fram deras behov och krav.
+\item Ta fram lösningar som uppfyller dessa behov och krav.
+\item Implementera lösningarna i en interaktiv dashboard i Kibana 
+\item Testa produkten mot slutanvändare genom djupintervjuer. 
+\item Upprepa ovanstående steg tills produkten blivit accepterad av slutanvändaren.
 \end{itemize}
-\item Analysera och visualisera data för att skapa en interaktiv dashboard som skulle möjliggöra användarna att utforska datadynamisk genom att följa en design och utvecklingsprocess från människa-datorinteraktion.
-\item Genomföra en analys angående representation av stora mängder strömmande data på ett sådant sätt att användare skulle kunna dra nytta av dem och använda dem på det bästa möjliga sättet genom att:
+
+\item Förbereda data för visualisering.
 \begin{itemize}
-\item Anpassa och analysera vanligen använda element, såsom olika typer av diagram och grafer, vid presentation av data.
-\item Dra slutsatser kring tillämpning av element med hjälp av djupintervjuer och processer inom Människa-dator interaktion.
+\item Skapa en webbtjänst som skulle hämta data från Transportstyrelsen.
+\item Modifiera data så att de skulle bli kompatibla med Kibana.
 \end{itemize}
+
 \end{itemize} 
 
 \section{Avgränsningar}
-Data som skulle användas för analys och visualisering skulle vara data från Transportstyrelsens betalstationer. Skapandet av webbapplikationen, analys och visualisering av data skulle göras med hjälp av Elastic Stacks “open source” projekt: Logstash, Elasticsearch och Kibana. 
-
-
-\section{Författarnas bidrag till examensarbetet}
-Detta är författarnas bidrag till examensarbetet.
-
+Data som skulle användas för analys och visualisering skulle vara data från Transportstyrelsens betalstationer. Skapandet av webbapplikationen, analys och visualisering av data skulle göras med hjälp av Elastic Stacks \textit{open-source}projekt: Logstash, Elasticsearch och Kibana.  
 
 \chapter{Teori och bakgrund}
 
@@ -116,11 +132,6 @@ Detta kapitel presenterar bakgrund och teorier till hur ett användargränssnitt
 \section{Visualisering} 
 \subsection{} 
 
-\begin{figure}[hbtp]
-\centering
-\includegraphics[scale=1]{../../Desktop/Screen Shot 2018-04-20 at 08.19.17.png}
-\caption{Systemarkitektur}
-\end{figure}
 
 
 
