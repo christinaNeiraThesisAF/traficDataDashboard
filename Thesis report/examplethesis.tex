@@ -20,6 +20,7 @@
 \usepackage{multirow}
 \usepackage{pdfpages}
 \usepackage{graphicx}
+\usepackage[toc,page]{appendix}
 \graphicspath{ {./images/} }
 \usepackage{mathtools}
 \usepackage{csquotes} % Recommended by biblatex
@@ -394,7 +395,15 @@ Källförteckningen.
 
 \chapter{Bilagor}
 
+\begin{appendices}
+  \chapter{First appendix}
+  \section{First section}
+  \section{Second section}
 
+  \chapter{Second appendix}
+  \section{First section}
+  \section{Second section}
+\end{appendices}
 \includepdf[pages={-}]{UX_designprocess.pdf}
 
 
