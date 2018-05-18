@@ -18,6 +18,9 @@
 \usepackage[parfill]{parskip}
 \usepackage{caption}
 \usepackage{multirow}
+\usepackage{pdfpages}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
 
 \usepackage{csquotes} % Recommended by biblatex
 \usepackage{biblatex}
@@ -141,6 +144,13 @@ Detta kapitel presenterar bakgrund och teorier till hur ett användargränssnitt
 Metoder och resultat text
 \blindtext
 
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1\textwidth]{Systemarkitektur}
+\caption{Redogörelse för systemarkitektur.}
+\end{figure}
+
 \captionsetup[table]{name=Tabel}
 
 \begin{table}[h!]
@@ -187,6 +197,13 @@ Koordinat för betalstationens
 
 \chapter{Resultat}
 
+\begin{figure}[h]
+
+\centering
+\includegraphics[width=0.5\textwidth]{ProductCreation}
+\caption{Redogörelse för de fyra stegen i designprocessen vid användning av Kibana
+.}
+\end{figure}
 
  \begin{tabular}{|p{3cm}|p{3cm}|p{3cm}|p{3cm}|}
       \hline
@@ -232,6 +249,9 @@ Källförteckningen.
 
 
 \chapter{Bilagor}
+
+
+\includepdf[pages={-}]{UX_designprocess.pdf}
 
 
 \end{document}
