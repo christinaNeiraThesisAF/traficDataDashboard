@@ -1,5 +1,4 @@
-\documentclass{kththesis}
-
+\documentclass[12pt]{kththesis}
 
 
 \titleformat
@@ -20,11 +19,14 @@
 \usepackage{multirow}
 \usepackage{pdfpages}
 \usepackage{graphicx}
-\usepackage[toc,page]{appendix}
+\usepackage[title,toc,page]{appendix}
 \graphicspath{ {./images/} }
 \usepackage{mathtools}
 \usepackage{csquotes} % Recommended by biblatex
 \usepackage{biblatex}
+\usepackage{times}
+\usepackage{afterpage}
+
 \addbibresource{references.bib} % The file containing our references, in BibTeX format
 
 
@@ -43,10 +45,15 @@
 
 % Frontmatter includes the titlepage, abstracts and table-of-contents
 \frontmatter
+\afterpage{\null\newpage}
 
-\titlepage
+\includepdf[pages={-}]{StartPage.pdf}
+\afterpage{\null\newpage}
+\includepdf[pages={-}]{Titlepage.pdf}
 \begin{otherlanguage}{swedish}
   \begin{abstract}
+\afterpage{\null\newpage}
+
 I dagsläget finns det en mängd utmaningar och svårigheter inom den traditionella UX-designprocessen. Dessa utmaningar har en påverkan på hur tidskrävande och kostsam en UX-designprocess kan vara. Några av dem är att få prototyper att likna slutprodukten med avseende på funktionalitet, användargränssnitt och användarupplevelsen och att UX-designers sällan får tillräckligt med input från utvecklare vad det gäller funktionella begränsningar. Det finns även svårigheter vid visualisering av data, mer specifikt strömmande data. Svårigheten ligger i att göra informationen i data så lättförståelig för användaren som möjligt och att möjliggöra användaren att få ut önskad information. Svårigheten beror på en mängd faktorer som datats komplexitet samt hastigheten och mängden data som strömmar in. 
 
 För att undersöka dessa svårigheter togs det fram en UX-designprocess vid användning av datavisualiseringsverktyget Kibana, som är en del av Elastic Stack. Elastic stack är ett verktyg som består av fyra projekt som hämtar, hanterar, tillfälligt lagrar och visualiserar data. För att kunna utvärdera och bedöma UX-designprocessen vid användning av Kibana skapades en interaktiv dashboard som presenterade Transportstyrelsens data från betalstationer. Under detta projekt togs en UX-designprocess fram där prototypskapandet och testningen optimerades då följande krav var uppfyllda: det som skulle visualiseras var data som var kompatibel med Kibana, systemet skulle vara fulländat innan skapandet av UI-element skulle påbörjas och det krävdes inte mycket modifiering av UI-element. Om kraven inte uppfylldes visade det sig att Kibana har en del begränsningar vad det gäller vad som kan visualiseras och hur visualiseringen kan modifieras. 
@@ -58,6 +65,7 @@ För att undersöka dessa svårigheter togs det fram en UX-designprocess vid anv
  \end{abstract}
 \end{otherlanguage}
  
+\afterpage{\null\newpage}
 
 \begin{abstract}
 
@@ -78,11 +86,15 @@ Text som är i kursiv stil i denna rapport är termer på engelska som inte var 
 
 Vi skulle vilja tacka alla inblandade parter i detta examensarbete på ÅF och KTH. Stort tack till, Martin Neumann, vår handledare på ÅF för all kunskapsdelning, stöd och rådgivning. Tack även till Anders Lindström som var vår handledare på KTH för all hjälp med detta examensarbete. 
 
+\afterpage{\null\newpage}
+
 \tableofcontents
 
 
 % Mainmatter is where the actual contents of the thesis goes
 \mainmatter
+
+\afterpage{\null\newpage}
 
 
 \chapter{Inledning}
@@ -132,6 +144,8 @@ Projektet skulle ytterligare delas upp i följande mer detaljerade delmål:
 
 \section{Avgränsningar}
 Data som skulle användas för analys och visualisering skulle vara data från Transportstyrelsens betalstationer. Skapandet av webbapplikationen, analys och visualisering av data skulle göras med hjälp av Elastic Stacks \textit{open-source}projekt: Logstash, Elasticsearch och Kibana.  
+
+\afterpage{\null\newpage}
 
 \chapter{Teori och bakgrund}
 
@@ -284,7 +298,7 @@ Vid skapandet av en interaktiv dashboard finns det en mängd egenskaper som går
 
 I Kibana finns även utvecklarverktyg som erbjuder kraftfulla sätt att interagera med Elastic Stack. Med den inbyggda konsolen kan utvecklare undvika att skriva kommandon i terminalen och istället utveckla Elasticsearch-data direkt i Kibana. I den betalda versionen av Elastic Stack finns det även möjlighet för tillämpning av maskininlärning på data i Elasticsearch, notiser vid ändringar av specificerade data, rapportgenerering av en eller flera visualiseringar i Kibana.
 
-
+\afterpage{\null\newpage}
 \chapter{Metod}
 
 I detta kapitel presenteras vilka metoder som användes för att uppfylla målen definierade i 1.2.
@@ -412,6 +426,8 @@ För att visualisera data i en interaktiv dashboard i Kibana skapades först all
 
 Vid specificering av data som skulle ingå i ett UI-element gjordes automatiska aggregeringar av Kibana vid val av fält. Aggregering gjordes på termer i valda fält, koordinater och datum. För termer i valda fält specificerades ett fält och sedan skapades automatiskt aggregeringar baserat på flest/minst antal gånger värdet i detta fält uppkom. Eftersom de UI-elementen som skapades kunde återanvändas på flera olika dashboards skapades flera versioner av användargränssnittet vid varje iteration. 
 
+\afterpage{\null\newpage}
+
 \chapter{Resultat}
 
 I det här kapitlet kommer designprocessen vid användning av Kibana samt tillämpningen av den att förklaras. Även en utvärdering av den framtagna designprocessen presenteras i detta kapitel. 
@@ -461,31 +477,62 @@ Hur många fordon som passerade den senaste minuten? &Antal fordon
 \end{center}
 \end{table}
 
+\afterpage{\null\newpage}
 
 \chapter{Analys och diskussion}
 Analys och diskussion
 \blindtext
 
+\afterpage{\null\newpage}
 
 \chapter{Slutsatser}
 Slutsatser
 \blindtext
 
+\afterpage{\null\newpage}
+
 \chapter{Källförteckning}
 Källförteckningen.
 
-
-\chapter{Bilagor}
+\afterpage{\null\newpage}
 
 \begin{appendices}
-  \chapter{First appendix}
-  \section{First section}
-\includepdf[pages={-}]{UX_designprocess.pdf}
-  \chapter{Second appendix}
-  \section{First section}
-  \section{Second section}
+\renewcommand\thechapter{A}                     
+\section{Utvärderingsformulär} 
+\includegraphics[width=1\textwidth]{UX_designprocess1.pdf}
+\includegraphics[width=1\textwidth]{UX_designprocess2.pdf}
+\includegraphics[width=1\textwidth]{UX_designprocess3.pdf}
+\includegraphics[width=1\textwidth]{UX_designprocess4.pdf}
+\includegraphics[width=1\textwidth]{UX_designprocess5.pdf}
+\includegraphics[width=1\textwidth]{UX_designprocess6.pdf}
+\includegraphics[width=1\textwidth]{UX_designprocess7.pdf}
+\includegraphics[width=1\textwidth]{UX_designprocess8.pdf}
+\includegraphics[width=1\textwidth]{UX_designprocess9.pdf}
+
+\section{User personas}
+\subsection{Curious Carl}
+\includegraphics[width=1\textwidth]{CuriousCarl}
+
+\subsection{Wondering Walter}
+\includegraphics[width=1\textwidth]{WonderingWalter}
+\newpage
+\subsection{Analyze Alice}
+\includegraphics[width=1\textwidth]{AnalyzeAlice}
+
+\section{Testningsformulär}
+\includegraphics[width=1\textwidth]{TextUnderstanding1.pdf}
+\includegraphics[width=1\textwidth]{TextUnderstanding2.pdf}
+\includegraphics[width=1\textwidth]{TextUnderstanding3.pdf}
+\includegraphics[width=1\textwidth]{TextUnderstanding4.pdf}
+\includegraphics[width=1\textwidth]{TextUnderstanding5.pdf}
+\includegraphics[width=1\textwidth]{TextUnderstanding6.pdf}
+\newpage
+\section{Resultat av testningsformuläret}
+\includegraphics[width=1\textwidth]{TrafficDashboard.pdf}
+
 \end{appendices}
 
+\afterpage{\null\newpage}
 
-
+\includepdf[pages={-}]{EndPage.pdf}
 \end{document}
