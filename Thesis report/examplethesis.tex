@@ -52,6 +52,9 @@
 
 \DeclareUnicodeCharacter{2217}{-}
 \begin{document}
+\renewcommand\appendixname{Appendix}
+\renewcommand\appendixpagename{Appendix}
+\renewcommand\appendixtocname{Appendix}
 \pagestyle{MyStyle}
 
 
@@ -68,7 +71,7 @@
 
 I dagsläget finns det en mängd utmaningar och svårigheter inom den traditionella designprocessen för UX, User Experience. Dessa utmaningar har en påverkan på hur tidskrävande och kostsam en designprocess för UX kan vara. Några av dem är att få prototyper att likna slutprodukten och kommunikationssvårigheter mellan UX-designers och utvecklare vid Agil projektmetodik. Det finns även svårigheter vid visualisering av strömmande data då informationen i data ska göras lättförståelig för användaren och att möjliggöra användaren att nå önskad information.
 
-För att undersöka dessa svårigheter togs en designprocess för UX, att användas med datavisualiseringsverktyget Kibana, fram. För att kunna utvärdera och bedöma designprocessen för UX, skapades en interaktiv dashboardsom presenterade Transportstyrelsens data från betalstationer. Efter framtagningen av designprocessen för UX konstaterades det att prototypskapandet och testningen optimerades. Fördelar med att använda Kibana var att designprocessen hade fokus på produkten och inte prototypen vilket förbättrade testningen med slutanvändaren och därmed även slutprodukten. Det fanns dock nackdelar då Kibana användes vilka var begränsningar i modifiering av användargränssnittet och att systemet behövde vara klart innan designprocessen för UX kunde påbörjas. 
+För att undersöka dessa svårigheter togs en designprocess för UX, att användas med datavisualiseringsverktyget Kibana, fram. För att kunna utvärdera och bedöma designprocessen för UX, skapades en interaktiv \textit{dashboard} som presenterade Transportstyrelsens data från betalstationer. Efter framtagningen av designprocessen för UX konstaterades det att prototypskapandet och testningen optimerades. Fördelar med att använda Kibana var att designprocessen hade fokus på produkten och inte prototypen vilket förbättrade testningen med slutanvändaren och därmed även slutprodukten. Det fanns dock nackdelar då Kibana användes vilka var begränsningar i modifiering av användargränssnittet och att systemet behövde vara klart innan designprocessen för UX kunde påbörjas. 
 
 
 \textbf{Nyckelord}
@@ -84,7 +87,7 @@ För att undersöka dessa svårigheter togs en designprocess för UX, att använ
 
 In the current situation there are a lot of challenges and difficulties in the traditional design process for UX, User Experience. These challenges have an impact on how time consuming and costly a design process for UX can be. Some of them are to create prototypes that resemble the end product and communication difficulties between UX-designers and developers that follow an Agile project methodology. There are also difficulties in visualizing streaming data, as information in data must be made easy to understand for the user and to enable the user to get desired information.
  
-To investigate these difficulties, a design process for UX was created to be used with the Kibana data visualization tool. In order to evaluate and assess the design process for UX, an interactive dashboard was created that presented data from Swedish payment stations. After developing the design process for UX, it was found that prototype creation and testing were optimized. The advantages of using Kibana were that the design process focused on the product and not the prototype, which improved the testing with the end user and therefor also the end product. However, there were disadvantages when Kibana was used which were limitations in modifying the user interface and that the system needed to be ready before the UX design process could begin.
+To investigate these difficulties, a design process for UX was created to be used with the Kibana data visualization tool. In order to evaluate and assess the design process for UX, an interactive \textit{dashboard} was created that presented data from Swedish payment stations. After developing the design process for UX, it was found that prototype creation and testing were optimized. The advantages of using Kibana were that the design process focused on the product and not the prototype, which improved the testing with the end user and therefor also the end product. However, there were disadvantages when Kibana was used which were limitations in modifying the user interface and that the system needed to be ready before the UX design process could begin.
 
 
 \textbf{Keywords}
@@ -143,7 +146,7 @@ Projektet skulle delas upp i följande mer detaljerade delmål:
 \item Bedöma kommunikationen mellan Agila utvecklare och UX-designers baserat på projektdeltagarnas erfarenhet av båda rollerna under UX-designprocessen vid användning av Kibana.
 \end{itemize} 
 
-För att kunna utvärdera och bedöma UX-designprocessen vid användning av Kibana skulle en interaktiv dashboard skapas med hjälp av Kibana som presenterade Transportstyrelsens data från betalstationer. För att göra detta skulle följande delsteg utföras: Utforska slutanvändare och ta fram deras behov och krav, ta fram lösningar som uppfyller dessa behov och krav, implementera lösningarna i en interaktiv dashboard i Kibana, testa produkten mot slutanvändare genom djupintervjuer och upprepa tidigare delsteg tills produkten blev accepterad av slutanvändaren. För att visualisera data från Transportstyrelsen skulle även data förberedas för visualisering. Detta genom att skapa en webbtjänst som skulle hämta data från Transportstyrelsen och modifiera data så att de skulle bli kompatibla med Kibana.
+För att kunna utvärdera och bedöma UX-designprocessen vid användning av Kibana skulle en interaktiv \textit{dashboard} skapas med hjälp av Kibana som presenterade Transportstyrelsens data från betalstationer. För att göra detta skulle följande delsteg utföras: Utforska slutanvändare och ta fram deras behov och krav, ta fram lösningar som uppfyller dessa behov och krav, implementera lösningarna i en interaktiv \textit{dashboard} i Kibana, testa produkten mot slutanvändare genom djupintervjuer och upprepa tidigare delsteg tills produkten blev accepterad av slutanvändaren. För att visualisera data från Transportstyrelsen skulle även data förberedas för visualisering. Detta genom att skapa en webbtjänst som skulle hämta data från Transportstyrelsen och modifiera data så att de skulle bli kompatibla med Kibana.
 
 \section{Avgränsningar}
 Data som skulle användas för analys och visualisering skulle vara data från Transportstyrelsens betalstationer. Skapandet av webbapplikationen, analys och visualisering av data skulle göras med hjälp av Elastic Stacks open-sourceprojekt: Logstash, Elasticsearch och Kibana. 
@@ -297,9 +300,9 @@ Kibana används för att visualisera det som är lagrad i Elasticsearch och är 
 \item Övriga: titlar, taggmoln, sök.
 \end{itemize}
 
-I dessa UI-element aggregeras data automatiskt av Kibana vid val av fält. Det kan vara fält som representerar tid, namn, geografisk koordinat, summa, m.m. För att Kibana ska kunna aggregera dessa egenskaper i data måste de vara kartlagda i Elasticsearch. Kartläggningen går ut på att specificera vilka fält som representerar vad. UI-elementen har anpassningsbara egenskaper som rör visualiseringen av datat, till exempel färg, etiketter på axlar i grafer, det maximala antalet olika värden samt specifika modifieringar för vissa UI-element. När flera UI-element sparats kan de kombineras med varandra för att bilda dashboards. Ett UI-element går att använda i flera dashboards och om en ändring görs på UI-elementet ändras det på alla ställen. Att ändra och spara är en snabb process som kan göras på ett fåtal knapptryckningar vilket underlättar vid framtagning av en dashboard och ändringar som bör göras i den. Dashboards går även att bädda in i webbsidor genom HTML vilket kan vara väldigt användbart vid kombination med olika dashboards. Ytterligare en aspekt vid framtagning av dashboards i Kibana är att det som utvecklas är den faktiska produkten som ska användas av slutanvändaren. Vid interaktion med UI-element i Kibana filtreras data och filtret tillämpas då på alla UI-element i hela dashboarden.
+I dessa UI-element aggregeras data automatiskt av Kibana vid val av fält. Det kan vara fält som representerar tid, namn, geografisk koordinat, summa, m.m. För att Kibana ska kunna aggregera dessa egenskaper i data måste de vara kartlagda i Elasticsearch. Kartläggningen går ut på att specificera vilka fält som representerar vad. UI-elementen har anpassningsbara egenskaper som rör visualiseringen av datat, till exempel färg, etiketter på axlar i grafer, det maximala antalet olika värden samt specifika modifieringar för vissa UI-element. När flera UI-element sparats kan de kombineras med varandra för att bilda \textit{dashboards}. Ett UI-element går att använda i flera \textit{dashboards} och om en ändring görs på UI-elementet ändras det på alla ställen. Att ändra och spara är en snabb process som kan göras på ett fåtal knapptryckningar vilket underlättar vid framtagning av en \textit{dashboard} och ändringar som bör göras i den. \textit{Dashboards} går även att bädda in i webbsidor genom HTML vilket kan vara väldigt användbart vid kombination med olika \textit{dashboards}. Ytterligare en aspekt vid framtagning av \textit{dashboards} i Kibana är att det som utvecklas är den faktiska produkten som ska användas av slutanvändaren. Vid interaktion med UI-element i Kibana filtreras data och filtret tillämpas då på alla UI-element i hela \textit{dashboarden}.
 
-Vid skapandet av en interaktiv dashboard finns det en mängd egenskaper som går att anpassa. Det går att ställa in en automatisk uppdateringsfrekvens som hämtar nya data på intervall mellan 5 sekunder och 1 dag. Det går även att specificera under vilket datum- och tidsintervall data ska visualiseras. Det kan då vara relaterat till nuvilket är tidpunkten som användaren sitter framför dashboarden eller två fixerade tidpunkter. Ett exempel hade kunnat vara att visa all data från en minut sedan till nu och uppdatera datat varje minut
+Vid skapandet av en interaktiv \textit{dashboard} finns det en mängd egenskaper som går att anpassa. Det går att ställa in en automatisk uppdateringsfrekvens som hämtar nya data på intervall mellan 5 sekunder och 1 dag. Det går även att specificera under vilket datum- och tidsintervall data ska visualiseras. Det kan då vara relaterat till nuvilket är tidpunkten som användaren sitter framför \textit{dashboarden} eller två fixerade tidpunkter. Ett exempel hade kunnat vara att visa all data från en minut sedan till nu och uppdatera datat varje minut
 
 I Kibana finns även utvecklarverktyg som erbjuder kraftfulla sätt att interagera med Elastic Stack. Med den inbyggda konsolen kan utvecklare undvika att skriva kommandon i terminalen och istället utveckla Elasticsearch-data direkt i Kibana. I den betalda versionen av Elastic Stack finns det även möjlighet för tillämpning av maskininlärning på data i Elasticsearch, notiser vid ändringar av specificerade data, rapportgenerering av en eller flera visualiseringar i Kibana.
 
@@ -321,7 +324,7 @@ Det som utvärderingen fokuserade på var svårigheter inom UX-designprocessen, 
 
 \section{Utvärdering av kommunikationen mellan Agila utvecklare och UX-designers under UX-designprocessen vid användning av Kibana}
 
-En utvärdering gjordes även av kommunikationen mellan Agila utvecklare och UX-designers eftersom det har visat sig vara en svårighet. Under projektets gång fick projektdeltagarna erfarenhet av båda rollerna eftersom de dels skapade systemet och designen till dashboarden. Utvärderingen gjordes genom en analys av tankar, erfarenheter och noteringar som gjorts av projektdeltagarna under projektets gång. 
+En utvärdering gjordes även av kommunikationen mellan Agila utvecklare och UX-designers eftersom det har visat sig vara en svårighet. Under projektets gång fick projektdeltagarna erfarenhet av båda rollerna eftersom de dels skapade systemet och designen till \textit{dashboarden}. Utvärderingen gjordes genom en analys av tankar, erfarenheter och noteringar som gjorts av projektdeltagarna under projektets gång. 
 
 
 \section{Förberedelse av data för visualisering}
@@ -330,7 +333,7 @@ För att möjliggöra utvärderingen av designprocessen vid användning av Kiban
 
 För att kunna presentera data användes Elastic Stack. Anledningen till att just detta verktyg valdes är på grund av övertaget denna produkt har på marknaden. Den är snabb vid sökningar och analyser, gör filtrerings- och modifiering processen smidig och erbjuder ett helt anpassningsbart användargränssnitt. Dessutom är det en väldigt stabil produkt som används av stora företag som bland annat Facebook, eBay, Netflix och Slack enligt Elastic Stacks lista på kunder [32].  
 
-En utmaning i visualisering av strömmande data har varit visuell skalbarhet och beslutsfattande. Ett annat vanligt problem inom visualisering av strömmande data var hastigheten som data skulle komma in och kombination av data vid visualisering för ökande förståelse. Ett mer generellt men ofta förekommande problem vid användning av data är att de inte är i den önskade formen och därför krävs det modifiering för att kunna använda dem på det önskade sättet. Vid skapandet av dashboarden skulle de ovannämnda utmaningarna ligga i fokus. I det här projektet skulle visualisering av strömmande data examineras och därför behövdes det en dataström. Data som användes var statisk, icke konsistent och ofullständigt därför valdes den följande implementationen.
+En utmaning i visualisering av strömmande data har varit visuell skalbarhet och beslutsfattande. Ett annat vanligt problem inom visualisering av strömmande data var hastigheten som data skulle komma in och kombination av data vid visualisering för ökande förståelse. Ett mer generellt men ofta förekommande problem vid användning av data är att de inte är i den önskade formen och därför krävs det modifiering för att kunna använda dem på det önskade sättet. Vid skapandet av \textit{dashboarden} skulle de ovannämnda utmaningarna ligga i fokus. I det här projektet skulle visualisering av strömmande data examineras och därför behövdes det en dataström. Data som användes var statisk, icke konsistent och ofullständigt därför valdes den följande implementationen.
 
 I Figur 3.1 representerar pilen dataflödet från det att data hämtas till att de visualiseras. 
 
@@ -391,9 +394,9 @@ Koordinat för betalstationens
 \end{table}
 
 
-\section{Visualisera data i en interaktiv dashboard i Kibana}
+\section{Visualisera data i en interaktiv \textit{dashboard} i Kibana}
 
-För att visualisera data i en interaktiv dashboard i Kibana skapades först alla UI-element och sedan integrerades de in i en dashboard. De UI-element som användes var de som fanns tillgängliga i Kibana och som var passande för syftet. De element som användes var:
+För att visualisera data i en interaktiv \textit{dashboard} i Kibana skapades först alla UI-element och sedan integrerades de in i en \textit{dashboard}. De UI-element som användes var de som fanns tillgängliga i Kibana och som var passande för syftet. De element som användes var:
 
 \begin{itemize}
 \item Taggmoln:
@@ -430,7 +433,7 @@ För att visualisera data i en interaktiv dashboard i Kibana skapades först all
 \end{itemize}
 \end{itemize}
 
-Vid specificering av data som skulle ingå i ett UI-element gjordes automatiska aggregeringar av Kibana vid val av fält. Aggregering gjordes på termer i valda fält, koordinater och datum. För termer i valda fält specificerades ett fält och sedan skapades automatiskt aggregeringar baserat på flest/minst antal gånger värdet i detta fält uppkom. Eftersom de UI-elementen som skapades kunde återanvändas på flera olika dashboards skapades flera versioner av användargränssnittet vid varje iteration. 
+Vid specificering av data som skulle ingå i ett UI-element gjordes automatiska aggregeringar av Kibana vid val av fält. Aggregering gjordes på termer i valda fält, koordinater och datum. För termer i valda fält specificerades ett fält och sedan skapades automatiskt aggregeringar baserat på flest/minst antal gånger värdet i detta fält uppkom. Eftersom de UI-elementen som skapades kunde återanvändas på flera olika \textit{dashboards} skapades flera versioner av användargränssnittet vid varje iteration. 
 
 
 \afterpage{\null\newpage}
@@ -452,7 +455,7 @@ UX-designprocessen som togs fram under detta projekt följde stegen i figur 4.1.
 
 \begin{itemize}
 \item Produktskapande gick ut på att skapa produktens användargränssnitt. Att experimentera med olika designer, demonstrera användargränssnittet till ledningen och att kontrollera om produkten är funktionell och användbar var del av detta steg. High-fidelity nåddes på grund av att ingen prototyp togs fram och istället skapades produkten som kunde tillämpa all funktionalitet systemet kunde erbjuda.
-\item Testninghandlade om att observera interaktionen mellan produkten och användare. Det kunde även göras genom demonstration av olika versioner av användargränssnittet till användarna, intervjua användaren, ställa frågor, använda sig av enkäter för att kunna identifiera svårigheter med användargränssnittet. Produkten testades mot systemet och all funktionalitet gick att testa mot användargränssnittet. Användarinteraktionen gjordes som om dashboarden var slutprodukten. Vid önskemål av testare kunde även UI-element i produkten ändras. 
+\item Testninghandlade om att observera interaktionen mellan produkten och användare. Det kunde även göras genom demonstration av olika versioner av användargränssnittet till användarna, intervjua användaren, ställa frågor, använda sig av enkäter för att kunna identifiera svårigheter med användargränssnittet. Produkten testades mot systemet och all funktionalitet gick att testa mot användargränssnittet. Användarinteraktionen gjordes som om \textit{dashboarden} var slutprodukten. Vid önskemål av testare kunde även UI-element i produkten ändras. 
 \end{itemize}
 
 \section{Utvärdering av UX-designprocess vid användning av Kibana}
@@ -465,19 +468,19 @@ Formuläret för utvärdering av UX-designprocessen vid användning av Kibana be
 
 \item Att fonten inte var så anpassningsbar i UI-element hävdade över 50\% av UX-designerna som svarade på formuläret att det störde dem väldigt mycket.
 
-\item 78\% av deltagarna stördes, väldigt mycket eller lite, av att de inte var helt fria vid placeringen av UI-element på dashboarden. 
+\item 78\% av deltagarna stördes, väldigt mycket eller lite, av att de inte var helt fria vid placeringen av UI-element på \textit{dashboarden}. 
 
-\item Kibana hade egenskapen att inkludera en dashboard i en webbsida där bland annat font, rubriker och fördelning kunde anpassas. 75\% av deltagarna tyckte att denna egenskap var användbar eller mycket användbar.
+\item Kibana hade egenskapen att inkludera en \textit{dashboard} i en webbsida där bland annat font, rubriker och fördelning kunde anpassas. 75\% av deltagarna tyckte att denna egenskap var användbar eller mycket användbar.
 
-\item I Kibana kunde uppdateringsfrekvensen av dashboarden som minst specificeras till 5 sekunder, vilket kunde ha en påverkan vid visualisering av strömmande data. Detta tyckte 38\% var dåligt och 31\% var skäligt. En kommentar var att det berodde på dataströmmens detaljnivå.
+\item I Kibana kunde uppdateringsfrekvensen av \textit{dashboarden} som minst specificeras till 5 sekunder, vilket kunde ha en påverkan vid visualisering av strömmande data. Detta tyckte 38\% var dåligt och 31\% var skäligt. En kommentar var att det berodde på dataströmmens detaljnivå.
 
 \item Att det var en väldigt intuitiv utvecklingsmiljö i Kibana tyckte 56\% av deltagarna var en väldigt bra egenskap och 38\% tyckte att det var en bra egenskap.
 
 \item För att skapa visualiseringar i Kibana behövde systemet vara fulländat först. 44\% av de tillfrågade UX-designerna tyckte att detta påverkade designprocessen negativt och 9\% tyckte att påverkan var väldigt negativ. Dock tyckte 16\% att det var positivt eller väldigt positivt. Kommentarer till denna fråga var att det var positivt men på grund av att det inte förekommer ofta att systemet är fulländat innan UX-designers ska påbörja sitt arbete tyckte en stor andel att det påverkade negativt.
 
-\item Vid interaktion med UI-element kunde data filtreras. Om filtrering gjordes på ett UI-element tillämpades detta på alla UI-element på hela dashboarden. Detta höll alltså all data synkroniserad. Detta tyckte 59\% av deltagarna var positivt eller väldigt positivt.
+\item Vid interaktion med UI-element kunde data filtreras. Om filtrering gjordes på ett UI-element tillämpades detta på alla UI-element på hela \textit{dashboarden}. Detta höll alltså all data synkroniserad. Detta tyckte 59\% av deltagarna var positivt eller väldigt positivt.
 
-\item Efter att ett UI-element skapats kunde det återanvändas på önskat antal dashboards och om UI-elementet skulle modifieras i en dashboard hade det ändrats på alla ställen det förekom. Detta tyckte 96\% var positivt eller väldigt positivt.
+\item Efter att ett UI-element skapats kunde det återanvändas på önskat antal \textit{dashboards} och om UI-elementet skulle modifieras i en \textit{dashboard} hade det ändrats på alla ställen det förekom. Detta tyckte 96\% var positivt eller väldigt positivt.
 
 \item Övriga kommentarer från utvärderingen som var relaterade till UX-designprocessen var att det ofta är väldigt högt prioriterat att vara effektiv i utförandet av designprocessen men det finns undantag då designkraven måste nå en viss nivå och då, för att inte produkten ska bli oanvändbar, prioriteras den effektiva designprocessen bort. Det fanns även en deltagare som tyckte att detta visualiseringsverktyg verkade mer passande för utvecklare som snabbt ville visualisera data. Detta på grund av att det fanns alldeles för mycket begränsningar för UX-designers.
 \end{itemize}
@@ -492,7 +495,7 @@ Nedanstående steg upprepades tre gånger och slutprodukten finns tillgänglig i
 
 \subsection{ Utforska slutanvändare och ta fram deras behov och krav
 }
-Det första steget gick ut på att förstå användarna och deras behov. Det gjordes genom att analysera data som skulle presenteras för att komma fram till intressant information som skulle kunna lyftas fram med presentation av data. För att göra detta skapades användarprofiler, även kallas för personas,som representerade slutanvändaren av produkten. I dessa personasbeskrevs användares behov, mål och egenskaper och finns i appendix. Personasskapades endast under den första iterationen. Utifrån dessa personasdefinierades designkraven för dashboarden gällande visualiseringen av data. De definierade designkraven gick ut på att presentera följande information på dashboarden:
+Det första steget gick ut på att förstå användarna och deras behov. Det gjordes genom att analysera data som skulle presenteras för att komma fram till intressant information som skulle kunna lyftas fram med presentation av data. För att göra detta skapades användarprofiler, även kallas för personas,som representerade slutanvändaren av produkten. I dessa personasbeskrevs användares behov, mål och egenskaper och finns i appendix. Personasskapades endast under den första iterationen. Utifrån dessa personasdefinierades designkraven för \textit{dashboarden} gällande visualiseringen av data. De definierade designkraven gick ut på att presentera följande information på \textit{dashboarden}:
 
 \begin{itemize}
 \item Hur många bilar åker igenom varje betalstation och/eller stad?
@@ -523,47 +526,47 @@ Detta gick ut på att utforska data som skulle presenteras. Det inspekterades vi
 
 Efter detta togs förslag om hur användargränssnittet skulle se ut fram. Det ritades ett första utkast för användargränssnittet och visades till en av slutanvändarna för att diskutera möjliga förändringar eller tillägg. 
 
-\subsection{ Implementera lösningarna i en interaktiv dashboard i Kibana }
-Efter att användare godkände ritningen skapades en dashboard i Kibana baserat på den. Vid specificering av data som skulle ingå i ett UI-element gjordes automatiska aggregeringar av Kibana vid val av fält. Aggregering gjordes på värden i valda fält, koordinater och datum. För att aggregera på värden i valda fält specificerades fältet i UI-elementet och sedan skapades automatiskt aggregeringar baserat på flest/minst antal gånger värdet i detta fält uppkom. Under skapandet av dashboarden togs flera olika designer fram. Det togs även hänsyn till UX riktlinjer, tidigare teorier inom UI och UX samt användares behov och önskemål. Vid varje iteration skapades nya dashboards som tillämpade ändringar baserat på analysen av testresultatet.
+\subsection{ Implementera lösningarna i en interaktiv \textit{dashboard} i Kibana }
+Efter att användare godkände ritningen skapades en \textit{dashboard} i Kibana baserat på den. Vid specificering av data som skulle ingå i ett UI-element gjordes automatiska aggregeringar av Kibana vid val av fält. Aggregering gjordes på värden i valda fält, koordinater och datum. För att aggregera på värden i valda fält specificerades fältet i UI-elementet och sedan skapades automatiskt aggregeringar baserat på flest/minst antal gånger värdet i detta fält uppkom. Under skapandet av \textit{dashboarden} togs flera olika designer fram. Det togs även hänsyn till UX riktlinjer, tidigare teorier inom UI och UX samt användares behov och önskemål. Vid varje iteration skapades nya \textit{dashboards} som tillämpade ändringar baserat på analysen av testresultatet.
 
 \subsection{ Testa produkten mot slutanvändare genom djupintervjuer 
 }
-Därefter utfördes testning av dashboarden i en grupp av fem personer som representerade möjliga slutanvändare. Testningen genomfördes genom att ställa frågor till användaren angående dashboarden och att låta användaren utföra specificerade uppgifter på dashboarden. Det utfördes tre iterationer av UX-designprocessen vid användning av Kibana. Användaren observerades vid testningen av produkten och handlingar, tankar och åsikter under utförandet noterades och stod i fokus vid förbättring av dashboarden. Frågor som ställdes till användarna vid testning kan hittas i appendix. Svar från dessa frågor och anteckningar från testning användes vid framtagandet av nästa dashboard. Vid varje iteration testades varje ny dashboard och detaljerat testresultat kan hittas i appendix. En sammanställning av testresultatet presenteras nedan. 
+Därefter utfördes testning av \textit{dashboarden} i en grupp av fem personer som representerade möjliga slutanvändare. Testningen genomfördes genom att ställa frågor till användaren angående \textit{dashboarden} och att låta användaren utföra specificerade uppgifter på \textit{dashboarden}. Det utfördes tre iterationer av UX-designprocessen vid användning av Kibana. Användaren observerades vid testningen av produkten och handlingar, tankar och åsikter under utförandet noterades och stod i fokus vid förbättring av \textit{dashboarden}. Frågor som ställdes till användarna vid testning kan hittas i appendix. Svar från dessa frågor och anteckningar från testning användes vid framtagandet av nästa \textit{dashboard}. Vid varje iteration testades varje ny \textit{dashboard} och detaljerat testresultat kan hittas i appendix. En sammanställning av testresultatet presenteras nedan. 
 
 \begin{enumerate}
 \item Första iterationens testresultat:
 \begin{itemize}
-\item Allmänna frågor: Vid den första testningen av dashboarden tyckte majoriteten av testarna att det var svårt att identifiera varje UI-elements rubrik och de önskade att de skulle sticka ut mer. Dashboarden gav ett rörigt och förvirrande intryck. 
+\item Allmänna frågor: Vid den första testningen av \textit{dashboarden} tyckte majoriteten av testarna att det var svårt att identifiera varje UI-elements rubrik och de önskade att de skulle sticka ut mer. \textit{Dashboarden} gav ett rörigt och förvirrande intryck. 
 
-\item Grundläggande trafikförståelse:Kartorna var svåra att använda för att filtrera, söka och ta fram information om trafik. Dessutom tyckte testarna att det var svårt och komplicerat att identifiera skillnader på fordonsriktningen och hitta specificerad information i dashboarden. Placeringen av element skulle kunna vara mer eftertänkt för att följa en rött tråd och många UI-element visualiserade samma information på olika sätt vilket skulle kunna undvikas. Det fanns en förvirring gällande relationerna mellan UI-elementen. 
+\item Grundläggande trafikförståelse:Kartorna var svåra att använda för att filtrera, söka och ta fram information om trafik. Dessutom tyckte testarna att det var svårt och komplicerat att identifiera skillnader på fordonsriktningen och hitta specificerad information i \textit{dashboarden}. Placeringen av element skulle kunna vara mer eftertänkt för att följa en rött tråd och många UI-element visualiserade samma information på olika sätt vilket skulle kunna undvikas. Det fanns en förvirring gällande relationerna mellan UI-elementen. 
 
-\item Avancerad trafikförståelse: Efter första uppgifterna upplevdes det lättare att hantera dashboarden men det förblev svårt att kombinera flera olika UI-element för att ta fram önskad information. Det var otydligt hur interaktion med UI-element i dashboarden kunde användas för framtagandet av information. 
+\item Avancerad trafikförståelse: Efter första uppgifterna upplevdes det lättare att hantera \textit{dashboarden} men det förblev svårt att kombinera flera olika UI-element för att ta fram önskad information. Det var otydligt hur interaktion med UI-element i \textit{dashboarden} kunde användas för framtagandet av information. 
 
-\item Sammanfattning:Det uppmärksammades att även mer förklaring gällande UI-element och deras användning borde läggas till. Det önskades också en bättre fördelning av UI-element i dashboarden för att öka förståelse och minska förvirringen.
+\item Sammanfattning:Det uppmärksammades att även mer förklaring gällande UI-element och deras användning borde läggas till. Det önskades också en bättre fördelning av UI-element i \textit{dashboarden} för att öka förståelse och minska förvirringen.
 \end{itemize}
 
 \item    Andra iterationens testresultat:
 
 \begin{itemize}
-\item Allmänna frågor: Den andra testningen visade beskrivningarna och rubrikerna av UI-element hade blivit lättare att identifiera och förstå men det fanns rum för förbättring. Det fanns ett tydligare sammanhang i dashboarden men några ändringar skulle kunna göras gällande antalet element som var placerade i dashboarden.
+\item Allmänna frågor: Den andra testningen visade beskrivningarna och rubrikerna av UI-element hade blivit lättare att identifiera och förstå men det fanns rum för förbättring. Det fanns ett tydligare sammanhang i \textit{dashboarden} men några ändringar skulle kunna göras gällande antalet element som var placerade i \textit{dashboarden}.
 
 \item Grundläggande trafikförståelse:Sökningen underlättades och det var mer lättförståeligt hur önskad information kunde tas fram men det var fortfarande svårt att förstå visa UI-element. Det var dock svårt att identifiera för vilken tidpunkt data representerades.
 
-\item Avancerad trafikförståelse: Det var många UI-element placerade i slutet av dashboarden vilket orsakade förvirring och extra letande för att hitta vilket UI-element som skulle användas för framtagandet av önskad information. Uppgifterna utfördes enklare och dashboard tillbringade mer förståelse. Det uttrycktes önskemål om mer detaljerad information om betalstationerna utan att behöva interagera med dashboarden mer.
+\item Avancerad trafikförståelse: Det var många UI-element placerade i slutet av \textit{dashboarden} vilket orsakade förvirring och extra letande för att hitta vilket UI-element som skulle användas för framtagandet av önskad information. Uppgifterna utfördes enklare och \textit{dashboard} tillbringade mer förståelse. Det uttrycktes önskemål om mer detaljerad information om betalstationerna utan att behöva interagera med \textit{dashboarden} mer.
 
-\item Sammanfattning:Dashboarden var strukturerad och följde ett mönster men det var fortfarande överväldigande i den nedre delen på grund av att det fanns för många UI-element. Dessa skulle kunna sammanfogas så att all data i skulle kunna visualiseras i ett enda element.
+\item Sammanfattning: \textit{Dashboarden} var strukturerad och följde ett mönster men det var fortfarande överväldigande i den nedre delen på grund av att det fanns för många UI-element. Dessa skulle kunna sammanfogas så att all data i skulle kunna visualiseras i ett enda element.
 \end{itemize}
 
 \item Tredje iterationens testresultat 
 
 \begin{itemize}
-\item Allmänna frågor: Vid den tredje testningen upplevdes dashboarden lättare att förstå enligt testarna. Beskrivningen och instruktioner gav tillräckligt med information för att öka förståelsen av data som presenterades i UI-elementen. Detta underlättade även sökningar i dashboarden. 
+\item Allmänna frågor: Vid den tredje testningen upplevdes \textit{dashboarden} lättare att förstå enligt testarna. Beskrivningen och instruktioner gav tillräckligt med information för att öka förståelsen av data som presenterades i UI-elementen. Detta underlättade även sökningar i \textit{dashboarden}. 
 
-\item   Grundläggande trafikförståelse:Sökningen, filtrering och interaktion med UI-element upplevdes lättare. Tidpunkten för data som visualiserades i varje UI-element kunde identifieras tack vare förklaringar i rubriker. Dessutom var relationerna mellan UI-elementen i dashboarden lättare att förstå.
+\item   Grundläggande trafikförståelse:Sökningen, filtrering och interaktion med UI-element upplevdes lättare. Tidpunkten för data som visualiserades i varje UI-element kunde identifieras tack vare förklaringar i rubriker. Dessutom var relationerna mellan UI-elementen i \textit{dashboarden} lättare att förstå.
 
-\item Avancerad trafikförståelse: Testarna upplevde att uppgifterna kunde utföras mycket snabbare och information togs ut på genom en mer intuitiv process. UI-elementen som användes ledde till en snabbare identifiering av information i dashboarden i denna iteration. 
+\item Avancerad trafikförståelse: Testarna upplevde att uppgifterna kunde utföras mycket snabbare och information togs ut på genom en mer intuitiv process. UI-elementen som användes ledde till en snabbare identifiering av information i \textit{dashboarden} i denna iteration. 
 
-\item Sammanfattning:I sin helhet var dashboarden mer intuitiv. Förståelsen av dashboarden ökades och det fanns en röd tråd i placering och presentation av UI-element samt i information som visualiserades. 
+\item Sammanfattning:I sin helhet var \textit{dashboarden} mer intuitiv. Förståelsen av \textit{dashboarden} ökades och det fanns en röd tråd i placering och presentation av UI-element samt i information som visualiserades. 
 \end{itemize}
 \end{enumerate}
 
@@ -612,25 +615,25 @@ I detta kapitel kommer UX-designprocessen vid användning av Kibana analyseras o
 \section{ Jämförelse mellan UX-designprocess vid användning av Kibana och den traditionella UX-designprocessen}
 Den UX-designprocessen som togs fram vid användning av Kibana följde den traditionella UX-designprocessen och var lik den gällande de två första stegen: observation och idéskapandet. Under dessa steg genomfördes arbetet i det här projektet som om de hade genomförts vid tillämpningen av den traditionella UX-designprocessen. De två sista stegen i den framtagna UX-designprocessen som var produktskapandet och testning skiljde sig från de två sista stegen i den traditionella UX-designprocessen som var prototypskapandet och testning. De skiljde sig åt vad det gällde tillvägagångssätt och innehåll. 
 
-Produktskapandet skulle gå till genom att implementera lösningar för det som togs fram under idéskapandet genom att ta fram dashboards som hade high-fidelity. Detta betydde att varje dashboard som togs fram skulle stödja all funktionalitet som systemet erbjöd och skulle kunna vara slutprodukten. Detta var något som var kostsamt vid den traditionella UX-designprocessen eftersom en high-fidelity prototyp skulle kräva mycket förberedelse för att kunna efterlikna slutproduktens funktionalitet. 
+Produktskapandet skulle gå till genom att implementera lösningar för det som togs fram under idéskapandet genom att ta fram \textit{dashboards} som hade high-fidelity. Detta betydde att varje \textit{dashboard} som togs fram skulle stödja all funktionalitet som systemet erbjöd och skulle kunna vara slutprodukten. Detta var något som var kostsamt vid den traditionella UX-designprocessen eftersom en high-fidelity prototyp skulle kräva mycket förberedelse för att kunna efterlikna slutproduktens funktionalitet. 
 
-Under produktskapandet skulle det vara möjligt att återanvända UI-elements som har skapats i flera dashboards. På grund av detta effektiviserades skapandet av dashboards och flera dashboards kunde skapas vid en iteration. Det märkvärdiga med detta var att om ett UI-element användes i olika dashboards och det ändrades på ett ställe så skulle det ändras i alla andra dashboards som det fanns. En sådan ändring skulle spara tid för UX-designern. 
+Under produktskapandet skulle det vara möjligt att återanvända UI-elements som har skapats i flera \textit{dashboards}. På grund av detta effektiviserades skapandet av \textit{dashboards} och flera \textit{dashboards} kunde skapas vid en iteration. Det märkvärdiga med detta var att om ett UI-element användes i olika \textit{dashboards} och det ändrades på ett ställe så skulle det ändras i alla andra \textit{dashboards} som det fanns. En sådan ändring skulle spara tid för UX-designern. 
 
 Testningen i UX-designprocessen vid användning av Kibana hade också några skillnader jämfört med testningen i den traditionella UX-designprocessen. Under testningen skulle resultatet av det föregående steget testas mot möjliga slutanvändare. Skillnaden i testning i de två olika UX-designprocesserna var att i den traditionella UX-designprocessen testades användare mot en prototyp medans i UX-designprocessen vid användning av Kibana testades användare mot en produkt som hade full funktionalitet. Eftersom användare testades på en produkt blev feedbacken mer relevant och möjliggjorde därför högre kvalité av produkten. Dessutom kunde även klagomål och önskade ändringar från användaren åtgärdas direkt vid testning vilket levererade ett bättre resultat.
 
 En stor begränsning som UX-designprocessen vid användning av Kibana hade var att den enbart skulle kunna användas för visualisering av data. Detta var en väldigt stor begränsning jämfört med den traditionella UX-designprocessen som skulle kunna användas på alla olika områden. 
 
 \section{Utvärdering av UX-designprocess vid användning av Kibana}
-Efter utvärderingen av UX-designprocessen kunde det konstateras att majoriteten av deltagarna hade ett positivt intryck av att ta fram och testa en produkt istället för prototyp i UX-designprocessen. Detta eftersom det säkerställde high-fidelity av dashboarden i tre aspekter: interaktivitet, funktionalitet och visualisering utan att det blev kostsamt eller tidskrävande. Det var även positivt eftersom all funktionalitet i systemet kunde testas på ett ekonomiskt sätt gällande både tid och pengar. 
+Efter utvärderingen av UX-designprocessen kunde det konstateras att majoriteten av deltagarna hade ett positivt intryck av att ta fram och testa en produkt istället för prototyp i UX-designprocessen. Detta eftersom det säkerställde high-fidelity av \textit{dashboarden} i tre aspekter: interaktivitet, funktionalitet och visualisering utan att det blev kostsamt eller tidskrävande. Det var även positivt eftersom all funktionalitet i systemet kunde testas på ett ekonomiskt sätt gällande både tid och pengar. 
 
 Däremot var det en väldigt stor del av deltagarna som tyckte att begränsningarna vid visualisering i Kibana var negativt eftersom UX-designerna inte hade den friheten de ofta behövde. Detta inkluderade följande: 
 \begin{itemize}
 \item att UI-element var inte helt ändringsbara, t. ex. tjockleken på staplarna i ett stapeldiagram
 \item att texten i rubrikerna av varje UI-element kunde inte redigeras med avseende på stil, font och storlek
-\item att fördelningen av UI-element mest var styrt av Kibana eftersom Kibana försökte fylla hela dashboarden med element utan att lämna luckor. 
+\item att fördelningen av UI-element mest var styrt av Kibana eftersom Kibana försökte fylla hela \textit{dashboarden} med element utan att lämna luckor. 
 \end{itemize}
 
-Dessa tre begränsningar kunde vara viktiga i UX-designprocessen eftersom de styrde utseendet av användargränssnittet och därmed även användarupplevelsen. På grund av dessa begränsningar kunde slutsatsen att Kibana försämrade produktens helhetsintryck dras. Om det dock fanns stöd för dessa begränsningar hade Kibana varit ett bättre verktyg för UX-designers eftersom de hade fått den friheten de behövt vid visualiseringen. Ytterligare något som deltagarna tyckte var en positiv egenskap i Kibana var möjligheten att inkludera en dashboard i en webbsida med hjälp av HTML. Detta var något som skulle kunna lösa problemen med Kibanas begränsningar. Eftersom Kibana var ett open-sourceprojektsom ständigt utvecklades fanns den potential och en stor möjlighet för mer utveckling och förbättringar.
+Dessa tre begränsningar kunde vara viktiga i UX-designprocessen eftersom de styrde utseendet av användargränssnittet och därmed även användarupplevelsen. På grund av dessa begränsningar kunde slutsatsen att Kibana försämrade produktens helhetsintryck dras. Om det dock fanns stöd för dessa begränsningar hade Kibana varit ett bättre verktyg för UX-designers eftersom de hade fått den friheten de behövt vid visualiseringen. Ytterligare något som deltagarna tyckte var en positiv egenskap i Kibana var möjligheten att inkludera en \textit{dashboard} i en webbsida med hjälp av HTML. Detta var något som skulle kunna lösa problemen med Kibanas begränsningar. Eftersom Kibana var ett open-sourceprojektsom ständigt utvecklades fanns den potential och en stor möjlighet för mer utveckling och förbättringar.
 
 Deltagarnas åsikter angående uppdateringsfrekvensen som Kibana erbjöd var splittrade. Den högsta uppdateringsfrekvensen som fanns tillgänglig i Kibana var fem sekunder. Detta kunde betraktas som en dålig egenskap eftersom strömmande data med en uppdateringsfrekvens på varje millisekund inte skulle kunna visualiseras så fort nya data fanns tillgänglig. Detta problem hade kunnat bli åtgärdat om Kibana skapade en egenskap som automatiskt justerade uppdateringsfrekvensen baserat på hastigheten som data strömmar in. Däremot hade detta inte varit ett problem alls om dataströmmen har fem sekunder som uppdateringsfrekvens eller lägre och därför skulle det rekommenderas att välja en sådan dataström vid användning av Kibana. 
 
@@ -638,9 +641,9 @@ Deltagarna i utvärderingen betraktade det som väldigt positivt att Kibana hade
 
 Majoriteten av deltagarna enades om att Kibanas begränsning angående att systemet behövde vara fulländat innan visualiseringen kunde påbörjas hade en negativ påverkan på UX-designprocessen. Detta eftersom det sällan förekom att systemet kunde bli helt avklarat innan UX-designprocessen påbörjades på grund av ekonomiska skäl och tidsbrist. Detta eftersom det skulle behövas dubbelt så lång tid för ett projekt där systemutvecklare skulle utveckla systemet först och UX-designers sedan designa produkten, jämfört med om dessa två steg hade gjorts parallellt. Om det skulle vara möjligt att dela upp de två stegen så att systemet utvecklades först och produkten designades efter skulle kunna vara något som eliminerade kommunikationen mellan UX-designers och utvecklare. Detta hade därför kunnat göra UX-designprocessen snabbare och mer effektiv men det hade varit svårt att uppnå i många projekt.
 
-I Kibana filtrerades all data i alla UI-element vid filtrering av data. Detta upplevdes som positivt av deltagarna eftersom det kunde underlätta en väldigt tidskrävande process. Ett exempel på hur det hade varit utan denna funktion hade varit då en användare skulle tolka svensk trafikinformation i en dashboard i Kibana med 15 UI-element. Om denna användare hade velat göra en filtrering för att bara visa trafik från Göteborg eller baserat på en viss fordonstyp hade denna användare behövt gå igenom alla 15 UI-element och specificera den önskade filtreringen. Detta hade varit tidskrävande och väldigt negativt ur ett UX-perspektiv. Med funktionen i Kibana hade det dock bara varit att göra filtreringen i ett UI-element och då hade allt i dashboarden filtrerats. 
+I Kibana filtrerades all data i alla UI-element vid filtrering av data. Detta upplevdes som positivt av deltagarna eftersom det kunde underlätta en väldigt tidskrävande process. Ett exempel på hur det hade varit utan denna funktion hade varit då en användare skulle tolka svensk trafikinformation i en \textit{dashboard} i Kibana med 15 UI-element. Om denna användare hade velat göra en filtrering för att bara visa trafik från Göteborg eller baserat på en viss fordonstyp hade denna användare behövt gå igenom alla 15 UI-element och specificera den önskade filtreringen. Detta hade varit tidskrävande och väldigt negativt ur ett UX-perspektiv. Med funktionen i Kibana hade det dock bara varit att göra filtreringen i ett UI-element och då hade allt i \textit{dashboarden} filtrerats. 
 
-Ytterligare en av Kibanas egenskaper som deltagarna tyckte var positiv var möjligheten att återanvända UI-element. Detta skulle kunna spara tid för en UX-designer vid skapandet av flera dashboards eftersom de skulle kunna återanvända samma element. Om ett UI-element ändrades på ett ställe skulle det ändras på alla ställen det förekom.
+Ytterligare en av Kibanas egenskaper som deltagarna tyckte var positiv var möjligheten att återanvända UI-element. Detta skulle kunna spara tid för en UX-designer vid skapandet av flera \textit{dashboards} eftersom de skulle kunna återanvända samma element. Om ett UI-element ändrades på ett ställe skulle det ändras på alla ställen det förekom.
 
 \section{Utvärdering av kommunikationen mellan Agila utvecklare och UX-designers under UX-designprocessen vid användning av Kibana}
 Ett problem som togs upp i det här projektet var svårigheterna i kommunikationen mellan Agila utvecklare och UX-designers. Efter framtagandet av UX-designprocessen upplevde projektdeltagarna att kommunikationen mellan utvecklare och UX-designers eliminerades eftersom det var ett krav att systemet skulle vara klart innan UX-designen påbörjades. Därmed försvann även problemen vid kommunikationen mellan de två parterna. 
@@ -656,30 +659,30 @@ Vid framtagandet av personas var en av nackdelarna att det inte fanns en tänkt 
 \subsection{Ta fram lösningar som uppfyller dessa behov och krav}
 För att ta fram lösningar krävdes det en hel del förarbete inom Kibana av projektdeltagarna, som inte hade någon erfarenhet av visualiseringsverktyget. För att ta reda på vilka möjligheter som fanns för visualisering behövde projektdeltagarna vetskap angående vilka UI-element som fanns tillgängliga, hur de kunde anpassas och hur de kunde kombineras i Kibana. Om personen som skulle använda sig av Kibana hade varit erfaren av visualiseringsverktyget, som projektdeltagarna känner sig vara efter projektet, hade detta dock inte varit ett problem. Därmed hade detta endast varit problematiskt vid den första användningen av Kibana.
 
-\subsection{Implementera lösningarna i en interaktiv dashboard i Kibana}
+\subsection{Implementera lösningarna i en interaktiv \textit{dashboard} i Kibana}
 
 Vid skapandet av UI-elementen upplevde projektdeltagarna väldigt mycket stöd från Kibana gällande val av data som skulle ingå i dem. Det krävdes endast förståelse kring hur data aggregerades inom Kibana och ett par och efter det valdes fälten som sammanställdes och visualiserades. 
 
-Vad det gällde modifieringen av UI-elementens utseende och deras fördelning i dashboarden var det en större utmaning i Kibana. Några av dessa var:
+Vad det gällde modifieringen av UI-elementens utseende och deras fördelning i \textit{dashboarden} var det en större utmaning i Kibana. Några av dessa var:
 
 \begin{itemize}
 \item Icke modifierbara egenskaper i UI-element.I Kibana var en stor begränsning, ur UX-perspektiv, att det fanns många egenskaper i UI-element som inte gick att modifiera. Till exempel kunde inte tjockleken på staplar i stapeldiagram eller tjocklek på cirkeln i cirkeldiagram med centrumhål ändras. Dessutom fanns det endast 56 färger enligt en viss skala som Kibana erbjöd att välja bland för färger på värden i UI-element.
 
-\item Begränsad modifiering av font. Vid visualisering av data var det väldigt viktigt att kunna beskriva innehållet i varje UI-element med hjälp av rubriker och titlar för att underlätta förståelsen för användarna. Dock var modifieringen av dessa rubrikers egenskaper begränsade. Några av egenskaperna var font, storlek, färg och stil (kursiv, fetstil o.s.v.). I UI-elementen gick det inte att modifiera någonting gällande rubrikens egenskaper. I dashboarden kunde det dock skapas ett specifikt UI-element som enbart hade text och i det elementet kunde storlek ändras, dock endast på all text i UI-elementet och inte bara en del av texten, och text kunde få fetstil.
+\item Begränsad modifiering av font. Vid visualisering av data var det väldigt viktigt att kunna beskriva innehållet i varje UI-element med hjälp av rubriker och titlar för att underlätta förståelsen för användarna. Dock var modifieringen av dessa rubrikers egenskaper begränsade. Några av egenskaperna var font, storlek, färg och stil (kursiv, fetstil o.s.v.). I UI-elementen gick det inte att modifiera någonting gällande rubrikens egenskaper. I \textit{dashboarden} kunde det dock skapas ett specifikt UI-element som enbart hade text och i det elementet kunde storlek ändras, dock endast på all text i UI-elementet och inte bara en del av texten, och text kunde få fetstil.
 
-\item Fördelning av UI-element i dashboarden.Då UI-elementen skulle sättas ihop i dashboarden fanns det en del begränsningar i Kibana. Det var möjligt att placera UI-element i den önskade ordningen men storleken på elementen var inte helt anpassningsbar eftersom det fanns en funktion i Kibana som gjorde att UI-elementen skulle fördelas på dashboarden utan några mellanrum eller luckor. En fördel med denna funktion var att även om UI-elementen endast placerades ut på dashboarden skapade Kibana en fördelning utan luckor där allt var kombinerat med varandra bra. Dock var det en nackdel då fördelningen behövde specifik modifiering och anpassning eftersom det inte var möjligt. 
+\item Fördelning av UI-element i \textit{dashboarden}. Då UI-elementen skulle sättas ihop i \textit{dashboarden} fanns det en del begränsningar i Kibana. Det var möjligt att placera UI-element i den önskade ordningen men storleken på elementen var inte helt anpassningsbar eftersom det fanns en funktion i Kibana som gjorde att UI-elementen skulle fördelas på \textit{dashboarden} utan några mellanrum eller luckor. En fördel med denna funktion var att även om UI-elementen endast placerades ut på \textit{dashboarden} skapade Kibana en fördelning utan luckor där allt var kombinerat med varandra bra. Dock var det en nackdel då fördelningen behövde specifik modifiering och anpassning eftersom det inte var möjligt. 
 \end{itemize}
 
-Dessa ovanstående begränsningar hade en stor påverkan på användargränssnittet och på användarupplevelsen för slutprodukten eftersom det blev svårt att anpassa dessa för att passa slutanvändarens krav. Någonting som hade kunnat förminska eller eliminera dessa begränsningar var möjligheten som fanns i Kibana var att inkludera en dashboard i en webbsida genom HTML. Eftersom webbsidan hade varit helt anpassningsbar med avseende på faktorer som font och fördelning av UI-element så hade dashboarden kunnat bli förbättrad i sin helhet. Dessutom hade vissa krav som, utan inkludering i en webbsida, hade varit omöjliga att nå kunnat bli blivit möjliga vilket hade resulterat i en nöjdare slutanvändare. På grund av detta projektets tidsbegränsningar fanns det inte tillräckligt med tid för att skapa denna webbsida med inkludering av dashboarden.  
+Dessa ovanstående begränsningar hade en stor påverkan på användargränssnittet och på användarupplevelsen för slutprodukten eftersom det blev svårt att anpassa dessa för att passa slutanvändarens krav. Någonting som hade kunnat förminska eller eliminera dessa begränsningar var möjligheten som fanns i Kibana var att inkludera en \textit{dashboard} i en webbsida genom HTML. Eftersom webbsidan hade varit helt anpassningsbar med avseende på faktorer som font och fördelning av UI-element så hade \textit{dashboarden} kunnat bli förbättrad i sin helhet. Dessutom hade vissa krav som, utan inkludering i en webbsida, hade varit omöjliga att nå kunnat bli blivit möjliga vilket hade resulterat i en nöjdare slutanvändare. På grund av detta projektets tidsbegränsningar fanns det inte tillräckligt med tid för att skapa denna webbsida med inkludering av \textit{dashboarden}.  
 
 \subsection{Testa produkten mot slutanvändare genom djupintervjuer } 
 Testningen av produkten genomfördes genom att anteckna och fråga de möjliga slutanvändarna vid djupintervjuer. Eftersom ett stort fokus vid testningen låg vid att de som testades skulle utföra uppgifter som specificerats så ställdes frågor angående svårighetsgraden på uppgiften. De blev ombedda att betygsätta svårighetsnivån. Detta användes sedan för att analysera en iterering och se om förändringar som gjorts i designen hade underlättat för testarna att slutföra en specificerad uppgift. 
 
-Eftersom dashboarden upplevdes rörig och ostrukturerad vid första itereringen lades mer beskrivande text för UI-element och distribuering av UI-element i dashboarden ändrades. Svårigheterna var att hitta, läsa och tolka texten för att interagera med dem UI-elementen. Kartorna var inte intuitiva och de var svåra att hantera vilket innebar att filtreringen i dashboarden var svår att utföra. Därför lades taggmoln till som underlättade filtreringen och hanteringen av dashboarden. Det förekom att färgerna i UI-elementen var liknande nyanser vilket försvårade avläsningen av data och därför ändrades de till färgerna som kunde separeras från varandra vilket underlättade avläsning av värden.
+Eftersom \textit{dashboarden} upplevdes rörig och ostrukturerad vid första itereringen lades mer beskrivande text för UI-element och distribuering av UI-element i \textit{dashboarden} ändrades. Svårigheterna var att hitta, läsa och tolka texten för att interagera med dem UI-elementen. Kartorna var inte intuitiva och de var svåra att hantera vilket innebar att filtreringen i \textit{dashboarden} var svår att utföra. Därför lades taggmoln till som underlättade filtreringen och hanteringen av \textit{dashboarden}. Det förekom att färgerna i UI-elementen var liknande nyanser vilket försvårade avläsningen av data och därför ändrades de till färgerna som kunde separeras från varandra vilket underlättade avläsning av värden.
 
-Trots alla förbättringar som gjordes efter första iterationen upplevdes dashboarden som överväldigande eftersom många UI-element var placerade i den nedre delen av dashboarden. Detta löstes genom att sammanställa information som presenterades i ett större UI-element. Ett exempel var att istället för att det fanns fyra olika diagram med olika fordonstyper så organiserades alla den information som presenterades i dem i ett stapeldiagram. Den presenterade antalet fordon i en tidsaxel som kunde filtreras genom ett cirkeldiagram som presenterade fördelningen av alla fordonstyper. Detta resulterade till en bättre förståelse och hantering av dashboarden. För att underlätta framtagandet av önskad information ännu mer lades ett sökningsfält till som användes för sökningar baserat på betalstationer. Vid sökning efter en viss betalstation anpassades alla UI-element i denna sökningen. Ytterligare något som gjordes i denna iterering var att den beskrivande texten i UI-elementen förbättrades för att tydligare specificera tidpunkterna för data som presenterades. 
+Trots alla förbättringar som gjordes efter första iterationen upplevdes \textit{dashboarden} som överväldigande eftersom många UI-element var placerade i den nedre delen av \textit{dashboarden}. Detta löstes genom att sammanställa information som presenterades i ett större UI-element. Ett exempel var att istället för att det fanns fyra olika diagram med olika fordonstyper så organiserades alla den information som presenterades i dem i ett stapeldiagram. Den presenterade antalet fordon i en tidsaxel som kunde filtreras genom ett cirkeldiagram som presenterade fördelningen av alla fordonstyper. Detta resulterade till en bättre förståelse och hantering av \textit{dashboarden}. För att underlätta framtagandet av önskad information ännu mer lades ett sökningsfält till som användes för sökningar baserat på betalstationer. Vid sökning efter en viss betalstation anpassades alla UI-element i denna sökningen. Ytterligare något som gjordes i denna iterering var att den beskrivande texten i UI-elementen förbättrades för att tydligare specificera tidpunkterna för data som presenterades. 
 
-Vid den tredje itereringen upplevdes dashboarden mer intuitiv, strukturerad och lättare att interagera med. Information som UI-elementen presenterade var tydlig och beskrivande texten var mer synlig. 
+Vid den tredje itereringen upplevdes \textit{dashboarden} mer intuitiv, strukturerad och lättare att interagera med. Information som UI-elementen presenterade var tydlig och beskrivande texten var mer synlig. 
 
 Efter att projektet slutförts ansåg projektdeltagarna att en bättre metod hade kunnat väljas för att mäta svårighetsnivå på uppgifter. När testarna själva skulle betygsätta svårighet var det väldigt beroende av känslor och åsikter, vilket ur ett UX-perspektiv var bra, men någonting som hade kunnat ge mer konkreta resultat som hade varit värdefullt vid analysen av testningen hade varit att ta tid på en testare från att uppgiften blivit förklarad till att den blivit slutförd. 
 
@@ -702,12 +705,12 @@ Det finns många utmaningar och brister inom den traditionella designprocessen f
 
 Fördelarna med designprocessen för UX då Kibana används var att fokus låg på produkten och inte prototypen vilket resulterade i mer effektiv testning med slutanvändaren. Nackdelarna i denna designprocess för UX var begränsningar i modifiering av användargränssnittet som Kibana har, att systemet skulle vara klart innan visualisering av data i UI-element samt att data som används måste vara kompatibla med Kibana.  
 
-Trots begränsningarna gällande anpassningsbarheten av visualiseringen erbjuder Kibana lösningar på dessa problem genom att t.ex. inkludera dashboards i webbsidor.  Eftersom Kibana är ett open-sourceprojekt ser projektdeltagarna att många begränsningar i Kibana kan komma att elimineras i framtiden. 
+Trots begränsningarna gällande anpassningsbarheten av visualiseringen erbjuder Kibana lösningar på dessa problem genom att t.ex. inkludera \textit{dashboards} i webbsidor.  Eftersom Kibana är ett open-sourceprojekt ser projektdeltagarna att många begränsningar i Kibana kan komma att elimineras i framtiden. 
 
 \section{Förslag på framtida arbete}
 Under förberedelsen av data inför visualisering i Kibana visade det sig att data måste vara format som är kompatibla med Kibana. Det skulle därför vara lämpligt att undersöka hur modifieringen av data innan de kan visualiseras i Kibana kan ske på ett effektivt och icke tidskrävande sätt. Detta skulle gynna UX-designprocessen vid användning av Kibana eftersom det är ett av krav systemet ska vara klar innan visualisering av data. En undersökning kring detta skulle alltså hitta ett sätt att förkorta tiden som spenderas på att få in data i Kibana vilket skulle leda till att UX-designprocessen kan påbörjas snabbare.
 
-Ytterligare ett förslag till fortsatt arbete är att undersöka möjligheten att inkludera en dashboard i en webbsida och analysera om den eliminerar begränsningarna i UX-designprocessen vid användning av Kibana och i så fall hur effektivt detta görs. För att kunna undersöka hur bra Kibana är gällande visualisering av data hade det kunnat jämföras med verktyg som liknar Elastic Stack, d.v.s. en större samling av projekt som hämtar, hanterar och visualiserar data. 
+Ytterligare ett förslag till fortsatt arbete är att undersöka möjligheten att inkludera en \textit{dashboard} i en webbsida och analysera om den eliminerar begränsningarna i UX-designprocessen vid användning av Kibana och i så fall hur effektivt detta görs. För att kunna undersöka hur bra Kibana är gällande visualisering av data hade det kunnat jämföras med verktyg som liknar Elastic Stack, d.v.s. en större samling av projekt som hämtar, hanterar och visualiserar data. 
 
 \afterpage{\null\newpage}
 
@@ -783,6 +786,8 @@ https://www.elastic.co/elk-stack
 
 \afterpage{\null\newpage}
 
+
+
 \begin{appendices}
 \renewcommand\thechapter{A}                     
 \section{Utvärderingsformulär} 
@@ -804,7 +809,7 @@ https://www.elastic.co/elk-stack
 \newpage
 \includegraphics[width=1\textwidth]{UX_designprocess9.pdf}
 
-\section{User personas}
+\section{Personas}
 \subsection{Curious Carl}
 \includegraphics[width=1\textwidth]{CuriousCarl}
 
@@ -830,8 +835,8 @@ https://www.elastic.co/elk-stack
 \section{Resultat av testningsformuläret}
 \includegraphics[width=1\textwidth]{TrafficDashboard.pdf}
 \newpage
-\section{Kibana dashboard, slutprodukten}
-Följande bilder presenterar slutprodukten av dashboarden. De två bilderna sitter ihop men delades upp i två p.g.a. formatering.
+\section{Kibana \textit{dashboard}, slutprodukten}
+Följande bilder presenterar slutprodukten av \textit{dashboarden}. De två bilderna sitter ihop men delades upp i två p.g.a. formatering.
 
 \includegraphics[width=1\textwidth]{Dashboard1}
 \newpage
