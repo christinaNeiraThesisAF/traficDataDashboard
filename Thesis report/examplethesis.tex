@@ -455,6 +455,120 @@ UX-designprocessen som togs fram under detta projekt följde stegen i figur 4.1.
 \item Testninghandlade om att observera interaktionen mellan produkten och användare. Det kunde även göras genom demonstration av olika versioner av användargränssnittet till användarna, intervjua användaren, ställa frågor, använda sig av enkäter för att kunna identifiera svårigheter med användargränssnittet. Produkten testades mot systemet och all funktionalitet gick att testa mot användargränssnittet. Användarinteraktionen gjordes som om dashboarden var slutprodukten. Vid önskemål av testare kunde även UI-element i produkten ändras. 
 \end{itemize}
 
+\section{Utvärdering av UX-designprocess vid användning av Kibana}
+Formuläret för utvärdering av UX-designprocessen vid användning av Kibana besvarades av 32 lämpliga kandidater. Eftersom formuläret skickades ut till 60 personer resulterade detta i en svarsfrekvens på 53\%. En sammanfattning av utvärderingen blev följande:
+
+\begin{itemize}
+\item Att Kibana möjliggjorde high-fidelity vid aspekterna interaktion, funktionalitet och visualisering tyckte 88\% av deltagarna var bra eller mycket bra egenskaper.
+
+\item 69\% av deltagarna stördes väldigt mycket eller stördes lite av att det fanns begränsningar i hur anpassningsbara vissa UI-element var. Som t.ex. att tjockleken på staplar i stapeldiagram och tjockleken på cirkeldiagram med centrumhål inte gick att anpassa. 22\% av deltagarna stördes inte alls av denna begränsning.
+
+\item Att fonten inte var så anpassningsbar i UI-element hävdade över 50\% av UX-designerna som svarade på formuläret att det störde dem väldigt mycket.
+
+\item 78\% av deltagarna stördes, väldigt mycket eller lite, av att de inte var helt fria vid placeringen av UI-element på dashboarden. 
+
+\item Kibana hade egenskapen att inkludera en dashboard i en webbsida där bland annat font, rubriker och fördelning kunde anpassas. 75\% av deltagarna tyckte att denna egenskap var användbar eller mycket användbar.
+
+\item I Kibana kunde uppdateringsfrekvensen av dashboarden som minst specificeras till 5 sekunder, vilket kunde ha en påverkan vid visualisering av strömmande data. Detta tyckte 38\% var dåligt och 31\% var skäligt. En kommentar var att det berodde på dataströmmens detaljnivå.
+
+\item Att det var en väldigt intuitiv utvecklingsmiljö i Kibana tyckte 56\% av deltagarna var en väldigt bra egenskap och 38\% tyckte att det var en bra egenskap.
+
+\item För att skapa visualiseringar i Kibana behövde systemet vara fulländat först. 44\% av de tillfrågade UX-designerna tyckte att detta påverkade designprocessen negativt och 9\% tyckte att påverkan var väldigt negativ. Dock tyckte 16\% att det var positivt eller väldigt positivt. Kommentarer till denna fråga var att det var positivt men på grund av att det inte förekommer ofta att systemet är fulländat innan UX-designers ska påbörja sitt arbete tyckte en stor andel att det påverkade negativt.
+
+\item Vid interaktion med UI-element kunde data filtreras. Om filtrering gjordes på ett UI-element tillämpades detta på alla UI-element på hela dashboarden. Detta höll alltså all data synkroniserad. Detta tyckte 59\% av deltagarna var positivt eller väldigt positivt.
+
+\item Efter att ett UI-element skapats kunde det återanvändas på önskat antal dashboards och om UI-elementet skulle modifieras i en dashboard hade det ändrats på alla ställen det förekom. Detta tyckte 96\% var positivt eller väldigt positivt.
+
+\item Övriga kommentarer från utvärderingen som var relaterade till UX-designprocessen var att det ofta är väldigt högt prioriterat att vara effektiv i utförandet av designprocessen men det finns undantag då designkraven måste nå en viss nivå och då, för att inte produkten ska bli oanvändbar, prioriteras den effektiva designprocessen bort. Det fanns även en deltagare som tyckte att detta visualiseringsverktyg verkade mer passande för utvecklare som snabbt ville visualisera data. Detta på grund av att det fanns alldeles för mycket begränsningar för UX-designers.
+\end{itemize}
+
+\section{Utvärdering av kommunikationen mellan Agila utvecklare och UX-designers under UX-designprocessen vid användning av Kibana}
+
+Svårigheter vid kommunikationen mellan Agila utvecklare och UX-designers eliminerades under UX-designprocessen vid användning av Kibana. Detta eftersom systemet behövde vara fullständigt innan visualiseringar kunde skapas. Eftersom begränsningar inom UX-designen vid användning av Kibana berodde på vilken typ av data som fanns tillgänglig, t.ex. om inte geografisk placering fanns tillgänglig gick det inte att visualisera data i en karta. Detta innebar att UX-designers inte behövde kommunicera med utvecklare under UX-designprocessen för att bli informerade om systemets begränsningar. 
+
+\section{Tillämpning av UX-designprocess vid användning av Kibana}
+
+Nedanstående steg upprepades tre gånger och slutprodukten finns tillgänglig i appendix.  
+
+\subsection{ Utforska slutanvändare och ta fram deras behov och krav
+}
+Det första steget gick ut på att förstå användarna och deras behov. Det gjordes genom att analysera data som skulle presenteras för att komma fram till intressant information som skulle kunna lyftas fram med presentation av data. För att göra detta skapades användarprofiler, även kallas för personas,som representerade slutanvändaren av produkten. I dessa personasbeskrevs användares behov, mål och egenskaper och finns i appendix. Personasskapades endast under den första iterationen. Utifrån dessa personasdefinierades designkraven för dashboarden gällande visualiseringen av data. De definierade designkraven gick ut på att presentera följande information på dashboarden:
+
+\begin{itemize}
+\item Hur många bilar åker igenom varje betalstation och/eller stad?
+\item Varifrån kommer bilar som åker genom betalstationerna? 
+\item Hur många fordon som passerade den senaste minuten? 
+\item Hur ser trafikfördelningen ut baserad på riktning? 
+\item Hur ser trafikfördelningen ut baserad på körfält? 
+\item Vilken är den mest populära fordonstypen?
+\end{itemize}
+
+Vid start av varje iteration analyserades resultatet av testningsfasen. 
+
+\subsection{Ta fram lösningar som uppfyller dessa behov och krav }
+Detta gick ut på att utforska data som skulle presenteras. Det inspekterades vilka värden som fanns tillgängliga och vilka möjligheter som fanns för att kombinera data för visualisering. Lösningarna blev dessa:
+ 
+\begin{itemize}
+\item Trafikintensitet baserat på betalstationer
+\item Trafikintensitet baserat på stad
+\item Kommun där fordonsägare bor
+\item Län där fordonsägare bor
+\item Trafikintensitet baserat på fordonstyp 
+\item Trafikintensitet baserat på fordonstyp för de mest populära betalstationerna
+\item Möjligheten att söka efter en betalstation
+\item Riktningsfördelning
+\item Körfältsfördelning
+\item Antal fordon
+\end{itemize}
+
+Efter detta togs förslag om hur användargränssnittet skulle se ut fram. Det ritades ett första utkast för användargränssnittet och visades till en av slutanvändarna för att diskutera möjliga förändringar eller tillägg. 
+
+\subsection{ Implementera lösningarna i en interaktiv dashboard i Kibana }
+Efter att användare godkände ritningen skapades en dashboard i Kibana baserat på den. Vid specificering av data som skulle ingå i ett UI-element gjordes automatiska aggregeringar av Kibana vid val av fält. Aggregering gjordes på värden i valda fält, koordinater och datum. För att aggregera på värden i valda fält specificerades fältet i UI-elementet och sedan skapades automatiskt aggregeringar baserat på flest/minst antal gånger värdet i detta fält uppkom. Under skapandet av dashboarden togs flera olika designer fram. Det togs även hänsyn till UX riktlinjer, tidigare teorier inom UI och UX samt användares behov och önskemål. Vid varje iteration skapades nya dashboards som tillämpade ändringar baserat på analysen av testresultatet.
+
+\subsection{ Testa produkten mot slutanvändare genom djupintervjuer 
+}
+Därefter utfördes testning av dashboarden i en grupp av fem personer som representerade möjliga slutanvändare. Testningen genomfördes genom att ställa frågor till användaren angående dashboarden och att låta användaren utföra specificerade uppgifter på dashboarden. Det utfördes tre iterationer av UX-designprocessen vid användning av Kibana. Användaren observerades vid testningen av produkten och handlingar, tankar och åsikter under utförandet noterades och stod i fokus vid förbättring av dashboarden. Frågor som ställdes till användarna vid testning kan hittas i appendix. Svar från dessa frågor och anteckningar från testning användes vid framtagandet av nästa dashboard. Vid varje iteration testades varje ny dashboard och detaljerat testresultat kan hittas i appendix. En sammanställning av testresultatet presenteras nedan. 
+
+\begin{enumerate}
+\item Första iterationens testresultat:
+\begin{itemize}
+\item Allmänna frågor: Vid den första testningen av dashboarden tyckte majoriteten av testarna att det var svårt att identifiera varje UI-elements rubrik och de önskade att de skulle sticka ut mer. Dashboarden gav ett rörigt och förvirrande intryck. 
+
+\item Grundläggande trafikförståelse:Kartorna var svåra att använda för att filtrera, söka och ta fram information om trafik. Dessutom tyckte testarna att det var svårt och komplicerat att identifiera skillnader på fordonsriktningen och hitta specificerad information i dashboarden. Placeringen av element skulle kunna vara mer eftertänkt för att följa en rött tråd och många UI-element visualiserade samma information på olika sätt vilket skulle kunna undvikas. Det fanns en förvirring gällande relationerna mellan UI-elementen. 
+
+\item Avancerad trafikförståelse: Efter första uppgifterna upplevdes det lättare att hantera dashboarden men det förblev svårt att kombinera flera olika UI-element för att ta fram önskad information. Det var otydligt hur interaktion med UI-element i dashboarden kunde användas för framtagandet av information. 
+
+\item Sammanfattning:Det uppmärksammades att även mer förklaring gällande UI-element och deras användning borde läggas till. Det önskades också en bättre fördelning av UI-element i dashboarden för att öka förståelse och minska förvirringen.
+\end{itemize}
+
+\item    Andra iterationens testresultat:
+
+\begin{itemize}
+\item Allmänna frågor: Den andra testningen visade beskrivningarna och rubrikerna av UI-element hade blivit lättare att identifiera och förstå men det fanns rum för förbättring. Det fanns ett tydligare sammanhang i dashboarden men några ändringar skulle kunna göras gällande antalet element som var placerade i dashboarden.
+
+\item Grundläggande trafikförståelse:Sökningen underlättades och det var mer lättförståeligt hur önskad information kunde tas fram men det var fortfarande svårt att förstå visa UI-element. Det var dock svårt att identifiera för vilken tidpunkt data representerades.
+
+\item Avancerad trafikförståelse: Det var många UI-element placerade i slutet av dashboarden vilket orsakade förvirring och extra letande för att hitta vilket UI-element som skulle användas för framtagandet av önskad information. Uppgifterna utfördes enklare och dashboard tillbringade mer förståelse. Det uttrycktes önskemål om mer detaljerad information om betalstationerna utan att behöva interagera med dashboarden mer.
+
+\item Sammanfattning:Dashboarden var strukturerad och följde ett mönster men det var fortfarande överväldigande i den nedre delen på grund av att det fanns för många UI-element. Dessa skulle kunna sammanfogas så att all data i skulle kunna visualiseras i ett enda element.
+\end{itemize}
+
+\item Tredje iterationens testresultat 
+
+\begin{itemize}
+\item Allmänna frågor: Vid den tredje testningen upplevdes dashboarden lättare att förstå enligt testarna. Beskrivningen och instruktioner gav tillräckligt med information för att öka förståelsen av data som presenterades i UI-elementen. Detta underlättade även sökningar i dashboarden. 
+
+\item   Grundläggande trafikförståelse:Sökningen, filtrering och interaktion med UI-element upplevdes lättare. Tidpunkten för data som visualiserades i varje UI-element kunde identifieras tack vare förklaringar i rubriker. Dessutom var relationerna mellan UI-elementen i dashboarden lättare att förstå.
+
+\item Avancerad trafikförståelse: Testarna upplevde att uppgifterna kunde utföras mycket snabbare och information togs ut på genom en mer intuitiv process. UI-elementen som användes ledde till en snabbare identifiering av information i dashboarden i denna iteration. 
+
+\item Sammanfattning:I sin helhet var dashboarden mer intuitiv. Förståelsen av dashboarden ökades och det fanns en röd tråd i placering och presentation av UI-element samt i information som visualiserades. 
+\end{itemize}
+\end{enumerate}
+
+\subsection{Sammanställning av designprocessens genomförande}
+I Tabell 4.1 finns designprocessens genomförande sammanställd. Designkraven kom från de tänkta slutanvändarna som togs fram under det första steget i UX-designprocessen. Lösningarna togs fram under det andra steget och var konkreta lösningar på designkraven. Visualiseringarna togs fram under det tredje steget och fälten i tabellen var de som användes från en passage för att möjliggöra motsvarande visualisering.
 
 \begin{table}[h!]
   \begin{center}
@@ -493,14 +607,107 @@ Hur många fordon som passerade den senaste minuten? &Antal fordon
 \afterpage{\null\newpage}
 
 \chapter{Analys och diskussion}
-Analys och diskussion
-\blindtext
+I detta kapitel kommer UX-designprocessen vid användning av Kibana analyseras och diskuteras jämfört med den traditionella UX-designprocessen. Även en analys av utvärderingen som gjordes av erfarna UX-designers för den framtagna designprocessen kommer utföras i detta kapitel. 
+
+\section{ Jämförelse mellan UX-designprocess vid användning av Kibana och den traditionella UX-designprocessen}
+Den UX-designprocessen som togs fram vid användning av Kibana följde den traditionella UX-designprocessen och var lik den gällande de två första stegen: observation och idéskapandet. Under dessa steg genomfördes arbetet i det här projektet som om de hade genomförts vid tillämpningen av den traditionella UX-designprocessen. De två sista stegen i den framtagna UX-designprocessen som var produktskapandet och testning skiljde sig från de två sista stegen i den traditionella UX-designprocessen som var prototypskapandet och testning. De skiljde sig åt vad det gällde tillvägagångssätt och innehåll. 
+
+Produktskapandet skulle gå till genom att implementera lösningar för det som togs fram under idéskapandet genom att ta fram dashboards som hade high-fidelity. Detta betydde att varje dashboard som togs fram skulle stödja all funktionalitet som systemet erbjöd och skulle kunna vara slutprodukten. Detta var något som var kostsamt vid den traditionella UX-designprocessen eftersom en high-fidelity prototyp skulle kräva mycket förberedelse för att kunna efterlikna slutproduktens funktionalitet. 
+
+Under produktskapandet skulle det vara möjligt att återanvända UI-elements som har skapats i flera dashboards. På grund av detta effektiviserades skapandet av dashboards och flera dashboards kunde skapas vid en iteration. Det märkvärdiga med detta var att om ett UI-element användes i olika dashboards och det ändrades på ett ställe så skulle det ändras i alla andra dashboards som det fanns. En sådan ändring skulle spara tid för UX-designern. 
+
+Testningen i UX-designprocessen vid användning av Kibana hade också några skillnader jämfört med testningen i den traditionella UX-designprocessen. Under testningen skulle resultatet av det föregående steget testas mot möjliga slutanvändare. Skillnaden i testning i de två olika UX-designprocesserna var att i den traditionella UX-designprocessen testades användare mot en prototyp medans i UX-designprocessen vid användning av Kibana testades användare mot en produkt som hade full funktionalitet. Eftersom användare testades på en produkt blev feedbacken mer relevant och möjliggjorde därför högre kvalité av produkten. Dessutom kunde även klagomål och önskade ändringar från användaren åtgärdas direkt vid testning vilket levererade ett bättre resultat.
+
+En stor begränsning som UX-designprocessen vid användning av Kibana hade var att den enbart skulle kunna användas för visualisering av data. Detta var en väldigt stor begränsning jämfört med den traditionella UX-designprocessen som skulle kunna användas på alla olika områden. 
+
+\section{Utvärdering av UX-designprocess vid användning av Kibana}
+Efter utvärderingen av UX-designprocessen kunde det konstateras att majoriteten av deltagarna hade ett positivt intryck av att ta fram och testa en produkt istället för prototyp i UX-designprocessen. Detta eftersom det säkerställde high-fidelity av dashboarden i tre aspekter: interaktivitet, funktionalitet och visualisering utan att det blev kostsamt eller tidskrävande. Det var även positivt eftersom all funktionalitet i systemet kunde testas på ett ekonomiskt sätt gällande både tid och pengar. 
+
+Däremot var det en väldigt stor del av deltagarna som tyckte att begränsningarna vid visualisering i Kibana var negativt eftersom UX-designerna inte hade den friheten de ofta behövde. Detta inkluderade följande: 
+\begin{itemize}
+\item att UI-element var inte helt ändringsbara, t. ex. tjockleken på staplarna i ett stapeldiagram
+\item att texten i rubrikerna av varje UI-element kunde inte redigeras med avseende på stil, font och storlek
+\item att fördelningen av UI-element mest var styrt av Kibana eftersom Kibana försökte fylla hela dashboarden med element utan att lämna luckor. 
+\end{itemize}
+
+Dessa tre begränsningar kunde vara viktiga i UX-designprocessen eftersom de styrde utseendet av användargränssnittet och därmed även användarupplevelsen. På grund av dessa begränsningar kunde slutsatsen att Kibana försämrade produktens helhetsintryck dras. Om det dock fanns stöd för dessa begränsningar hade Kibana varit ett bättre verktyg för UX-designers eftersom de hade fått den friheten de behövt vid visualiseringen. Ytterligare något som deltagarna tyckte var en positiv egenskap i Kibana var möjligheten att inkludera en dashboard i en webbsida med hjälp av HTML. Detta var något som skulle kunna lösa problemen med Kibanas begränsningar. Eftersom Kibana var ett open-sourceprojektsom ständigt utvecklades fanns den potential och en stor möjlighet för mer utveckling och förbättringar.
+
+Deltagarnas åsikter angående uppdateringsfrekvensen som Kibana erbjöd var splittrade. Den högsta uppdateringsfrekvensen som fanns tillgänglig i Kibana var fem sekunder. Detta kunde betraktas som en dålig egenskap eftersom strömmande data med en uppdateringsfrekvens på varje millisekund inte skulle kunna visualiseras så fort nya data fanns tillgänglig. Detta problem hade kunnat bli åtgärdat om Kibana skapade en egenskap som automatiskt justerade uppdateringsfrekvensen baserat på hastigheten som data strömmar in. Däremot hade detta inte varit ett problem alls om dataströmmen har fem sekunder som uppdateringsfrekvens eller lägre och därför skulle det rekommenderas att välja en sådan dataström vid användning av Kibana. 
+
+Deltagarna i utvärderingen betraktade det som väldigt positivt att Kibana hade en intuitiv utvecklingsmiljö och att det var lätt för andra UX-designers eller utvecklare att förstå hur verktyget skulle användas. Detta var en speciellt bra egenskap eftersom arbetsprocessen i projekt effektiviserades om verktygen som användes var lätta att sätta sig in i och använda sig av. 
+
+Majoriteten av deltagarna enades om att Kibanas begränsning angående att systemet behövde vara fulländat innan visualiseringen kunde påbörjas hade en negativ påverkan på UX-designprocessen. Detta eftersom det sällan förekom att systemet kunde bli helt avklarat innan UX-designprocessen påbörjades på grund av ekonomiska skäl och tidsbrist. Detta eftersom det skulle behövas dubbelt så lång tid för ett projekt där systemutvecklare skulle utveckla systemet först och UX-designers sedan designa produkten, jämfört med om dessa två steg hade gjorts parallellt. Om det skulle vara möjligt att dela upp de två stegen så att systemet utvecklades först och produkten designades efter skulle kunna vara något som eliminerade kommunikationen mellan UX-designers och utvecklare. Detta hade därför kunnat göra UX-designprocessen snabbare och mer effektiv men det hade varit svårt att uppnå i många projekt.
+
+I Kibana filtrerades all data i alla UI-element vid filtrering av data. Detta upplevdes som positivt av deltagarna eftersom det kunde underlätta en väldigt tidskrävande process. Ett exempel på hur det hade varit utan denna funktion hade varit då en användare skulle tolka svensk trafikinformation i en dashboard i Kibana med 15 UI-element. Om denna användare hade velat göra en filtrering för att bara visa trafik från Göteborg eller baserat på en viss fordonstyp hade denna användare behövt gå igenom alla 15 UI-element och specificera den önskade filtreringen. Detta hade varit tidskrävande och väldigt negativt ur ett UX-perspektiv. Med funktionen i Kibana hade det dock bara varit att göra filtreringen i ett UI-element och då hade allt i dashboarden filtrerats. 
+
+Ytterligare en av Kibanas egenskaper som deltagarna tyckte var positiv var möjligheten att återanvända UI-element. Detta skulle kunna spara tid för en UX-designer vid skapandet av flera dashboards eftersom de skulle kunna återanvända samma element. Om ett UI-element ändrades på ett ställe skulle det ändras på alla ställen det förekom.
+
+\section{Utvärdering av kommunikationen mellan Agila utvecklare och UX-designers under UX-designprocessen vid användning av Kibana}
+Ett problem som togs upp i det här projektet var svårigheterna i kommunikationen mellan Agila utvecklare och UX-designers. Efter framtagandet av UX-designprocessen upplevde projektdeltagarna att kommunikationen mellan utvecklare och UX-designers eliminerades eftersom det var ett krav att systemet skulle vara klart innan UX-designen påbörjades. Därmed försvann även problemen vid kommunikationen mellan de två parterna. 
+
+Däremot kunde det finnas ekonomiska aspekter i projekt som begränsade både tid och arbetskraft. Dessa begränsningar kunde vara faktorer som orsakade att utvecklare och UX-designers behövde arbeta parallellt från start. Eftersom detta skulle leda till att hela systemet inte kunde var klart innan UX-designen påbörjades skulle inte UX-designprocessen vid användning av Kibana kunna tillämpas. Ett undantag då det skulle gå att tillämpa denna designprocess trots ekonomiska begränsningar skulle vara om data som skulle visualiseras var kompatibel med Kibana och innehöll all information som krävdes för önskade visualiseringar. Då hade utvecklarna inte behövt spendera tid på att modifiera data och därför hade processen för att hämta och visualisera data genom Elastic Stack gått snabbare.
+
+\section{Tillämpning av UX-designprocess vid användning av Kibana} 
+I detta avsnitt kommer tillämpningen av UX-designprocessen analyseras. Även för- och nackdelar kommer tas upp och alternativa metoder som hade kunnat ge bättre resultat kommer diskuteras.  Reflektioner som kommer tas upp i detta avsnitt är baserade på projektdeltagarnas erfarenheter under projektets gång.
+
+\subsection{Utforska slutanvändare och ta fram deras behov och krav} 
+Vid framtagandet av personas var en av nackdelarna att det inte fanns en tänkt slutanvändare eftersom produkten endast skulle tas fram i syfte att testa UX-designprocessen vid användning av Kibana. Eftersom det inte fanns några tänkta användare togs dessa personas fram av projektdeltagarna och blev då inte så specificerade som de hade kunnat blivit. Det som hade kunnat göras istället var att ställa frågor utåt genom formulär för att ta reda på vad människor hade velat ha som designkrav, eftersom den tänkta målgruppen ändå var en genomsnittlig svensk som var intresserad av trafikinformation i Sverige. Detta hade underlättat vid de andra stegen i designprocessen då det hade funnits ett mer specificerat mål och krav i alla steg.
+
+\subsection{Ta fram lösningar som uppfyller dessa behov och krav}
+För att ta fram lösningar krävdes det en hel del förarbete inom Kibana av projektdeltagarna, som inte hade någon erfarenhet av visualiseringsverktyget. För att ta reda på vilka möjligheter som fanns för visualisering behövde projektdeltagarna vetskap angående vilka UI-element som fanns tillgängliga, hur de kunde anpassas och hur de kunde kombineras i Kibana. Om personen som skulle använda sig av Kibana hade varit erfaren av visualiseringsverktyget, som projektdeltagarna känner sig vara efter projektet, hade detta dock inte varit ett problem. Därmed hade detta endast varit problematiskt vid den första användningen av Kibana.
+
+\subsection{Implementera lösningarna i en interaktiv dashboard i Kibana}
+
+Vid skapandet av UI-elementen upplevde projektdeltagarna väldigt mycket stöd från Kibana gällande val av data som skulle ingå i dem. Det krävdes endast förståelse kring hur data aggregerades inom Kibana och ett par och efter det valdes fälten som sammanställdes och visualiserades. 
+
+Vad det gällde modifieringen av UI-elementens utseende och deras fördelning i dashboarden var det en större utmaning i Kibana. Några av dessa var:
+
+\begin{itemize}
+\item Icke modifierbara egenskaper i UI-element.I Kibana var en stor begränsning, ur UX-perspektiv, att det fanns många egenskaper i UI-element som inte gick att modifiera. Till exempel kunde inte tjockleken på staplar i stapeldiagram eller tjocklek på cirkeln i cirkeldiagram med centrumhål ändras. Dessutom fanns det endast 56 färger enligt en viss skala som Kibana erbjöd att välja bland för färger på värden i UI-element.
+
+\item Begränsad modifiering av font. Vid visualisering av data var det väldigt viktigt att kunna beskriva innehållet i varje UI-element med hjälp av rubriker och titlar för att underlätta förståelsen för användarna. Dock var modifieringen av dessa rubrikers egenskaper begränsade. Några av egenskaperna var font, storlek, färg och stil (kursiv, fetstil o.s.v.). I UI-elementen gick det inte att modifiera någonting gällande rubrikens egenskaper. I dashboarden kunde det dock skapas ett specifikt UI-element som enbart hade text och i det elementet kunde storlek ändras, dock endast på all text i UI-elementet och inte bara en del av texten, och text kunde få fetstil.
+
+\item Fördelning av UI-element i dashboarden.Då UI-elementen skulle sättas ihop i dashboarden fanns det en del begränsningar i Kibana. Det var möjligt att placera UI-element i den önskade ordningen men storleken på elementen var inte helt anpassningsbar eftersom det fanns en funktion i Kibana som gjorde att UI-elementen skulle fördelas på dashboarden utan några mellanrum eller luckor. En fördel med denna funktion var att även om UI-elementen endast placerades ut på dashboarden skapade Kibana en fördelning utan luckor där allt var kombinerat med varandra bra. Dock var det en nackdel då fördelningen behövde specifik modifiering och anpassning eftersom det inte var möjligt. 
+\end{itemize}
+
+Dessa ovanstående begränsningar hade en stor påverkan på användargränssnittet och på användarupplevelsen för slutprodukten eftersom det blev svårt att anpassa dessa för att passa slutanvändarens krav. Någonting som hade kunnat förminska eller eliminera dessa begränsningar var möjligheten som fanns i Kibana var att inkludera en dashboard i en webbsida genom HTML. Eftersom webbsidan hade varit helt anpassningsbar med avseende på faktorer som font och fördelning av UI-element så hade dashboarden kunnat bli förbättrad i sin helhet. Dessutom hade vissa krav som, utan inkludering i en webbsida, hade varit omöjliga att nå kunnat bli blivit möjliga vilket hade resulterat i en nöjdare slutanvändare. På grund av detta projektets tidsbegränsningar fanns det inte tillräckligt med tid för att skapa denna webbsida med inkludering av dashboarden.  
+
+\subsection{Testa produkten mot slutanvändare genom djupintervjuer } 
+Testningen av produkten genomfördes genom att anteckna och fråga de möjliga slutanvändarna vid djupintervjuer. Eftersom ett stort fokus vid testningen låg vid att de som testades skulle utföra uppgifter som specificerats så ställdes frågor angående svårighetsgraden på uppgiften. De blev ombedda att betygsätta svårighetsnivån. Detta användes sedan för att analysera en iterering och se om förändringar som gjorts i designen hade underlättat för testarna att slutföra en specificerad uppgift. 
+
+Eftersom dashboarden upplevdes rörig och ostrukturerad vid första itereringen lades mer beskrivande text för UI-element och distribuering av UI-element i dashboarden ändrades. Svårigheterna var att hitta, läsa och tolka texten för att interagera med dem UI-elementen. Kartorna var inte intuitiva och de var svåra att hantera vilket innebar att filtreringen i dashboarden var svår att utföra. Därför lades taggmoln till som underlättade filtreringen och hanteringen av dashboarden. Det förekom att färgerna i UI-elementen var liknande nyanser vilket försvårade avläsningen av data och därför ändrades de till färgerna som kunde separeras från varandra vilket underlättade avläsning av värden.
+
+Trots alla förbättringar som gjordes efter första iterationen upplevdes dashboarden som överväldigande eftersom många UI-element var placerade i den nedre delen av dashboarden. Detta löstes genom att sammanställa information som presenterades i ett större UI-element. Ett exempel var att istället för att det fanns fyra olika diagram med olika fordonstyper så organiserades alla den information som presenterades i dem i ett stapeldiagram. Den presenterade antalet fordon i en tidsaxel som kunde filtreras genom ett cirkeldiagram som presenterade fördelningen av alla fordonstyper. Detta resulterade till en bättre förståelse och hantering av dashboarden. För att underlätta framtagandet av önskad information ännu mer lades ett sökningsfält till som användes för sökningar baserat på betalstationer. Vid sökning efter en viss betalstation anpassades alla UI-element i denna sökningen. Ytterligare något som gjordes i denna iterering var att den beskrivande texten i UI-elementen förbättrades för att tydligare specificera tidpunkterna för data som presenterades. 
+
+Vid den tredje itereringen upplevdes dashboarden mer intuitiv, strukturerad och lättare att interagera med. Information som UI-elementen presenterade var tydlig och beskrivande texten var mer synlig. 
+
+Efter att projektet slutförts ansåg projektdeltagarna att en bättre metod hade kunnat väljas för att mäta svårighetsnivå på uppgifter. När testarna själva skulle betygsätta svårighet var det väldigt beroende av känslor och åsikter, vilket ur ett UX-perspektiv var bra, men någonting som hade kunnat ge mer konkreta resultat som hade varit värdefullt vid analysen av testningen hade varit att ta tid på en testare från att uppgiften blivit förklarad till att den blivit slutförd. 
+
+\section{Förberedelse av data för visualisering}
+För att möjliggöra tillämpningen av UX-designprocessen vid användning av Kibana implementerades full-stackutveckling under detta projekt. Vid utvecklingen förekom några svårigheter angående förberedelsen av data inför visualisering. Datakällan som valdes var statisk och mycket tid ägnades åt att simulera en dataström från den källan. Hade projektdeltagarna istället valt en datakälla som redan var strömmande hade den tiden kunnat läggas på andra saker i projektet. Datakällan som valdes borde också varit så konsistent och fullständigt för visualisering som möjligt. 
+
+I det här projektet lades en stor del av tiden åt modifiering av data så att de skulle gå från en icke kompatibel form i Kibana till att de blev kompatibla med Kibana. Några av modifieringarna som gjordes var att sammanställa datum och tidpunkten av varje objekt i ett nytt fält för att skapa en tidsstämpel som skulle kunna användas senare av Kibana vid visualisering. 
+
+Ytterligare en svårighet som projektdeltagarna stött på var vid visualisering av geografiska data i Kibana. Datakällan innehöll geografisk relaterad information men inte koordinater för att möjliggöra visualisering i Kibana. Det krävdes en stor informationssökning för att få fram koordinater för den data och mycket tid för modifiering av den informationen för att vara i ett kompatibelt format med Kibana. När informationen hittades i det önskade formatet lades denna information till i varje objekt som hämtades från datakällan. Hela denna process hade kunnat undvikas om det hade valts en datakälla som innehöll all information för visualisering och om informationen var kompatibel med Kibana.
+
+Kibana erbjöd stöd för visualisering av data på kartor men endast för ett begränsat antal länder och eftersom den datakälla som användes i detta projekt innehöll svensk geografisk information som inte fanns tillgängligt ledde detta till en till svårighet. Projektdeltagarna behövde hitta denna information, modifiera den till rätt format och lägga till den i Kibana för att möjliggöra visualisering av data på kartor. Detta var en tidskrävande process som borde tas hänsyn till när det önskas att utföra visualisering av data i kartor. Kibana är ett open-sourceprojekt och därför finns det många möjligheter för förbättringar av detta.  
+
+\section{Ekonomiska och arbetsmiljömässiga aspekter}
+Under detta alla moment i detta projekt har ekonomiska och arbetsmiljömässiga aspekter betraktats. Fokus låg under hela projektet på att se om och hur Kibana kunde underlätta för UX-designprocessen vid visualisering av data. Om Kibana användes med data som var kompatibel med Kibana och systemet var avklarat innan UX-designprocessen påbörjades kunde det påverka de ekonomiska och arbetsmiljömässiga aspekterna positivt. Ur det ekonomiska perspektivet skulle företaget som tillämpade denna UX-designprocess gynnas eftersom mindre tid skulle läggas av arbetarna jämfört med den traditionella UX-designprocessen. Vilket skulle spara företaget pengar. Ur det arbetsmiljömässiga perspektivet kunde kommunikationssvårigheter mellan UX-designers och utvecklare elimineras vilket ledde till en bättre arbetsmiljö för båda parterna som kunde lägga fokus på respektive individuella områden.
 
 \afterpage{\null\newpage}
 
 \chapter{Slutsatser}
-Slutsatser
-\blindtext
+Det finns många utmaningar och brister inom den traditionella designprocessen för UX som påverkar tiden och pengar som spenderas under designprocessen för UX. Under detta projekt ställdes följande utmaningar i fokus: att få prototyper att likna slutprodukten och kommunikationssvårigheter mellan UX-designers och utvecklare vid Agil projektmetodik. Efter projektet konstaterades det att Kibana kan förbättra effektiviteten av designprocessen för UX eftersom prototypskapandet och testningen optimerades. Dessutom  kan kommunikationssvårigheter mellan UX-designers och utvecklare elimineras vid användning av Kibana eftersom systemet måste vara klart innan UX-designers kan börja med visualisering i Kibana. 
+
+Fördelarna med designprocessen för UX då Kibana används var att fokus låg på produkten och inte prototypen vilket resulterade i mer effektiv testning med slutanvändaren. Nackdelarna i denna designprocess för UX var begränsningar i modifiering av användargränssnittet som Kibana har, att systemet skulle vara klart innan visualisering av data i UI-element samt att data som används måste vara kompatibla med Kibana.  
+
+Trots begränsningarna gällande anpassningsbarheten av visualiseringen erbjuder Kibana lösningar på dessa problem genom att t.ex. inkludera dashboards i webbsidor.  Eftersom Kibana är ett open-sourceprojekt ser projektdeltagarna att många begränsningar i Kibana kan komma att elimineras i framtiden. 
+
+\section{Förslag på framtida arbete}
+Under förberedelsen av data inför visualisering i Kibana visade det sig att data måste vara format som är kompatibla med Kibana. Det skulle därför vara lämpligt att undersöka hur modifieringen av data innan de kan visualiseras i Kibana kan ske på ett effektivt och icke tidskrävande sätt. Detta skulle gynna UX-designprocessen vid användning av Kibana eftersom det är ett av krav systemet ska vara klar innan visualisering av data. En undersökning kring detta skulle alltså hitta ett sätt att förkorta tiden som spenderas på att få in data i Kibana vilket skulle leda till att UX-designprocessen kan påbörjas snabbare.
+
+Ytterligare ett förslag till fortsatt arbete är att undersöka möjligheten att inkludera en dashboard i en webbsida och analysera om den eliminerar begränsningarna i UX-designprocessen vid användning av Kibana och i så fall hur effektivt detta görs. För att kunna undersöka hur bra Kibana är gällande visualisering av data hade det kunnat jämföras med verktyg som liknar Elastic Stack, d.v.s. en större samling av projekt som hämtar, hanterar och visualiserar data. 
 
 \afterpage{\null\newpage}
 
@@ -580,13 +787,21 @@ https://www.elastic.co/elk-stack
 \renewcommand\thechapter{A}                     
 \section{Utvärderingsformulär} 
 \includegraphics[width=1\textwidth]{UX_designprocess1.pdf}
+\newpage
 \includegraphics[width=1\textwidth]{UX_designprocess2.pdf}
+\newpage
 \includegraphics[width=1\textwidth]{UX_designprocess3.pdf}
+\newpage
 \includegraphics[width=1\textwidth]{UX_designprocess4.pdf}
+\newpage
 \includegraphics[width=1\textwidth]{UX_designprocess5.pdf}
+\newpage
 \includegraphics[width=1\textwidth]{UX_designprocess6.pdf}
+\newpage
 \includegraphics[width=1\textwidth]{UX_designprocess7.pdf}
+\newpage
 \includegraphics[width=1\textwidth]{UX_designprocess8.pdf}
+\newpage
 \includegraphics[width=1\textwidth]{UX_designprocess9.pdf}
 
 \section{User personas}
@@ -601,14 +816,21 @@ https://www.elastic.co/elk-stack
 
 \section{Testningsformulär}
 \includegraphics[width=1\textwidth]{TextUnderstanding1.pdf}
+\newpage
 \includegraphics[width=1\textwidth]{TextUnderstanding2.pdf}
+\newpage
 \includegraphics[width=1\textwidth]{TextUnderstanding3.pdf}
+\newpage
 \includegraphics[width=1\textwidth]{TextUnderstanding4.pdf}
+\newpage
 \includegraphics[width=1\textwidth]{TextUnderstanding5.pdf}
+\newpage
 \includegraphics[width=1\textwidth]{TextUnderstanding6.pdf}
 \newpage
 \section{Resultat av testningsformuläret}
 \includegraphics[width=1\textwidth]{TrafficDashboard.pdf}
+
+\section{Kibana dashboard}
 
 \end{appendices}
 
