@@ -347,7 +347,7 @@ Det började med en RESTful webbtjänst som efterfrågade Transportstyrelsens da
 
 Eftersom data som användes var statisk skapades en dataström av dessa data med hjälp av webbtjänsten. Detta gjordes genom att modifiera tiden i data som kom in i webbtjänsten, i sekundnivå. För att kunna använda dataströmmen som skapades och visualisera den i Kibana så krävdes modifiering av data. Detta gjordes genom att ändra format på datatyper, som tid och datum, vilket gjordes i webbtjänsten innan data skickades vidare till Logstash. Dessutom var det nödvändigt att lägga till information om geografiska punkter på den data som visualiserades för att möjliggöra visualisering av data i kartor. Eftersom regioner som skulle visualiseras saknades i Kibana behövdes även denna information tas fram. Informationen om regioner, som i detta fall var svenska kommuner och län, som fanns tillgängliga var i ett format som inte var kompatibelt med Kibana. På grund av detta skapades ett dokument som innehöll denna information och lades till i Kibanas regionsdata. Ytterligare ett tillägg som behövdes på data var geografiska koordinater för betalstationer. Detta för att kunna visualisera trafikintensitet baserad på betalstationer. Det gjordes genom att ta fram ett dokument som innehöll koordinater för betalstationerna. Informationen om koordinater lades till i all data som hämtades genom webbtjänsten och skickades vidare till Logstash. 
 
-I Tabell 3.1 presenteras vilka egenskaper en passage hade efter modifiering. Dessa egenskaper användes sedan för visualisering. 
+I tabell 3.1 presenteras vilka egenskaper en passage hade efter modifiering. Dessa egenskaper användes sedan för visualisering. 
 \newpage
 \captionsetup[table]{name=Tabell}
 
@@ -571,7 +571,7 @@ Därefter utfördes testning av \textit{dashboarden} i en grupp av fem personer 
 \end{enumerate}
 
 \subsection{Sammanställning av designprocessens genomförande}
-I Tabell 4.1 finns designprocessens genomförande sammanställd. Designkraven kom från de tänkta slutanvändarna som togs fram under det första steget i UX-designprocessen. Lösningarna togs fram under det andra steget och var konkreta lösningar på designkraven. Visualiseringarna togs fram under det tredje steget och fälten i tabellen var de som användes från en passage för att möjliggöra motsvarande visualisering.
+I tabell 4.1 finns designprocessens genomförande sammanställd. Designkraven kom från de tänkta slutanvändarna som togs fram under det första steget i UX-designprocessen. Lösningarna togs fram under det andra steget och var konkreta lösningar på designkraven. Visualiseringarna togs fram under det tredje steget och fälten i tabellen var de som användes från en passage för att möjliggöra motsvarande visualisering.
 
 \begin{table}[h!]
   \begin{center}
