@@ -69,14 +69,14 @@
   \begin{abstract}
 \afterpage{\null\newpage}
 
-I dagsläget finns det en mängd utmaningar och svårigheter inom den traditionella designprocessen för UX, User Experience. Dessa utmaningar har en påverkan på hur tidskrävande och kostsam en designprocess för UX kan vara. Några av dem är att få prototyper att likna slutprodukten och kommunikationssvårigheter mellan UX-designers och utvecklare vid Agil projektmetodik. Några svårigheter som finns vid visualisering av strömmande data är att göra den lättförståelig för användaren och möjliggöra användaren att nå önskad information.
+I dagsläget finns det en mängd utmaningar och svårigheter inom den traditionella designprocessen för användarupplevelse (UX, User Experience). Dessa utmaningar har en påverkan på hur tidskrävande och kostsam en designprocess för UX kan vara. Några av dem är att få prototyper att likna slutprodukten och kommunikationssvårigheter mellan UX-designers och utvecklare vid Agil projektmetodik. Några svårigheter som finns vid visualisering av strömmande data är att göra den lättförståelig för användaren och möjliggöra användaren att nå önskad information.
 
-För att undersöka dessa svårigheter togs en designprocess för UX, att användas med datavisualiseringsverktyget Kibana, fram. För att kunna utvärdera och bedöma designprocessen för UX, skapades en interaktiv \textit{dashboard} som presenterade Transportstyrelsens data från betalstationer. Efter framtagningen av designprocessen för UX konstaterades det att prototypskapandet och testningen optimerades. Fördelar med att använda Kibana var att designprocessen hade fokus på produkten och inte prototypen vilket förbättrade testningen med slutanvändaren och därmed även slutprodukten. Det fanns dock nackdelar då Kibana användes vilka var begränsningar i modifiering av användargränssnittet och att systemet behövde vara klart innan designprocessen för UX kunde påbörjas. 
+För att undersöka dessa svårigheter togs en designprocess för UX, att användas med datavisualiseringsverktyget Kibana, fram. För att kunna utvärdera och bedöma designprocessen för UX, skapades en interaktiv \textit{dashboard} som presenterade Transportstyrelsens data från betalstationer. Framtagningen av designprocessen för UX resulterade i en optimisering av prototypskapandet och testningen. Detta eftersom designprocessen för UX möjliggjorde utveckling av produkten, istället för prototypen, vilket förbättrade testningen med slutanvändaren och därmed även slutprodukten. Det fanns dock nackdelar då Kibana användes vilka var begränsningar i modifieringen av användargränssnittet och att systemet behövde vara klart innan designprocessen för UX kunde påbörjas. 
 
 
 \textbf{Nyckelord}
 
-\textit{Kibana, Elastic Stack, UX-designprocess, UX, Användarupplevelse}
+\textit{Kibana, Elastic Stack, UX-designprocess, UX, användarupplevelse}
 
  \end{abstract}
 \end{otherlanguage}
@@ -87,7 +87,7 @@ För att undersöka dessa svårigheter togs en designprocess för UX, att använ
 
 In the current situation there are a lot of challenges and difficulties in the traditional design process for UX, User Experience. These challenges have an impact on how time consuming and costly a design process for UX can be. Some of them are to create prototypes that resemble the end product and communication difficulties between UX-designers and developers that follow an Agile project methodology. There are also difficulties in visualizing streaming data, as information in data must be made easy to understand for the user and the users must be able to get desired information.
  
-To investigate these difficulties, a design process for UX was created to be used with the Kibana data visualization tool. In order to evaluate and assess the design process for UX, an interactive \textit{dashboard} was created that presented data from Swedish payment stations. After developing the design process for UX, it was found that prototype creation and testing were optimized. The advantages of using Kibana were that the design process focused on the product and not the prototype, which improved the testing with the end user and therefor also the end product. However, there were disadvantages when Kibana was used which were limitations in modifying the user interface and that the system needed to be ready before the UX design process could begin.
+To investigate these difficulties, a design process for UX was created to be used with the Kibana data visualization tool. In order to evaluate and assess the design process for UX, an interactive \textit{dashboard} was created that presented data from Swedish payment stations. The development of the design process for UX resulted in an optimization of the prototype-creation and testing. The design process for UX enabled development of the product, instead of the prototype, which improved the testing with the end user and therefor also the end product. However, there were disadvantages when Kibana was used which were limitations in modifying the user interface and that the system needed to be ready before the UX design process could begin. 
 
 
 \textbf{Keywords}
@@ -114,13 +114,13 @@ Vi skulle vilja tacka alla inblandade parter i detta examensarbete på ÅF och K
 % Mainmatter is where the actual contents of the thesis goes
 \mainmatter
 
-\afterpage{\null\newpage}
+\afterpage{\null}
 
 
 \chapter{Inledning}
 Detta kapitel inleds med en problemformulering som förklarar vilka svårigheter det finns vid visualisering av strömmande data och vilka problem som finns i den traditionella UX-designprocessen. Därefter beskrivs projektets målsättning som följs av avgränsningar.
-\section{Problemformuläring}
-För 30 år sedan uppstod konceptet användarupplevelse, mer känt som UX, som står för engelskans User Experience. Det är kvalitén på upplevelsen och erfarenheten som användaren får vid interaktion med en viss produkt, ett system eller en tjänst. För att ge användare en bra användarupplevelse bör användargränssnittet, d.v.s. det grafiska gränssnittet, vara användarvänligt. Detta innebär att gränssnittet ska vara lätt att använda och förstå samt uppfylla de avsedda användarnas behov och hjälpa användaren att utföra den önskade uppgiften. 
+\section{Problemformulering}
+För 30 år sedan uppstod konceptet användarupplevelse, mer känt som UX, som står för engelskans \textit{User Experience}. Det är kvalitén på upplevelsen och erfarenheten som användaren får vid interaktion med en viss produkt, ett system eller en tjänst. För att ge användare en bra användarupplevelse bör användargränssnittet, d.v.s. det grafiska gränssnittet, vara användarvänligt. Detta innebär att gränssnittet ska vara lätt att använda och förstå samt uppfylla de avsedda användarnas behov och hjälpa användaren att utföra den önskade uppgiften. 
 
 Dock är det inte alltid lätt att skapa användargränssnitt för produkter, speciellt när det gäller att visualisera strömmande data. Svårigheten ligger i att göra informationen i data så lättförståelig för användaren som möjligt och att möjliggöra användaren att få ut önskad information. Dessa svårigheter beror på en mängd faktorer som datats komplexitet samt hastigheten och mängden data som strömmar in. 
 
@@ -128,12 +128,12 @@ För att ta fram ett användargränssnitt bör en designprocess för UX, även k
 
 Ytterligare en svårighet som finns vid framtagandet av interaktiva prototyper är att detta kan vara väldigt tidskrävande för en UX-designer. Detta eftersom resultatet av varje användarinteraktion som ska finnas i slutprodukten även skulle behöva tas fram för prototypen. Därför leder detta problem, samt de ovannämnda, till att extra tid måste läggas ned av UX-designern vilket även ökar kostnader. 
 
-I detta projekt användes därför ett verktyg prototypskapandet kunde ersättas med där produktframtagningen. Syftet var att utvärdera designprocessen vid användningen av det verktyget jämfört med den vanligen använda designprocessen. Verktyget skulle användas för hämtning, tillfällig lagring och visualisering av data. Det fanns en mängd olika verktyg för detta som till exempel Elastic Stack, Loggly och Scalyr. Eftersom Elastic Stack säger sig vara “en världsledande mjukvaruleverantör för att göra strukturerad och ostrukturerade data användbar i realtid för användarfall som sökning, loggning, säkerhet och analys” [1] valdes detta verktyg. I samma artikel presenteras statistiken att Elastic Stack har över 100 miljoner nedladdningar vilket visar på att det är extremt populärt och använt. Dessutom var Elasticsearch, som är sökmotorn i Elastic Stack och möjliggör lagring, sökning och analys av stora mängder data i nära realtid, den mest populära sökmotorn enligt en rakning av sökmotorer som gjorts på DB-Engines i Maj 2018 [2]. Eftersom Kibana används för visualisering av data som finns i Elasticsearch är det även möjligt för alla Elasticsearch användare att använda Kibana vilket skulle innebära en stor mängd potentiella användare av Kibana. Under projektets gång låg fokus på Kibana eftersom det är visualiseringsverktyget i Elastic Stack.
+I detta projekt användes därför ett verktyg där prototypskapandet kunde ersättas med där produktframtagningen. Syftet var att utvärdera designprocessen vid användningen av det verktyget jämfört med den vanligen använda designprocessen. Verktyget skulle användas för hämtning, tillfällig lagring och visualisering av data. Det fanns en mängd olika verktyg för detta som till exempel Elastic Stack, Splunk och Scalyr. Elastic Stack säger sig på deras hemsida [1] vara en världsledande mjukvaruleverantör för att göra strukturerad och ostrukturerade data användbar i realtid för användarfall som sökning, loggning, säkerhet och analys. Även statistiken om att Elastic Stack har över 100 miljoner nedladdningar presenteras på Elastic Stacks hemsida vilket visar på att det är ett extremt populärt och väl använt verktyg. Dessutom var Elasticsearch, som är sökmotorn i Elastic Stack och möjliggör lagring, sökning och analys av stora mängder data i nära realtid, den mest populära sökmotorn enligt en rakning av sökmotorer som gjorts på DB-Engines i Maj 2018 [2]. Eftersom Kibana används för visualisering av data som finns i Elasticsearch är det även möjligt för alla Elasticsearch användare att använda Kibana vilket skulle innebära en stor mängd potentiella användare av Kibana. Baserat på ovanstående orsaker valdes Elastic Stack som verktyg för detta projekt. Under projektets gång låg fokus på Kibana eftersom det är visualiseringsverktyget i Elastic Stack.
 
 Dataströmmen som användes som exempeldata vid visualiseringen var från Transportstyrelsens öppna databas gällande betalstationer i Sverige. Detta möjliggjorde en visualisering av trafik där användare kunde få information som till exempel antal fordon som passerade ett valt område, fördelning av fordonstyper, var fordonsägare som åkte igenom valda betalstationer bodde m.m.
 
 \section{Målsättning}
-Detta arbete syftar till att undersöka om, och hur Kibana kan förbättra UX-designprocessen vid visualisering av data. Ett av målen i det här projekt var därför att ta fram viktiga problem och eventuella brister inom UX-designprocessen och undersöka dessa. Det skulle även skapas en produkt med hjälp av Elastic Stack där Kibana skulle användas som visualiseringsverktyg. Framtagningen av produkten gjordes för att kunna uppfylla det huvudsakliga målet med projektet vilket var en UX-designprocess som togs fram vid användning av Kibana. Den skulle sedan utvärderas av erfarna UX-designers för att jämföras med den traditionella UX-designprocessen. 
+Detta arbete syftar till att undersöka om, och hur Kibana kan förbättra UX-designprocessen vid visualisering av data. Ett av målen i det här projekt var därför att ta fram viktiga problem och eventuella brister inom UX-designprocessen och undersöka dessa. Det skulle även skapas en produkt med hjälp av datahanterings- och visualiseringsverktyget Elastic Stack där Kibana skulle användas som visualiseringsverktyg. Framtagningen av produkten gjordes för att kunna uppfylla det huvudsakliga målet med projektet vilket var en UX-designprocess som togs fram vid användning av Kibana. Den skulle sedan utvärderas av erfarna UX-designers för att jämföras med den traditionella UX-designprocessen. 
 
 Projektet skulle delas upp i följande mer detaljerade delmål:
 
@@ -149,9 +149,7 @@ Projektet skulle delas upp i följande mer detaljerade delmål:
 För att kunna utvärdera och bedöma UX-designprocessen vid användning av Kibana skulle en interaktiv \textit{dashboard} skapas med hjälp av Kibana som presenterade Transportstyrelsens data från betalstationer. För att göra detta skulle följande delsteg utföras: Utforska slutanvändare och ta fram deras behov och krav, ta fram lösningar som uppfyller dessa behov och krav, implementera lösningarna i en interaktiv \textit{dashboard} i Kibana, testa produkten mot slutanvändare genom djupintervjuer och upprepa tidigare delsteg tills produkten blev accepterad av slutanvändaren. För att visualisera data från Transportstyrelsen skulle även data förberedas för visualisering. Detta genom att skapa en webbtjänst som skulle hämta data från Transportstyrelsen och modifiera data så att de skulle bli kompatibla med Kibana.
 
 \section{Avgränsningar}
-Data som skulle användas för analys och visualisering skulle vara data från Transportstyrelsens betalstationer. Skapandet av webbapplikationen, analys och visualisering av data skulle göras med hjälp av Elastic Stacks open-sourceprojekt: Logstash, Elasticsearch och Kibana. 
-
-\afterpage{\null\newpage}
+Data som skulle användas för analys och visualisering skulle vara data från Transportstyrelsens betalstationer. Skapandet av webbapplikationen, analys och visualisering av data skulle göras med hjälp av datahanterings- och visualiseringsverktyget Elastic Stacks open-sourceprojekt: Logstash, Elasticsearch och Kibana. 
 
 \chapter{Teori och bakgrund}
 
@@ -164,7 +162,7 @@ I detta avsnitt kommer termerna användargränssnitt och användarupplevelse pre
 
 Den första datorn med ett grafiskt användargränssnitt var Xerox PARC och skapades 1973 [3]. Det hade bilder, listrutor och kryssrutor. Innan detta var användaren tvungen att interagera med en dator enbart via ett kommandoradsgränssnitt. Efter det första grafiska användargränssnittet har konceptet undersökts och utvecklats mycket och blivit en nödvändig del av en produkt. Användargränssnittet är inte bara ett grafiskt användargränssnitt, det är användbarheten av en produkt för användaren.
 
-I och med utvecklingen av teknik och den ständiga ökningen av andelen människor som använder teknikprodukter, uppstod aspekter av produkter som inte tidigare undersökts såsom användarupplevelse. Konceptet User Experience (UX) introducerades först under 1990-talet av Donald Norman [4]. Innan termen User Experience introducerades, hänvisade människor till detta koncept som "critical aspects of human interface research and application".
+I och med utvecklingen av teknik och den ständiga ökningen av andelen människor som använder teknikprodukter, uppstod aspekter av produkter som inte tidigare undersökts såsom användarupplevelse. Konceptet \textit{User Experience} (UX) introducerades först under 1990-talet av Donald Norman [4]. Innan termen \textit{User Experience} introducerades, hänvisade människor till detta koncept som "critical aspects of human interface research and application".
 
 \subsection{Användarupplevelse}
  
@@ -175,7 +173,7 @@ Användarupplevelsen är en mycket komplicerad process som överstiger vad anvä
 I boken “Measuring the User Experience” [7] av Tom Tullis och Bill Albert förklaras det att användarupplevelsens stora inflytande på användaren har fått många företag att tillägna avdelningar som är dedikerade till att undersöka och förbättra användarupplevelsen av sina produkter. Anledningen till att användarupplevelse är så viktigt för producenterna är att när en produkt saknar användarupplevelse eller inte har tillräckligt med användarupplevelse, påverkar det radikalt försäljningen av produkten. 
 
 \subsection{Användargränssnitt}
-Användargränssnittet, även kallat UI efter engelskans User Interface, är den del av en systemprogramvara som användaren kan se, höra, röra eller prata med enligt boken “The Essential Guide to User Interface Design: An introduction to HUI Design” [8]. Det är indelat i två aspekter, ett är användarinmatningen och ett är systemutmatningen. Inmatningen är det sätt som användaren interagerar med systemet och kan vara via tangentbordet, musen, pekskärmen eller rösten. Utmatningen är hur användaren kommer att få ett svar från systemet och det främsta exemplet på det i dagens samhälle är en bildskärm. 
+Användargränssnittet, även kallat UI efter engelskans \textit{User Interface}, är den del av en systemprogramvara som användaren kan se, höra, röra eller prata med enligt boken “The Essential Guide to User Interface Design: An introduction to HUI Design” [8]. Det är indelat i två aspekter, ett är användarinmatningen och ett är systemutmatningen. Inmatningen är det sätt som användaren interagerar med systemet och kan vara via tangentbordet, musen, pekskärmen eller rösten. Utmatningen är hur användaren kommer att få ett svar från systemet och det främsta exemplet på det i dagens samhälle är en bildskärm. 
 
 Begreppet användargränssnittsdesign kommer från en studie kallad människa-datorinteraktion, förkortat MDI, som är studien, planeringen och designen av hur människor och datorer kommunicerar för att uppfylla användarens behov. Ett bra användargränssnitt är ett gränssnitt som är lätt att använda och förstå. Det uppfyller den avsedda användarens behov och hjälper användaren att utföra den önskade uppgiften. Enligt artikeln ”Master Mobile Design” [9] skriven av Nick Babich presenteras det att om användaren inte är nöjd med en användarupplevelse efter första användningen finns det 80\% möjlighet att användaren slutar använda en applikation. Därför är det viktigt att säkerställa att användargränssnittet är välanpassat för användaren med hjälp av designprocessen i användargränssnittet.
 
@@ -197,7 +195,7 @@ En ganska stor del av befolkningen är färgblinda, vilket betyder att de kan ha
 \subsection{UX-designprocess}
 
 
-Inom begreppet MDI tillhör interaktionsdesign som har som mål att öka människors förståelse över vad som kan göras, vad som sker och vad som precis hänt. För att kunna göra detta och försäkra en positiv användarupplevelse av produkten som designas så ska principer inom psykologi, design, konst och känsla följas. Kraven inom detta område är att försäkra att människors behov är mötta, att den resulterande produkten är förståelig, lätt och naturlig att använda och det ska vara svårt att göra fel. Dessutom ska användaren kunna utföra önskade uppgifter och upplevelsen ska vara positiv och njutningsbar för användaren.                    
+Inom begreppet människa-dator interaktion tillhör interaktionsdesign som har som mål att öka människors förståelse över vad som kan göras, vad som sker och vad som precis hänt. För att kunna göra detta och försäkra en positiv användarupplevelse av produkten som designas så ska principer inom psykologi, design, konst och känsla följas. Kraven inom detta område är att försäkra att människors behov är mötta, att den resulterande produkten är förståelig, lätt och naturlig att använda och det ska vara svårt att göra fel. Dessutom ska användaren kunna utföra önskade uppgifter och upplevelsen ska vara positiv och njutningsbar för användaren.                    
 
 \captionsetup[figure]{name=Figur}
 
@@ -273,7 +271,7 @@ Ytterligare en svårighet med att presentera dataströmmar är att hastigheten s
 
 \section{Elastic Stack} 
 
-Elastic stack är ett verktyg som kan ta data från vilken källa som helst, i vilket format som helst, och söka, analysera och visualisera det i realtid. Den består av fyra open-sourceprojekt som är Beats, Logstash, Elasticsearch och Kibana som presenteras mer i detalj nedan. Användning av Elastic stack är gratis men det finns begränsningar i utrymme och vissa extrafunktioner som kan betalas. [27]
+Elastic stack är ett verktyg som kan ta data från vilken källa som helst, i vilket format som helst, och söka, analysera och visualisera det i realtid. Den består av fyra open-sourceprojekt som är Beats, Logstash, Elasticsearch och Kibana som presenteras mer i detalj nedan. Användning av Elastic stack är gratis men det finns begränsningar i utrymme och vissa extrafunktioner som kostar. [27]
 
 
 \subsection{Logstash} 
@@ -307,9 +305,10 @@ Vid skapandet av en interaktiv \textit{dashboard} finns det en mängd egenskaper
 I Kibana finns även utvecklarverktyg som erbjuder kraftfulla sätt att interagera med Elastic Stack. Med den inbyggda konsolen kan utvecklare undvika att skriva kommandon i terminalen och istället utveckla Elasticsearch-data direkt i Kibana. I den betalda versionen av Elastic Stack finns det även möjlighet för tillämpning av maskininlärning på data i Elasticsearch, notiser vid ändringar av specificerade data, rapportgenerering av en eller flera visualiseringar i Kibana.
 
 \afterpage{\null\newpage}
+
 \chapter{Metod}
 
-I detta kapitel presenteras vilka metoder som användes för att uppfylla målen definierade i 1.2.
+I detta kapitel presenteras vilka metoder som användes för att uppfylla målen definierade i 1.2. 
 
 \section{Litteraturstudie}
 
@@ -331,7 +330,7 @@ En utvärdering gjordes även av kommunikationen mellan Agila utvecklare och UX-
 
 För att möjliggöra utvärderingen av designprocessen vid användning av Kibana skapades ett användargränssnitt med hjälp av Kibana som skulle visualisera Transportstyrelsens data från betalstationer.
 
-För att kunna presentera data användes Elastic Stack. Anledningen till att just detta verktyg valdes är på grund av övertaget denna produkt har på marknaden. Den är snabb vid sökningar och analyser, gör filtrerings- och modifiering processen smidig och erbjuder ett helt anpassningsbart användargränssnitt. Dessutom är det en väldigt stabil produkt som används av stora företag som bland annat Facebook, eBay, Netflix och Slack enligt Elastic Stacks lista på kunder [32].  
+För att kunna presentera data användes Elastic Stack. Anledningen till att just detta verktyg valdes är på grund av övertaget denna produkt har på marknaden. Den är snabb vid sökningar och analyser, gör filtrerings- och modifiering processen smidig och erbjuder ett helt anpassningsbart användargränssnitt. Dessutom är det en väldigt stabil produkt som används av stora företag som bland annat Facebook, eBay, Netflix och Slack enligt Elastic Stacks lista på kunder [32]. Enligt rapporten "Descriptive study and experimental analysis of the ELK stack applicability for Big Data use cases" [33] är Elastic Stack det bästa alternativet jämfört med Splunk och SiLK baserat på egenskaper som erbjuds och faktumet att Elastic Stack är ett \textit{open-source} projekt. 
 
 En utmaning i visualisering av strömmande data har varit visuell skalbarhet och beslutsfattande. Ett annat vanligt problem inom visualisering av strömmande data var hastigheten som data skulle komma in och kombination av data vid visualisering för ökande förståelse. Ett mer generellt men ofta förekommande problem vid användning av data är att de inte är i den önskade formen och därför krävs det modifiering för att kunna använda dem på det önskade sättet. Vid skapandet av \textit{dashboarden} skulle de ovannämnda utmaningarna ligga i fokus. I det här projektet skulle visualisering av strömmande data examineras och därför behövdes det en dataström. Data som användes var statisk, icke konsistent och ofullständigt därför valdes den följande implementationen.
 
@@ -398,6 +397,8 @@ Koordinat för betalstationens
 
 För att visualisera data i en interaktiv \textit{dashboard} i Kibana skapades först alla UI-element och sedan integrerades de in i en \textit{dashboard}. De UI-element som användes var de som fanns tillgängliga i Kibana och som var passande för syftet. De element som användes var:
 
+\newpage
+
 \begin{itemize}
 \item Taggmoln:
 \begin{itemize}
@@ -435,9 +436,6 @@ För att visualisera data i en interaktiv \textit{dashboard} i Kibana skapades f
 
 Vid specificering av data som skulle ingå i ett UI-element gjordes automatiska aggregeringar av Kibana vid val av fält. Aggregering gjordes på termer i valda fält, koordinater och datum. För termer i valda fält specificerades ett fält och sedan skapades automatiskt aggregeringar baserat på flest/minst antal gånger värdet i detta fält uppkom. Eftersom de UI-elementen som skapades kunde återanvändas på flera olika \textit{dashboards} skapades flera versioner av användargränssnittet vid varje iteration. 
 
-
-\afterpage{\null\newpage}
-
 \chapter{Resultat}
 
 I det här kapitlet kommer designprocessen vid användning av Kibana samt tillämpningen av den att förklaras. Även en utvärdering av den framtagna designprocessen presenteras i detta kapitel.  
@@ -459,7 +457,7 @@ UX-designprocessen som togs fram under detta projekt följde stegen i figur 4.1.
 \end{itemize}
 
 \section{Utvärdering av UX-designprocessen vid användning av Kibana}
-Formuläret för utvärdering av UX-designprocessen vid användning av Kibana besvarades av 32 lämpliga kandidater. Eftersom formuläret skickades ut till 60 personer resulterade detta i en svarsfrekvens på 53\%. En sammanfattning av utvärderingen blev följande:
+Formuläret för utvärdering av UX-designprocessen vid användning av Kibana besvarades av 32 lämpliga kandidater. Eftersom formuläret skickades ut till 60 personer resulterade detta i en svarsfrekvens på 53\%. En sammanställning av alla svar kan finnas i A.6 i Appendix. Nedan följer en sammanfattning av utvärderingen:
 
 \begin{itemize}
 \item Att Kibana möjliggjorde \textit{high-fidelity} vid aspekterna interaktion, funktionalitet och visualisering tyckte 88\% av deltagarna var bra eller mycket bra egenskaper.
@@ -472,7 +470,7 @@ Formuläret för utvärdering av UX-designprocessen vid användning av Kibana be
 
 \item Kibana hade egenskapen att inkludera en \textit{dashboard} i en webbsida där bland annat font, rubriker och fördelning kunde anpassas. 75\% av deltagarna tyckte att denna egenskap var användbar eller mycket användbar.
 
-\item I Kibana kunde uppdateringsfrekvensen av \textit{dashboarden} som minst specificeras till 5 sekunder, vilket kunde ha en påverkan vid visualisering av strömmande data. Detta tyckte 38\% var dåligt och 31\% var skäligt. En kommentar var att det berodde på dataströmmens detaljnivå.
+\item I Kibana kunde uppdateringsfrekvensen av \textit{dashboarden} specificeras till minst fem sekunder, vilket kunde ha en påverkan vid visualisering av strömmande data. Detta tyckte 38\% var dåligt och 31\% var skäligt. En kommentar var att det berodde på dataströmmens detaljnivå.
 
 \item Att det var en väldigt intuitiv utvecklingsmiljö i Kibana tyckte 56\% av deltagarna var en väldigt bra egenskap och 38\% tyckte att det var en bra egenskap.
 
@@ -493,8 +491,7 @@ Svårigheter vid kommunikationen mellan Agila utvecklare och UX-designers elimin
 
 Nedanstående steg upprepades tre gånger och slutprodukten finns tillgänglig i A.5 i Appendix.  
 
-\subsection{ Utforska slutanvändare och ta fram deras behov och krav
-}
+\subsection{Utforska slutanvändare och ta fram deras behov och krav}
 Det första steget gick ut på att förstå användarna och deras behov. Det gjordes genom att analysera data som skulle presenteras för att komma fram till intressant information som skulle kunna lyftas fram med presentation av data. För att göra detta skapades användarprofiler, även kallas för \textit{personas}, som representerade slutanvändaren av produkten. I dessa \textit{personas} beskrevs användares behov, mål och egenskaper och finns i A.2 i Appendix. \textit{Personas} skapades endast under den första iterationen. Utifrån dessa \textit{personas} definierades designkraven för \textit{dashboarden} gällande visualiseringen av data. De definierade designkraven gick ut på att presentera följande information på \textit{dashboarden}:
 
 \begin{itemize}
@@ -508,7 +505,7 @@ Det första steget gick ut på att förstå användarna och deras behov. Det gjo
 
 Vid start av varje iteration analyserades resultatet av testningsfasen. 
 
-\subsection{Ta fram lösningar som uppfyller dessa behov och krav }
+\subsection{Ta fram lösningar som uppfyller slutanvändares behov och krav}
 Detta gick ut på att utforska data som skulle presenteras. Det inspekterades vilka värden som fanns tillgängliga och vilka möjligheter som fanns för att kombinera data för visualisering. Lösningarna blev dessa:
  
 \begin{itemize}
@@ -526,12 +523,11 @@ Detta gick ut på att utforska data som skulle presenteras. Det inspekterades vi
 
 Efter detta togs förslag om hur användargränssnittet skulle se ut fram. Det ritades ett första utkast för användargränssnittet och visades till en av slutanvändarna för att diskutera möjliga förändringar eller tillägg. 
 
-\subsection{ Implementera lösningarna i en interaktiv \textit{dashboard} i Kibana }
-Efter att användare godkände ritningen skapades en \textit{dashboard} i Kibana baserat på den. Vid specificering av data som skulle ingå i ett UI-element gjordes automatiska aggregeringar av Kibana vid val av fält. Aggregering gjordes på värden i valda fält, koordinater och datum. För att aggregera på värden i valda fält specificerades fältet i UI-elementet och sedan skapades automatiskt aggregeringar baserat på flest/minst antal gånger värdet i detta fält uppkom. Under skapandet av \textit{dashboarden} togs flera olika designer fram. Det togs även hänsyn till UX riktlinjer, tidigare teorier inom UI och UX samt användares behov och önskemål. Vid varje iteration skapades nya \textit{dashboards} som tillämpade ändringar baserat på analysen av testresultatet.
+\subsection{Implementera lösningarna i en interaktiv \textit{dashboard} i Kibana }
+Efter att användarna godkände ritningen på användargränssnittet skapades en \textit{dashboard} i Kibana baserat på den. Vid specificering av data som skulle ingå i ett UI-element gjordes automatiska aggregeringar av Kibana vid val av fält. Aggregering gjordes på värden i valda fält, koordinater och datum. För att aggregera på värden i valda fält specificerades fältet i UI-elementet och sedan skapades automatiskt aggregeringar baserat på flest/minst antal gånger värdet i detta fält uppkom. Under skapandet av \textit{dashboarden} togs flera olika designer fram. Det togs även hänsyn till UX riktlinjer, tidigare teorier inom UI och UX samt användares behov och önskemål. Vid varje iteration skapades nya \textit{dashboards} som tillämpade ändringar baserat på analysen av testresultatet.
 
-\subsection{ Testa produkten mot slutanvändare genom djupintervjuer 
-}
-Därefter utfördes testning av \textit{dashboarden} i en grupp av fem personer som representerade möjliga slutanvändare. Testningen genomfördes genom att ställa frågor till användaren angående \textit{dashboarden} och att låta användaren utföra specificerade uppgifter på \textit{dashboarden}. Det utfördes tre iterationer av UX-designprocessen vid användning av Kibana. Användaren observerades vid testningen av produkten och handlingar, tankar och åsikter under utförandet noterades och stod i fokus vid förbättring av \textit{dashboarden}. Frågor som ställdes till användarna vid testning och svaren kan hittas i A.3 i Appendix. Svar från dessa frågor och anteckningar från testning användes vid framtagandet av nästa \textit{dashboard}. Vid varje iteration testades varje ny \textit{dashboard} och ett detaljerat testresultat kan hittas i A.4 i Appendix. En sammanställning av testresultatet presenteras nedan. 
+\subsection{Test av produkten mot slutanvändare genom djupintervjuer}
+Testningen av \textit{dashboarden} utfördes i en grupp av fem personer som representerade möjliga slutanvändare. Testningen genomfördes genom att ställa frågor till användaren angående \textit{dashboarden} och att låta användaren utföra specificerade uppgifter på \textit{dashboarden}. Det utfördes tre iterationer av UX-designprocessen vid användning av Kibana. Användarna observerades vid testningen av produkten och handlingar, tankar och åsikter under utförandet noterades och stod i fokus vid förbättring av \textit{dashboarden}. Frågor som ställdes till användarna vid testning och svaren kan hittas i A.3 i Appendix. Svar från dessa frågor och anteckningar från testning användes vid framtagandet av nästa \textit{dashboard}. Vid varje iteration testades varje ny \textit{dashboard} och ett detaljerat testresultat kan hittas i A.4 i Appendix. En sammanställning av testresultatet presenteras nedan. 
 
 \begin{enumerate}
 \item Första iterationens testresultat:
@@ -592,7 +588,7 @@ I tabell 4.1 finns designprocessens genomförande sammanställd. Designkraven ko
   &Län där fordonsägare bor
  & Karta med geografiska områden  & Län\\ \hline
  
-Hur många fordon som passerade den senaste minuten? &Antal fordon
+Hur många fordon passerade den senaste minuten? &Antal fordon
  & Antal  & PassageObjekt\\ \hline
  
  \multirow{2}{3cm}{Hur ser trafikfördelningen ut baserat på riktning?} &  Riktnings-fördelning&Cirkeldiagram& Riktning\\\cline{2-4}
@@ -612,7 +608,7 @@ Hur många fordon som passerade den senaste minuten? &Antal fordon
 \chapter{Analys och diskussion}
 I detta kapitel kommer UX-designprocessen vid användning av Kibana analyseras och diskuteras jämfört med den traditionella UX-designprocessen. Även en analys av utvärderingen som gjordes av erfarna UX-designers för den framtagna designprocessen kommer utföras i detta kapitel. 
 
-\section{ Jämförelse mellan UX-designprocess vid användning av Kibana och den traditionella UX-designprocessen}
+\section{Jämförelse mellan UX-designprocess vid användning av Kibana och den traditionella UX-designprocessen}
 Den UX-designprocessen som togs fram vid användning av Kibana följde den traditionella UX-designprocessen och var lik den gällande de två första stegen: observation och idéskapandet. Under dessa steg genomfördes arbetet i det här projektet som om de hade genomförts vid tillämpningen av den traditionella UX-designprocessen. De två sista stegen i den framtagna UX-designprocessen som var produktskapandet och testning skiljde sig från de två sista stegen i den traditionella UX-designprocessen som var prototypskapandet och testning. De skiljde sig åt vad det gällde tillvägagångssätt och innehåll. 
 
 Produktskapandet skulle gå till genom att implementera lösningar för det som togs fram under idéskapandet genom att ta fram \textit{dashboards} som hade \textit{high-fidelity}. Detta betydde att varje \textit{dashboard} som togs fram skulle stödja all funktionalitet som systemet erbjöd och skulle kunna vara slutprodukten. Detta var något som var kostsamt vid den traditionella UX-designprocessen eftersom en \textit{high-fidelity} prototyp skulle kräva mycket förberedelse för att kunna efterlikna slutproduktens funktionalitet. 
@@ -624,7 +620,7 @@ Testningen i UX-designprocessen vid användning av Kibana hade också några ski
 En stor begränsning som UX-designprocessen vid användning av Kibana hade var att den enbart skulle kunna användas för visualisering av data. Detta var en väldigt stor begränsning jämfört med den traditionella UX-designprocessen som skulle kunna användas på alla olika områden. 
 
 \section{Utvärdering av UX-designprocessen vid användning av Kibana}
-Efter utvärderingen av UX-designprocessen kunde det konstateras att majoriteten av deltagarna hade ett positivt intryck av att ta fram och testa en produkt istället för prototyp i UX-designprocessen. Detta eftersom det säkerställde \textit{high-fidelity} av \textit{dashboarden} i tre aspekter: interaktivitet, funktionalitet och visualisering utan att det blev kostsamt eller tidskrävande. Det var även positivt eftersom all funktionalitet i systemet kunde testas på ett ekonomiskt sätt gällande både tid och pengar. 
+Efter utvärderingen av UX-designprocessen med erfarna UX-designers kunde det konstateras att majoriteten av deltagarna hade ett positivt intryck av att ta fram och testa en produkt istället för prototyp i UX-designprocessen. Detta eftersom det säkerställde \textit{high-fidelity} av \textit{dashboarden} i tre aspekter: interaktivitet, funktionalitet och visualisering utan att det blev kostsamt eller tidskrävande. Det var även positivt eftersom all funktionalitet i systemet kunde testas på ett ekonomiskt sätt gällande både tid och pengar. 
 
 Däremot var det en väldigt stor del av deltagarna som tyckte att begränsningarna vid visualisering i Kibana var negativt eftersom UX-designerna inte hade den friheten de ofta behövde. Detta inkluderade följande: 
 \begin{itemize}
@@ -635,7 +631,7 @@ Däremot var det en väldigt stor del av deltagarna som tyckte att begränsninga
 
 Dessa tre begränsningar kunde vara viktiga i UX-designprocessen eftersom de styrde utseendet av användargränssnittet och därmed även användarupplevelsen. På grund av dessa begränsningar kunde slutsatsen att Kibana försämrade produktens helhetsintryck dras. Om det dock fanns stöd för dessa begränsningar hade Kibana varit ett bättre verktyg för UX-designers eftersom de hade fått den friheten de behövt vid visualiseringen. Ytterligare något som deltagarna tyckte var en positiv egenskap i Kibana var möjligheten att inkludera en \textit{dashboard} i en webbsida med hjälp av HTML. Detta var något som skulle kunna lösa problemen med Kibanas begränsningar. Eftersom Kibana var ett open-sourceprojektsom ständigt utvecklades fanns den potential och en stor möjlighet för mer utveckling och förbättringar.
 
-Deltagarnas åsikter angående uppdateringsfrekvensen som Kibana erbjöd var splittrade. Den högsta uppdateringsfrekvensen som fanns tillgänglig i Kibana var fem sekunder. Detta kunde betraktas som en dålig egenskap eftersom strömmande data med en uppdateringsfrekvens på varje millisekund inte skulle kunna visualiseras så fort nya data fanns tillgänglig. Detta problem hade kunnat bli åtgärdat om Kibana skapade en egenskap som automatiskt justerade uppdateringsfrekvensen baserat på hastigheten som data strömmar in. Däremot hade detta inte varit ett problem alls om dataströmmen har fem sekunder som uppdateringsfrekvens eller lägre och därför skulle det rekommenderas att välja en sådan dataström vid användning av Kibana. 
+Deltagarnas åsikter angående uppdateringsfrekvensen som Kibana erbjöd var splittrade. Den högsta uppdateringsfrekvensen som fanns tillgänglig i Kibana var fem sekunder. Detta kunde betraktas som en dålig egenskap eftersom strömmande data med en uppdateringsfrekvens på varje millisekund inte skulle kunna visualiseras så fort ny data fanns tillgänglig. Detta problem hade kunnat bli åtgärdat om Kibana skapade en egenskap som automatiskt justerade uppdateringsfrekvensen baserat på hastigheten som data strömmar in. Däremot hade detta inte varit ett problem alls om dataströmmen har fem sekunder som uppdateringsfrekvens eller lägre och därför skulle det rekommenderas att välja en sådan dataström vid användning av Kibana. 
 
 Deltagarna i utvärderingen betraktade det som väldigt positivt att Kibana hade en intuitiv utvecklingsmiljö och att det var lätt för andra UX-designers eller utvecklare att förstå hur verktyget skulle användas. Detta var en speciellt bra egenskap eftersom arbetsprocessen i projekt effektiviserades om verktygen som användes var lätta att sätta sig in i och använda sig av. 
 
@@ -658,7 +654,7 @@ I detta avsnitt kommer tillämpningen av UX-designprocessen analyseras. Även f�
 \subsection{Utforska slutanvändare och ta fram deras behov och krav} 
 Vid framtagandet av \textit{personas} var en av nackdelarna att det inte fanns en tänkt slutanvändare eftersom produkten endast skulle tas fram i syfte att testa UX-designprocessen vid användning av Kibana. Eftersom det inte fanns några tänkta användare togs dessa \textit{personas} fram av författarna och blev då inte så specificerade som de hade kunnat blivit. Det som hade kunnat göras istället var att ställa frågor utåt genom formulär för att ta reda på vad människor hade velat ha som designkrav, eftersom den tänkta målgruppen ändå var en genomsnittlig svensk som var intresserad av trafikinformation i Sverige. Detta hade underlättat vid de andra stegen i designprocessen då det hade funnits ett mer specificerat mål och krav i alla steg.
 
-\subsection{Ta fram lösningar som uppfyller dessa behov och krav}
+\subsection{Ta fram lösningar som uppfyller slutanvändares behov och krav}
 För att ta fram lösningar krävdes det en hel del förarbete inom Kibana av författarna, som inte hade någon erfarenhet av visualiseringsverktyget. För att ta reda på vilka möjligheter som fanns för visualisering behövde författarna vetskap angående vilka UI-element som fanns tillgängliga, hur de kunde anpassas och hur de kunde kombineras i Kibana. Om personen som skulle använda sig av Kibana hade varit erfaren av visualiseringsverktyget, som författarna upplevde sig vara efter projektet, hade detta dock inte varit ett problem. Därmed hade detta endast varit problematiskt vid den första användningen av Kibana.
 
 \subsection{Implementera lösningarna i en interaktiv \textit{dashboard} i Kibana}
@@ -677,8 +673,8 @@ Vad det gällde modifieringen av UI-elementens utseende och deras fördelning i 
 
 Dessa ovanstående begränsningar hade en stor påverkan på användargränssnittet och på användarupplevelsen för slutprodukten eftersom det blev svårt att anpassa dessa för att passa slutanvändarens krav. Någonting som hade kunnat förminska eller eliminera dessa begränsningar var möjligheten som fanns i Kibana var att inkludera en \textit{dashboard} i en webbsida genom HTML. Eftersom webbsidan hade varit helt anpassningsbar med avseende på faktorer som font och fördelning av UI-element så hade \textit{dashboarden} kunnat bli förbättrad i sin helhet. Dessutom hade vissa krav som, utan inkludering i en webbsida, hade varit omöjliga att nå kunnat bli blivit möjliga vilket hade resulterat i en nöjdare slutanvändare. På grund av detta projektets tidsbegränsningar fanns det inte tillräckligt med tid för att skapa denna webbsida med inkludering av \textit{dashboarden}.  
 
-\subsection{Testa produkten mot slutanvändare genom djupintervjuer } 
-Testningen av produkten genomfördes genom att anteckna och fråga de möjliga slutanvändarna vid djupintervjuer. Eftersom ett stort fokus vid testningen låg vid att de som testades skulle utföra uppgifter som specificerats så ställdes frågor angående svårighetsgraden på uppgiften. De blev ombedda att betygsätta svårighetsnivån. Detta användes sedan för att analysera en iterering och se om förändringar som gjorts i designen hade underlättat för testarna att slutföra en specificerad uppgift. 
+\subsection{Test av produkten mot slutanvändare genom djupintervjuer} 
+Testningen av produkten genomfördes genom att djupintervjuer med de möjliga slutanvändarna. Eftersom ett stort fokus vid testningen låg vid att de som testades skulle utföra uppgifter som specificerats så ställdes frågor angående svårighetsgraden på uppgiften. De blev ombedda att betygsätta svårighetsnivån. Detta användes sedan för att analysera en iterering och se om förändringar som gjorts i designen hade underlättat för testarna att slutföra en specificerad uppgift. 
 
 Eftersom \textit{dashboarden} upplevdes rörig och ostrukturerad vid första itereringen lades mer beskrivande text för UI-element och distribuering av UI-element i \textit{dashboarden} ändrades. Svårigheterna var att hitta, läsa och tolka texten för att interagera med de UI-elementen. Kartorna var inte intuitiva och de var svåra att hantera på grund av Kibanas sätt att möjliggöra filtrering i kartor. Detta innebar att filtreringen i \textit{dashboarden} var svår att utföra. Därför lades istället taggmoln till som underlättade filtreringen och hanteringen av \textit{dashboarden}. Det förekom att färgerna i UI-elementen var liknande nyanser vilket försvårade avläsningen av data och därför ändrades de till färger som kunde separeras från varandra vilket underlättade avläsning av värden.
 
@@ -698,12 +694,12 @@ Ytterligare en svårighet som författarna stött på var vid visualisering av g
 Kibana erbjöd stöd för visualisering av data på kartor men endast för ett begränsat antal länder och eftersom den datakälla som användes i detta projekt innehöll svensk geografisk information som inte fanns tillgänglig ledde detta till en till svårighet. Författarna behövde hitta denna information, modifiera den till rätt format och lägga till den i Kibana för att möjliggöra visualisering av data på kartor. Detta var en tidskrävande process som borde tas hänsyn till när det önskas att utföra visualisering av data i kartor. Kibana är ett open-sourceprojekt och därför finns det många möjligheter för förbättringar av detta.  
 
 \section{Ekonomiska och arbetsmiljömässiga aspekter}
-Under alla moment i detta projekt har ekonomiska och arbetsmiljömässiga aspekter betraktats. Fokus låg under hela projektet på att se om och hur Kibana kunde underlätta UX-designprocessen vid visualisering av data. Om Kibana användes med data som var kompatibel med Kibana och systemet var avklarat innan UX-designprocessen påbörjades kunde det påverka de ekonomiska och arbetsmiljömässiga aspekterna positivt. Ur det ekonomiska perspektivet skulle företaget som tillämpade denna UX-designprocess gynnas eftersom mindre tid skulle läggas av arbetarna jämfört med den traditionella UX-designprocessen, vilket skulle spara företaget pengar. Ur det arbetsmiljömässiga perspektivet kunde kommunikationssvårigheter mellan UX-designers och utvecklare elimineras vilket ledde till en bättre arbetsmiljö för båda parterna som kunde lägga fokus på respektive individuella områden.
+Under alla moment i detta projekt har ekonomiska och arbetsmiljömässiga aspekter betraktats. Fokus låg under hela projektet på att se om och hur Kibana kunde underlätta UX-designprocessen vid visualisering av data. Om Kibana användes med data som var kompatibel med Kibana och systemet var avklarat innan UX-designprocessen påbörjades, kunde det påverka de ekonomiska och arbetsmiljömässiga aspekterna positivt. Ur det ekonomiska perspektivet skulle företaget som tillämpade denna UX-designprocess gynnas eftersom mindre tid skulle läggas av arbetarna jämfört med den traditionella UX-designprocessen, vilket skulle spara företaget pengar. Ur det arbetsmiljömässiga perspektivet kunde kommunikationssvårigheter mellan UX-designers och utvecklare elimineras. Detta ledde till en bättre arbetsmiljö för båda parterna som kunde lägga fokus på respektive individuella områden.
 
-\afterpage{\null\newpage}
+Även sociala, etiska och miljömässiga aspekter har beaktats men var inte tillämbara i detta projekt.
 
 \chapter{Slutsatser}
-Det finns många utmaningar och brister inom den traditionella designprocessen för UX som påverkar tiden och pengarna som spenderas under designprocessen för UX. Under detta projekt ställdes följande utmaningar i fokus: att få prototyper att likna slutprodukten och kommunikationssvårigheter mellan UX-designers och utvecklare vid Agil projektmetodik. Efter projektet konstaterades det att Kibana kan förbättra effektiviteten av designprocessen för UX eftersom prototypskapandet och testningen optimerades. Dessutom  kan kommunikationssvårigheter mellan UX-designers och utvecklare elimineras vid användning av Kibana eftersom systemet måste vara klart innan UX-designers kan börja med visualisering i Kibana. 
+Det finns många utmaningar och brister inom den traditionella designprocessen för UX som påverkar tiden och pengarna som spenderas under designprocessen för UX. Under detta projekt ställdes följande utmaningar i fokus: att få prototyper att likna slutprodukten samt kommunikationssvårigheter mellan UX-designers och utvecklare vid Agil projektmetodik. Efter att förändringar hade utförts i designprocessen för UX konstaterades det att Kibana kan förbättra effektiviteten av designprocessen för UX. Detta eftersom prototypskapandet och testningen optimerades. Dessutom  kan kommunikationssvårigheter mellan UX-designers och utvecklare elimineras vid användning av Kibana eftersom systemet måste vara klart innan UX-designers kan börja med visualisering i Kibana. 
 
 Fördelarna med designprocessen för UX då Kibana används var att fokus låg på produkten och inte prototypen vilket resulterade i mer effektiv testning med slutanvändaren. Nackdelarna i denna designprocess för UX var begränsningar i modifiering av användargränssnittet som Kibana har, att systemet skulle vara klart innan visualisering av data i UI-element samt att data som används måste vara kompatibla med Kibana.  
 
@@ -713,8 +709,6 @@ Trots begränsningarna gällande anpassningsbarheten av visualiseringen erbjuder
 Under förberedelsen av data inför visualisering i Kibana visade det sig att data måste vara i ett format som är kompatibelt med Kibana. Det skulle därför vara lämpligt att undersöka hur modifieringen av data innan de kan visualiseras i Kibana kan ske på ett effektivt och icke tidskrävande sätt. Detta skulle gynna UX-designprocessen vid användning av Kibana eftersom det är ett av krav systemet ska vara klar innan visualisering av data. En undersökning kring detta skulle alltså hitta ett sätt att förkorta tiden som spenderas på att få in data i Kibana vilket skulle leda till att UX-designprocessen kan påbörjas snabbare.
 
 Ytterligare ett förslag till fortsatt arbete är att undersöka möjligheten att inkludera en \textit{dashboard} i en webbsida och analysera om den eliminerar begränsningarna i UX-designprocessen vid användning av Kibana och i så fall hur effektivt detta görs. För att kunna undersöka hur bra Kibana är gällande visualisering av data hade det kunnat jämföras med verktyg som liknar Elastic Stack, d.v.s. en större samling av projekt som hämtar, hanterar och visualiserar data. 
-
-\afterpage{\null\newpage}
 
 \chapter{Källförteckning}
 [1] Elastic. Elastic Reaches 100 Million Downloads for the Elastic Stack [Internet]. [citerad 2018-03-27]. Hämtad från: https://www.elastic.co/about/press\newline/elastic-reaches-100-million-downloads-for-the-elastic-st (Citatet är översatt till svenska av Neira Causevic och Christina Ntis)
@@ -744,7 +738,7 @@ https://ieeexplore-ieee-org.focus.lib.kth.se\newline/stamp/stamp.jsp?tp\=\&arnum
 [12] 1177 Vårdguiden. Färgblindhet [Internet]. Stockholm: 1177 Vårdguiden; 2017 [uppdaterad 2017-01-11; citerad 2018-03-27]. Hämtad från:\newline 
 https://www.1177.se/Stockholm/Fakta-och-rad/Sjukdomar/Fargblindhet/
 
-[13] Jakob Nielsen. A 100-Year View of User Experience [Internet].  USA: Nielsen Norman Group; 2017 [citerad 2018-04-07]. Hämtad från:  https://www.nngroup.com/articles/100-years-ux/
+[13] Jakob Nielsen. A 100-Year View of User Experience [Internet].  USA: Nielsen Norman Group; 2017 [citerad 2018-04-07]. Hämtad från:  \newline https://www.nngroup.com/articles/100-years-ux/
 
 [14] Norman Don. The design of everyday things. New York: Basic Books; 2013. ISBN 978-0-465-05065-9 
 
@@ -786,9 +780,7 @@ https://www.elastic.co/elk-stack
 
 [32] Elastic. Stories from Users Like You[Internet]. [citerad 2018-03-27]. Hämtad från:\newline https://www.elastic.co/use-cases
 
-\afterpage{\null\newpage}
-
-
+[33] Ömer Uludag. Descriptive study and experimental analysis of the ELK stack applicability for Big Data use cases [Internet]. Fakultät für Informatik; München; 2016 [citerad 2018-05-22]. Hämtad från: \newline https://wwwmatthes.in.tum.de/file/fql8rtq6earf/Sebis-Public-Website/-/Master-s-Thesis-Oemer-Uluda/MT\%20Uludag.pdf
 
 \begin{appendices}
 \renewcommand\thechapter{A}                     
@@ -837,16 +829,28 @@ https://www.elastic.co/elk-stack
 \section{Resultat av testningsformuläret}
 \includegraphics[width=1\textwidth]{TrafficDashboard.pdf}
 \newpage
-\section{Kibana \textit{dashboard}, slutprodukten}
-Följande bilder presenterar slutprodukten av \textit{dashboarden}. De två bilderna sitter ihop men delades upp i två p.g.a. formatering.
+\section{Kibana \textit{dashboarden}: Slutprodukten}
+Följande bilder presenterar slutprodukten av \textit{dashboarden}. De två bilderna sitter ihop men delades upp i två på grund av formatering.
 
 \includegraphics[width=1\textwidth]{Dashboard1}
 \newpage
 \includegraphics[width=1\textwidth]{Dashboard2}
+\newpage
 
-\end{appendices}
+\section{Resultat av utvärderingsformuläret}
+Nedan presenteras en sammanställning av alla svar från utvärderingsformuläret. 
+
+\includegraphics[width=1\textwidth]{UtvarderingSvar1}
+\newpage
+\includegraphics[width=1\textwidth]{UtvarderingSvar2}
+\newpage
+\includegraphics[width=1\textwidth]{UtvarderingSvar3}
+\newpage
+\includegraphics[width=1\textwidth]{UtvarderingSvar4}
 
 \afterpage{\null\newpage}
+\end{appendices}
+
 
 \includepdf[pages={-}]{EndPage.pdf}
 \end{document}
