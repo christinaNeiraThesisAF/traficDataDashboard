@@ -35,6 +35,7 @@
     \fancyhead{} %Clean headers
     \fancyhead[RO]{\leftmark}
     \fancyhead[LE]{\leftmark}
+    \fancyfoot[C]{ \thepage\ }
     \renewcommand{\chaptermark}[1]{\markboth{\thechapter. {\slshape{##1}}}{}}
 } 
 \addbibresource{references.bib} % The file containing our references, in BibTeX format
@@ -63,10 +64,12 @@
 \afterpage{\null\newpage}
 
 \includepdf[pages={-}]{StartPage.pdf}
+\thispagestyle{empty}
 \afterpage{\null\newpage}
 \includepdf[pages={-}]{Titlepage.pdf}
 \begin{otherlanguage}{swedish}
   \begin{abstract}
+  \thispagestyle{empty}
 \afterpage{\null\newpage}
 
 I dagsläget finns det en mängd utmaningar och svårigheter inom den traditionella designprocessen för användarupplevelse (UX, User Experience). Dessa utmaningar har en påverkan på hur tidskrävande och kostsam en designprocess för UX kan vara. Några av dem är att få prototyper att likna slutprodukten och kommunikationssvårigheter mellan UX-designers och utvecklare vid Agil projektmetodik. Några svårigheter som finns vid visualisering av strömmande data är att göra den lättförståelig för användaren och möjliggöra användaren att nå önskad information.
@@ -80,7 +83,7 @@ För att undersöka dessa svårigheter togs en designprocess för UX, att använ
 
  \end{abstract}
 \end{otherlanguage}
- 
+ \thispagestyle{empty}
 \afterpage{\null\newpage}
 
 \begin{abstract}
@@ -103,7 +106,7 @@ Text som är i kursiv stil i denna rapport är termer på engelska som inte var 
 
 Vi skulle vilja tacka alla inblandade parter i detta examensarbete på ÅF och KTH. Stort tack till Martin Neumann, vår handledare på ÅF, för all kunskapsdelning, stöd och rådgivning. Tack även till Anders Lindström som var vår handledare på KTH för all hjälp med detta examensarbete. 
 
-
+\thispagestyle{empty}
 \afterpage{\null\newpage}
 
 \renewcommand{\contentsname}{Innehållsförteckning}
@@ -113,7 +116,7 @@ Vi skulle vilja tacka alla inblandade parter i detta examensarbete på ÅF och K
 
 % Mainmatter is where the actual contents of the thesis goes
 \mainmatter
-
+\thispagestyle{empty}
 \afterpage{\null}
 
 
