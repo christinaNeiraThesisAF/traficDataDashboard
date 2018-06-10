@@ -74,7 +74,7 @@
 
 I dagsläget finns det en mängd utmaningar och svårigheter inom den traditionella designprocessen för användarupplevelse (UX, User Experience). Dessa utmaningar har en påverkan på hur tidskrävande och kostsam en designprocess för UX kan vara. Några av dem är att få prototyper att likna slutprodukten och kommunikationssvårigheter mellan UX-designers och utvecklare vid Agil projektmetodik. Några svårigheter som finns vid visualisering av strömmande data är att göra den lättförståelig för användaren och möjliggöra användaren att nå önskad information.
 
-För att undersöka dessa svårigheter togs en designprocess för UX, att användas med datavisualiseringsverktyget Kibana, fram. För att kunna utvärdera och bedöma designprocessen för UX, skapades en interaktiv \textit{dashboard} som presenterade Transportstyrelsens data från betalstationer. Framtagningen av designprocessen för UX resulterade i en optimisering av prototypskapandet och testningen. Detta eftersom designprocessen för UX möjliggjorde utveckling av produkten, istället för prototypen, vilket förbättrade testningen med slutanvändaren och därmed även slutprodukten. Det fanns dock nackdelar då Kibana användes vilka var begränsningar i modifieringen av användargränssnittet och att systemet behövde vara klart innan designprocessen för UX kunde påbörjas. 
+För att undersöka dessa svårigheter togs en designprocess för UX, att användas med datavisualiseringsverktyget Kibana, fram. För att kunna utvärdera och bedöma designprocessen för UX, skapades en interaktiv \textit{dashboard} som presenterade Transportstyrelsens data från betalstationer. Framtagningen av designprocessen för UX resulterade i en optimering av prototypskapandet och testningen. Detta eftersom designprocessen för UX möjliggjorde utveckling av produkten, istället för prototypen, vilket förbättrade testningen med slutanvändaren och därmed även slutprodukten. Det fanns dock nackdelar då Kibana användes vilka var begränsningar i modifieringen av användargränssnittet och att systemet behövde vara klart innan designprocessen för UX kunde påbörjas. 
 
 
 \textbf{Nyckelord}
@@ -136,7 +136,7 @@ I detta projekt användes därför ett verktyg där prototypskapandet kunde ers�
 Dataströmmen som användes som exempeldata vid visualiseringen var från Transportstyrelsens öppna databas gällande betalstationer i Sverige. Detta möjliggjorde en visualisering av trafik där användare kunde få information som till exempel antal fordon som passerade ett valt område, fördelning av fordonstyper, var fordonsägare som åkte igenom valda betalstationer bodde m.m.
 
 \section{Målsättning}
-Detta arbete syftar till att undersöka om, och hur Kibana kan förbättra UX-designprocessen vid visualisering av data. Ett av målen i det här projekt var därför att ta fram viktiga problem och eventuella brister inom UX-designprocessen och undersöka dessa. Det skulle även skapas en produkt med hjälp av datahanterings- och visualiseringsverktyget Elastic Stack där Kibana skulle användas som visualiseringsverktyg. Framtagningen av produkten gjordes för att kunna uppfylla det huvudsakliga målet med projektet vilket var en UX-designprocess som togs fram vid användning av Kibana. Den skulle sedan utvärderas av erfarna UX-designers för att jämföras med den traditionella UX-designprocessen. 
+Detta arbete syftar till att undersöka om, och hur Kibana kan förbättra UX-designprocessen vid visualisering av data. Ett av målen i det här projekt var därför att ta fram viktiga problem och eventuella brister inom UX-designproce-ssen och undersöka dessa. Det skulle även skapas en produkt med hjälp av datahanterings- och visualiseringsverktyget Elastic Stack där Kibana skulle användas som visualiseringsverktyg. Framtagningen av produkten gjordes för att kunna uppfylla det huvudsakliga målet med projektet vilket var en UX-designprocess som togs fram vid användning av Kibana. Den skulle sedan utvärderas av erfarna UX-designers för att jämföras med den traditionella UX-designprocessen. 
 
 Projektet skulle delas upp i följande mer detaljerade delmål:
 
@@ -144,9 +144,9 @@ Projektet skulle delas upp i följande mer detaljerade delmål:
 
 \item Identifiera problem och brister inom UX-designprocessen. 
 
-\item Bedöma UX-designprocessen vid användning av Kibana baserat på utvärderingar av erfarna UX-designers.
+\item Bedöma UX-designprocessen vid användning av Kibana baserat på utvä-rderingar av erfarna UX-designers.
 
-\item Bedöma kommunikationen mellan Agila utvecklare och UX-designers baserat på författarnas erfarenhet av båda rollerna under UX-designprocessen vid användning av Kibana.
+\item Bedöma kommunikationen mellan Agila utvecklare och UX-designers baserat på författarnas erfarenhet av båda rollerna under UX-designpro-cessen vid användning av Kibana.
 \end{itemize} 
 
 För att kunna utvärdera och bedöma UX-designprocessen vid användning av Kibana skulle en interaktiv \textit{dashboard} skapas med hjälp av Kibana som presenterade Transportstyrelsens data från betalstationer. För att göra detta skulle följande delsteg utföras: Utforska slutanvändare och ta fram deras behov och krav, ta fram lösningar som uppfyller dessa behov och krav, implementera lösningarna i en interaktiv \textit{dashboard} i Kibana, testa produkten mot slutanvändare genom djupintervjuer och upprepa tidigare delsteg tills produkten blev accepterad av slutanvändaren. För att visualisera data från Transportstyrelsen skulle även data förberedas för visualisering. Detta genom att skapa en webbtjänst som skulle hämta data från Transportstyrelsen och modifiera data så att de skulle bli kompatibla med Kibana.
@@ -274,7 +274,7 @@ Ytterligare en svårighet med att presentera dataströmmar är att hastigheten s
 
 \section{Elastic Stack} 
 
-Elastic stack är ett verktyg som kan ta data från vilken källa som helst, i vilket format som helst, och söka, analysera och visualisera det i realtid. Den består av fyra open-sourceprojekt som är Beats, Logstash, Elasticsearch och Kibana som presenteras mer i detalj nedan. Användning av Elastic stack är gratis men det finns begränsningar i utrymme och vissa extrafunktioner som kostar. [27]
+Enligt Elastic stacks hemsida [27] är ett verktyg som kan ta data från vilken källa som helst, i vilket format som helst, och söka, analysera och visualisera det i realtid. Den består av fyra open-sourceprojekt som är Beats, Logstash, Elasticsearch och Kibana som presenteras mer i detalj nedan. Användning av Elastic stack är gratis men det finns begränsningar i utrymme och vissa extrafunktioner som kostar. 
 
 
 \subsection{Logstash} 
@@ -287,7 +287,7 @@ Enligt Beats produktbeskrivning på Elastic Stacks hemsida [29] är Beats en pla
 
 \subsection{Elasticsearch}
 
-Elasticsearch är en JSON-baserad, RESTful sök och analysmotor som lagrar och indexerar data och gör dem tillgängliga för analys och visualisering enligt produktbeskrivningen för Elasticsearch på Elastic Stacks hemsida [30]. Det är Elastic Stacks huvudmotor och möjliggör lagring, sökning och analys av stora datamängder snabbt och i nära realtid vilket innebär att det finns en liten latens från det att ett dokument indexeras tills dess att det blir sökbart. Elasticsearch passar bäst för applikationer som är konstruerade för att hantera nära realtidsdata som behöver bearbetas och analyseras snabbt. 
+Elasticsearch är en JSON-baserad, RESTful sök och analysmotor som lagrar och indexerar data och gör dem tillgängliga för analys och visualisering enligt produktbeskrivningen för Elasticsearch på Elastic Stacks hemsida [30]. Det är Elastic Stacks huvudmotor och möjliggör lagring, sökning och analys av stora datamängder snabbt och i nära realtid vilket innebär att det finns en liten latens från det att ett dokument indexeras tills dess att det blir sökbart. Användningen av Elasticsearch är bäst lämpad för applikationer som är konstruerade för att hantera nära realtidsdata som behöver bearbetas och analyseras snabbt.
  
 
 \subsection{Kibana}
@@ -311,11 +311,11 @@ I Kibana finns även utvecklarverktyg som erbjuder kraftfulla sätt att interage
 
 \chapter{Metod}
 
-I detta kapitel presenteras vilka metoder som användes för att uppfylla målen definierade i 1.2. 
+I detta kapitel presenteras vilka metoder som användes för att uppfylla målen definierade i 1.2. Avsnitt 3.1 presenterar den förstudie som har gjorts inom den traditionella UX-designprocessen och visualisering av data. Avsnitt 3.2 tar upp hur utvärderingen av UX-designprocessen vid användning av Kibana utfördes. En utvärdering av kommunikationen mellan Agila utvecklare och UX-designers utfördes även och beskrivs i avsnitt 3.3. I avsnitt 3.4 beskrivs systemarkitekturen och hur data förbereddes för visualisering. Slutligen presenterar avsnitt 3.5 hur visualiseringen i Kibana utfördes.
 
 \section{Litteraturstudie}
 
-För att identifiera utmaningar i den traditionella designprocessen genomfördes en litteraturstudie under förstudien. Detta för att ta reda på vad som skulle stå i fokus under utvärderingen av designprocessen som skulle bli framtagen med Kibana. Under förstudien genomfördes även en litteraturstudie för att ta reda på svårigheter inom visualisering för att kunna välja en typ av data som har visualiseringsutmaningar. Litteraturstudien utfördes genom analyser av relaterade arbeten och rapporter.
+För att identifiera utmaningar i den traditionella designprocessen genomfördes en litteraturstudie under förstudien. Detta för att ta reda på vad som skulle stå i fokus under utvärderingen av designprocessen som skulle bli framtagen med Kibana. Under förstudien genomfördes även en litteraturstudie för att ta reda på svårigheter inom visualisering av data för att kunna välja en typ av data som har visualiseringsutmaningar. Litteraturstudien utfördes genom analyser av relaterade arbeten och rapporter.
 
 \section{Utvärdering av UX-designprocessen vid användning av Kibana}
 
@@ -443,7 +443,7 @@ Vid specificering av data som skulle ingå i ett UI-element gjordes automatiska 
 
 I det här kapitlet kommer designprocessen vid användning av Kibana samt tillämpningen av den att förklaras. Även en utvärdering av den framtagna designprocessen presenteras i detta kapitel.  
 
-\section{UX-Designprocess vid användning av Kibana}
+\section{UX-Designprocess vid användning av  \newline Kibana}
 
 UX-designprocessen som togs fram under detta projekt följde stegen i figur 4.1. Målet med varje iterering var att förbättra produkten och komma närmare kundens krav. Itereringen upprepades tills dess att kunden accepterade produkten. Observation och idéskapande följde den traditionella designprocessen och beskrivs i kapitel 2.1.5 medan produktskapande och testning fick en ny betydelse.Stegen i UX-Designprocessen vid användning av Kibana beskrivs nedan:
 
